@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail - Better Call Sofa</title>
+  <link href="../css/product-detail.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Better <span>Call Sofa</span></div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="categories.html">Categories</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="wishlist-btn">
+            <i class="far fa-heart"></i>
+            <span class="badge">0</span>
+          </button>
+          <button class="cart-btn" id="cart-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge">0</span>
+          </button>
+          <button class="user-btn">
+            <i class="far fa-user"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li class="active">Product Name</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Product Detail Section -->
+  <section class="product-detail">
+    <div class="container">
+      <div class="product-detail-content">
+        <!-- Product Gallery -->
+        <div class="product-gallery">
+          <div class="main-image">
+            <img src="" alt="" id="main-product-image">
+          </div>
+          <div class="thumbnail-images" id="thumbnail-images">
+            <!-- Thumbnails will be populated here -->
+          </div>
+        </div>
+        
+        <!-- Product Info -->
+        <div class="product-info">
+          <h1 class="product-name" id="product-name">Product Name</h1>
+          <div class="product-meta">
+            <div class="product-category" id="product-category">Category</div>
+            <div class="product-sku" id="product-sku">SKU: <span>12345</span></div>
+          </div>
+          <div class="product-price" id="product-price">
+            <span class="current-price">$0.00</span>
+            <span class="original-price">$0.00</span>
+            <span class="discount-badge">-0%</span>
+          </div>
+          <div class="product-description" id="product-description">
+            <p>Product description goes here...</p>
+          </div>
+          
+          <!-- Product Options -->
+          <div class="product-options">
+            <div class="option-group">
+              <label>Color</label>
+              <div class="color-options" id="color-options">
+                <!-- Color options will be populated here -->
+              </div>
+            </div>
+            <div class="option-group">
+              <label>Size</label>
+              <div class="size-options" id="size-options">
+                <!-- Size options will be populated here -->
+              </div>
+            </div>
+            <div class="option-group">
+              <label>Material</label>
+              <div class="material-options" id="material-options">
+                <!-- Material options will be populated here -->
+              </div>
+            </div>
+          </div>
+          
+          <!-- Add to Cart -->
+          <div class="add-to-cart">
+            <div class="quantity-selector">
+              <button class="quantity-btn decrease">-</button>
+              <input type="number" class="quantity-input" value="1" min="1" max="10">
+              <button class="quantity-btn increase">+</button>
+            </div>
+            <button class="add-to-cart-btn" id="add-to-cart-btn">
+              <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+            <button class="add-to-wishlist-btn" id="add-to-wishlist-btn">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
+          
+          <!-- Product Features -->
+          <div class="product-features">
+            <div class="feature">
+              <i class="fas fa-truck"></i>
+              <span>Free Shipping</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-undo"></i>
+              <span>30-Day Returns</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-shield-alt"></i>
+              <span>2-Year Warranty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Details Tabs -->
+  <section class="product-tabs">
+    <div class="container">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="description">Description</button>
+        <button class="tab-btn" data-tab="specifications">Specifications</button>
+        <button class="tab-btn" data-tab="reviews">Reviews</button>
+        <button class="tab-btn" data-tab="shipping">Shipping</button>
+      </div>
+      
+      <div class="tab-content">
+        <div class="tab-pane active" id="description-tab">
+          <h3>Product Description</h3>
+          <div id="detailed-description">
+            <!-- Detailed description will be populated here -->
+          </div>
+        </div>
+        
+        <div class="tab-pane" id="specifications-tab">
+          <h3>Product Specifications</h3>
+          <table class="specifications-table" id="specifications-table">
+            <!-- Specifications will be populated here -->
+          </table>
+        </div>
+        
+        <div class="tab-pane" id="reviews-tab">
+          <h3>Customer Reviews</h3>
+          <div class="reviews-summary">
+            <div class="average-rating">
+              <div class="rating-value">4.5</div>
+              <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="rating-count">Based on 24 reviews</div>
+            </div>
+            <div class="rating-bars">
+              <!-- Rating bars will be populated here -->
+            </div>
+          </div>
+          <div class="reviews-list" id="reviews-list">
+            <!-- Reviews will be populated here -->
+          </div>
+          <button class="write-review-btn">Write a Review</button>
+        </div>
+        
+        <div class="tab-pane" id="shipping-tab">
+          <h3>Shipping Information</h3>
+          <div class="shipping-info">
+            <p>Free shipping on orders over $499. Delivery within 3-5 business days.</p>
+            <p>For international shipping, please contact our customer service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products -->
+  <section class="related-products">
+    <div class="container">
+      <div class="section-title">
+        <h2>Related Products</h2>
+        <p>You might also like these products</p>
+      </div>
+      <div class="product-grid" id="related-products-grid">
+        <!-- Related products will be populated here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Modal -->
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="modal" id="cart-modal">
+    <div class="modal-header">
+      <div class="modal-title">Shopping Cart</div>
+      <button class="close-modal" id="close-modal">&times;</button>
+    </div>
+    <div class="modal-body" id="cart-items">
+      <!-- Cart items will be populated here -->
+    </div>
+    <div class="modal-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-amount">$0.00</span>
+      </div>
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Better Call Sofa</h3>
+          <p>Quality furniture for modern living. We provide stylish and comfortable furniture pieces for every home.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="#">Living Room</a></li>
+            <li><a href="#">Bedroom</a></li>
+            <li><a href="#">Dining Room</a></li>
+            <li><a href="#">Office</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Warranty</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p>Subscribe to get special offers and once-in-a-lifetime deals.</p>
+          <form>
+            <input type="email" placeholder="Enter your email" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--light-gray); border-radius: 4px;">
+            <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Better Call Sofa . All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="../js/product-detail.js"></script>
+</body>
+</html> 
