@@ -8,9 +8,12 @@ const cartModal = document.getElementById('cart-modal');
 const modalOverlay = document.getElementById('modal-overlay');
 const closeModal = document.getElementById('close-modal');
 const cartItems = document.getElementById('cart-items');
+const userBtn = document.querySelector('.user-btn');
+const wishlistBtn = document.querySelector('.wishlist-btn');
 
 // Cart state
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
 // Fetch products from the JSON file
 async function fetchProducts() {
@@ -30,6 +33,8 @@ function renderProductCard(product) {
     ? (product.price * (1 - product.discount / 100)).toFixed(2) 
     : null;
   
+  const isInWishlist = wishlist.includes(product.id);
+  
   return `
     <div class="product-card" data-category="${product.category}">
       <div class="product-image">
@@ -39,8 +44,8 @@ function renderProductCard(product) {
           <button class="product-action-btn add-to-cart" data-id="${product.id}">
             <i class="fas fa-shopping-cart"></i>
           </button>
-          <button class="product-action-btn add-to-wishlist" data-id="${product.id}">
-            <i class="far fa-heart"></i>
+          <button class="product-action-btn add-to-wishlist ${isInWishlist ? 'active' : ''}" data-id="${product.id}">
+            <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i>
           </button>
           <button class="product-action-btn quick-view" data-id="${product.id}">
             <i class="fas fa-eye"></i>
@@ -99,8 +104,10 @@ function addProductEventListeners() {
   // Add to wishlist buttons
   document.querySelectorAll('.add-to-wishlist').forEach(button => {
     button.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const productId = e.currentTarget.getAttribute('data-id');
-      addToWishlist(productId);
+      toggleWishlist(productId);
     });
   });
   
@@ -135,15 +142,32 @@ async function addToCart(productId) {
       });
     }
     
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCartBadge();
     renderCartItems();
   }
 }
 
-// Add product to wishlist
-function addToWishlist(productId) {
-  // This would typically update a wishlist state and UI
-  console.log(`Added product ${productId} to wishlist`);
+// Toggle product in wishlist
+function toggleWishlist(productId) {
+  const index = wishlist.indexOf(productId);
+  
+  if (index === -1) {
+    wishlist.push(productId);
+  } else {
+    wishlist.splice(index, 1);
+  }
+  
+  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  updateWishlistBadge();
+  
+  // Update the wishlist button in the product card
+  const wishlistBtn = document.querySelector(`.product-card[data-category] .add-to-wishlist[data-id="${productId}"]`);
+  if (wishlistBtn) {
+    wishlistBtn.classList.toggle('active');
+    const icon = wishlistBtn.querySelector('i');
+    icon.className = wishlistBtn.classList.contains('active') ? 'fas fa-heart' : 'far fa-heart';
+  }
 }
 
 // Quick view product
@@ -162,6 +186,22 @@ function updateCartBadge() {
   const cartBadge = document.querySelector('.cart-btn .badge');
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
   cartBadge.textContent = totalItems;
+  cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
+}
+
+// Update wishlist badge
+function updateWishlistBadge() {
+  const wishlistBadge = document.querySelector('.wishlist-btn .badge');
+  wishlistBadge.textContent = wishlist.length;
+  wishlistBadge.style.display = wishlist.length > 0 ? 'flex' : 'none';
+  
+  // Update header wishlist button icon
+  const icon = wishlistBtn.querySelector('i');
+  if (wishlist.length > 0) {
+    icon.className = 'fas fa-heart';
+  } else {
+    icon.className = 'far fa-heart';
+  }
 }
 
 // Render cart items
@@ -231,6 +271,7 @@ function addCartItemEventListeners() {
         const item = cart.find(item => item.id === productId);
         if (item) {
           item.quantity = newQuantity;
+          localStorage.setItem('cart', JSON.stringify(cart));
           updateCartBadge();
         }
       }
@@ -248,6 +289,7 @@ function updateCartItemQuantity(productId, change) {
     if (item.quantity <= 0) {
       removeFromCart(productId);
     } else {
+      localStorage.setItem('cart', JSON.stringify(cart));
       updateCartBadge();
       renderCartItems();
     }
@@ -257,6 +299,7 @@ function updateCartItemQuantity(productId, change) {
 // Remove item from cart
 function removeFromCart(productId) {
   cart = cart.filter(item => item.id !== productId);
+  localStorage.setItem('cart', JSON.stringify(cart));
   updateCartBadge();
   renderCartItems();
 }
@@ -265,6 +308,10 @@ function removeFromCart(productId) {
 function init() {
   // Render products
   renderProducts();
+  
+  // Update badges
+  updateCartBadge();
+  updateWishlistBadge();
   
   // Filter options
   filterOptions.forEach(option => {
@@ -292,18 +339,29 @@ function init() {
   
   // Cart modal
   cartBtn.addEventListener('click', () => {
-    cartModal.classList.add('open');
-    modalOverlay.classList.add('open');
+    cartModal.classList.add('active');
+    modalOverlay.classList.add('active');
+    renderCartItems();
   });
   
   closeModal.addEventListener('click', () => {
-    cartModal.classList.remove('open');
-    modalOverlay.classList.remove('open');
+    cartModal.classList.remove('active');
+    modalOverlay.classList.remove('active');
   });
   
   modalOverlay.addEventListener('click', () => {
-    cartModal.classList.remove('open');
-    modalOverlay.classList.remove('open');
+    cartModal.classList.remove('active');
+    modalOverlay.classList.remove('active');
+  });
+  
+  // Wishlist button
+  wishlistBtn.addEventListener('click', () => {
+    window.location.href = 'wishlist.html';
+  });
+  
+  // User button - redirect to login page
+  userBtn.addEventListener('click', () => {
+    window.location.href = 'login.html';
   });
 }
 

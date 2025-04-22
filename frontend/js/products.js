@@ -18,11 +18,14 @@ const prevPageBtn = document.querySelector('.prev-page');
 const nextPageBtn = document.querySelector('.next-page');
 const pageNumbers = document.querySelector('.page-numbers');
 const categoryFilterButtons = document.querySelectorAll('.filter-option');
+const headerWishlistBtn = document.querySelector('.nav-actions .wishlist-btn');
+const wishlistBadge = document.querySelector('.wishlist-btn .badge');
+const userBtn = document.querySelector('.user-btn');
 
 // State
 let products = [];
-let cart = [];
-let wishlist = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 let currentPage = 1;
 let itemsPerPage = 12;
 let totalPages = 1;
@@ -49,6 +52,8 @@ async function fetchProducts() {
     filteredProducts = [...products];
     updatePagination();
     renderProducts();
+    updateWishlistBadge();
+    updateCartBadge();
   } catch (error) {
     console.error('Error fetching products:', error);
     productsGrid.innerHTML = '<p class="error">Failed to load products. Please try again later.</p>';
@@ -59,6 +64,7 @@ async function fetchProducts() {
 function renderProductCard(product) {
   const discountedPrice = product.discount ? product.price * (1 - product.discount / 100) : product.price;
   const fixedImagePath = product.images[0].replace('/public/images/', '/backend/public/images/');
+  const isInWishlist = wishlist.includes(product.id);
   
   return `
     <div class="product-card" data-id="${product.id}">
@@ -69,8 +75,8 @@ function renderProductCard(product) {
           <button class="product-action-btn add-to-cart" title="Add to Cart">
             <i class="fas fa-shopping-cart"></i>
           </button>
-          <button class="product-action-btn add-to-wishlist" title="Add to Wishlist">
-            <i class="fas fa-heart"></i>
+          <button class="product-action-btn add-to-wishlist ${isInWishlist ? 'active' : ''}" title="Add to Favorites">
+            <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i>
           </button>
           <button class="product-action-btn quick-view" title="Quick View">
             <i class="fas fa-eye"></i>
@@ -219,15 +225,19 @@ function renderProducts() {
   // Render products for current page
   productsGrid.innerHTML = productsToShow.map(product => renderProductCard(product)).join('');
   
-  // Add event listeners to product cards
-  document.querySelectorAll('.product-card').forEach(card => {
-    const productId = card.dataset.id;
-    const product = products.find(p => p.id === productId);
-    
-    card.querySelector('.add-to-cart').addEventListener('click', () => addToCart(product));
-    card.querySelector('.add-to-wishlist').addEventListener('click', () => addToWishlist(product));
-    card.querySelector('.quick-view').addEventListener('click', () => quickView(product));
+// In the renderProducts function:
+document.querySelectorAll('.product-card').forEach(card => {
+  const productId = card.dataset.id;
+  const product = products.find(p => p.id === productId);
+  
+  card.querySelector('.add-to-cart').addEventListener('click', () => addToCart(product));
+  card.querySelector('.add-to-wishlist').addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleWishlist(product);
   });
+  card.querySelector('.quick-view').addEventListener('click', () => quickView(product));
+});
   
   // Update pagination
   updatePagination();
@@ -249,6 +259,7 @@ function addToCart(product, quantity = 1) {
     });
   }
   
+  localStorage.setItem('cart', JSON.stringify(cart));
   updateCart();
   openCart();
 }
@@ -296,6 +307,7 @@ function updateCart() {
       const cartItem = cart.find(i => i.id === productId);
       if (cartItem.quantity > 1) {
         cartItem.quantity -= 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
         updateCart();
       }
     });
@@ -303,6 +315,7 @@ function updateCart() {
     item.querySelector('.increase').addEventListener('click', () => {
       const cartItem = cart.find(i => i.id === productId);
       cartItem.quantity += 1;
+      localStorage.setItem('cart', JSON.stringify(cart));
       updateCart();
     });
     
@@ -311,71 +324,73 @@ function updateCart() {
       const newQuantity = parseInt(e.target.value);
       if (newQuantity > 0) {
         cartItem.quantity = newQuantity;
+        localStorage.setItem('cart', JSON.stringify(cart));
         updateCart();
       }
     });
     
     item.querySelector('.cart-item-remove').addEventListener('click', () => {
       cart = cart.filter(i => i.id !== productId);
+      localStorage.setItem('cart', JSON.stringify(cart));
       updateCart();
     });
   });
 }
 
 function openCart() {
-  cartModal.classList.add('open');
-  cartOverlay.classList.add('open');
+  cartModal.classList.add('active');
+  cartOverlay.classList.add('active');
 }
 
 function closeCart() {
-  cartModal.classList.remove('open');
-  cartOverlay.classList.remove('open');
+  cartModal.classList.remove('active');
+  cartOverlay.classList.remove('active');
 }
 
 // Wishlist Functions
-function addToWishlist(product) {
-  const existingItem = wishlist.find(item => item.id === product.id);
+function toggleWishlist(product) {
+  const index = wishlist.indexOf(product.id);
   
-  if (existingItem) {
-    // Remove from wishlist if already exists
-    wishlist = wishlist.filter(item => item.id !== product.id);
-    updateWishlistUI(product.id, false);
+  if (index === -1) {
+    wishlist.push(product.id);
   } else {
-    // Add to wishlist
-    wishlist.push({
-      id: product.id,
-      name: product.name,
-      price: product.discount ? product.price * (1 - product.discount / 100) : product.price,
-      image: product.images[0]
-    });
-    updateWishlistUI(product.id, true);
+    wishlist.splice(index, 1);
   }
   
-  // Save wishlist to localStorage
   localStorage.setItem('wishlist', JSON.stringify(wishlist));
-}
-
-function updateWishlistUI(productId, isInWishlist) {
-  const wishlistBtn = document.querySelector(`.product-card[data-id="${productId}"] .add-to-wishlist`);
+  updateWishlistBadge();
+  
+  // Update the wishlist button in the product card
+  const wishlistBtn = document.querySelector(`.product-card[data-id="${product.id}"] .add-to-wishlist`);
   if (wishlistBtn) {
-    wishlistBtn.classList.toggle('active', isInWishlist);
-    wishlistBtn.innerHTML = `<i class="fas fa-heart"></i>`;
+    wishlistBtn.classList.toggle('active');
+    const icon = wishlistBtn.querySelector('i');
+    icon.className = wishlistBtn.classList.contains('active') ? 'fas fa-heart' : 'far fa-heart';
   }
 }
 
-// Load wishlist from localStorage on page load
-function loadWishlist() {
-  const savedWishlist = localStorage.getItem('wishlist');
-  if (savedWishlist) {
-    wishlist = JSON.parse(savedWishlist);
-    // Update UI for all products in wishlist
-    wishlist.forEach(item => {
-      updateWishlistUI(item.id, true);
-    });
+function updateWishlistBadge() {
+  wishlistBadge.textContent = wishlist.length;
+  wishlistBadge.style.display = wishlist.length > 0 ? 'flex' : 'none';
+  
+  // Update header wishlist button icon
+  if (headerWishlistBtn) {
+    const icon = headerWishlistBtn.querySelector('i');
+    if (wishlist.length > 0) {
+      icon.className = 'fas fa-heart';
+    } else {
+      icon.className = 'far fa-heart';
+    }
   }
 }
 
-// Quick View Functions
+function updateCartBadge() {
+  const cartBadge = document.querySelector('.cart-btn .badge');
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  cartBadge.textContent = totalItems;
+  cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
+}
+
 function quickView(product) {
   // Create modal elements
   const modalOverlay = document.createElement('div');
@@ -383,11 +398,12 @@ function quickView(product) {
   modalOverlay.id = 'quick-view-overlay';
   
   const modal = document.createElement('div');
-  modal.className = 'modal quick-view-modal';
+  modal.className = 'quick-view-modal';
   modal.id = 'quick-view-modal';
   
   // Calculate discounted price
   const discountedPrice = product.discount ? product.price * (1 - product.discount / 100) : product.price;
+  const isInWishlist = wishlist.includes(product.id);
   
   // Create modal content
   modal.innerHTML = `
@@ -438,8 +454,8 @@ function quickView(product) {
             <button class="add-to-cart-btn" data-id="${product.id}">
               <i class="fas fa-shopping-cart"></i> Add to Cart
             </button>
-            <button class="add-to-wishlist-btn" data-id="${product.id}">
-              <i class="far fa-heart"></i>
+            <button class="add-to-wishlist-btn ${isInWishlist ? 'active' : ''}" data-id="${product.id}">
+              <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i>
             </button>
           </div>
           <div class="view-details-link">
@@ -456,7 +472,7 @@ function quickView(product) {
   
   // Show modal with animation
   setTimeout(() => {
-    modalOverlay.classList.add('open');
+    modalOverlay.classList.add('active');
     modal.classList.add('open');
   }, 10);
   
@@ -496,8 +512,12 @@ function quickView(product) {
   // Add to wishlist button
   const addToWishlistBtn = modal.querySelector('.add-to-wishlist-btn');
   addToWishlistBtn.addEventListener('click', () => {
-    addToWishlist(product);
-    closeQuickView();
+    toggleWishlist(product);
+    
+    // Update button state
+    addToWishlistBtn.classList.toggle('active');
+    const icon = addToWishlistBtn.querySelector('i');
+    icon.className = addToWishlistBtn.classList.contains('active') ? 'fas fa-heart' : 'far fa-heart';
   });
 }
 
@@ -505,13 +525,17 @@ function closeQuickView() {
   const modalOverlay = document.getElementById('quick-view-overlay');
   const modal = document.getElementById('quick-view-modal');
   
-  modalOverlay.classList.remove('open');
+  modalOverlay.classList.remove('active');
   modal.classList.remove('open');
   
   // Remove modal from DOM after animation
   setTimeout(() => {
-    document.body.removeChild(modalOverlay);
-    document.body.removeChild(modal);
+    if (modalOverlay && modalOverlay.parentNode) {
+      document.body.removeChild(modalOverlay);
+    }
+    if (modal && modal.parentNode) {
+      document.body.removeChild(modal);
+    }
   }, 300);
 }
 
@@ -612,8 +636,17 @@ checkoutBtn.addEventListener('click', () => {
   console.log('Proceeding to checkout with items:', cart);
 });
 
+// Header wishlist button
+headerWishlistBtn.addEventListener('click', () => {
+  window.location.href = 'wishlist.html';
+});
+
+// User button - redirect to login page
+userBtn.addEventListener('click', () => {
+  window.location.href = 'login.html';
+});
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   fetchProducts();
-  loadWishlist(); // Load wishlist on page load
 }); 

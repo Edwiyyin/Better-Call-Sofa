@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - Better Call Sofa</title>
+  <title>My Favorites - Better Call Sofa </title>
   <link href="../css/products.css" rel="stylesheet" type="text/css">
   <link href="../css/common.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -16,7 +16,7 @@
         <div class="logo">Better <span>Call Sofa</span></div>
         <ul class="nav-links">
           <li><a href="home.html">Home</a></li>
-          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="products.html">Products</a></li>
           <li><a href="categories.html">Categories</a></li>
         </ul>
         <div class="nav-actions">
@@ -39,17 +39,17 @@
     </div>
   </header>
 
-  <!-- Products Page Header -->
+  <!-- Favorites Page Header -->
   <section class="page-header">
     <div class="container">
-      <h1>Our Products</h1>
+      <h1>My Favorites</h1>
       <div class="breadcrumb">
-        <a href="home.html">Home</a> / <span>Products</span>
+        <a href="home.html">Home</a> / <span>Favorites</span>
       </div>
     </div>
   </section>
 
-  <!-- Products Section -->
+  <!-- Favorites Section -->
   <section class="products-section">
     <div class="container">
       <div class="products-layout">
@@ -150,14 +150,14 @@
             </ul>
           </div>
           
-          <button class="apply-filters-btn">Apply Filters</button>
+          <!-- Apply button removed -->
         </div>
         
-        <!-- Products Grid -->
+        <!-- Favorites Content -->
         <div class="products-content">
           <div class="products-header">
             <div class="products-count">
-              Showing <span id="products-count">0</span> products
+              Showing <span id="products-count">0</span> items in your favorites
             </div>
             <div class="products-sort">
               <label for="sort-by">Sort by:</label>
@@ -171,8 +171,17 @@
             </div>
           </div>
           
-          <div class="products-grid" id="products-grid">
-            <!-- Products will be populated here -->
+          <div class="products-grid" id="wishlist-grid">
+            <!-- Favorites items will be populated here -->
+          </div>
+          
+          <div class="empty-wishlist" id="empty-wishlist" style="display: none;">
+            <div class="empty-state">
+              <i class="far fa-heart"></i>
+              <h2>Your favorites list is empty</h2>
+              <p>Browse our products and add items to your favorites</p>
+              <a href="products.html" class="btn">Browse Products</a>
+            </div>
           </div>
           
           <div class="pagination">
@@ -215,7 +224,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3>FurniCraft</h3>
+          <h3>Better Call Sofa</h3>
           <p>Quality furniture for modern living. We provide stylish and comfortable furniture pieces for every home.</p>
           <div class="social-links">
             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -260,64 +269,6 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="../js/products.js"></script>
-  <script>
-    const headerWishlistBtn = document.querySelector('.nav-actions .wishlist-btn');
-    const wishlistBadge = document.querySelector('.wishlist-btn .badge');
-
-    headerWishlistBtn.addEventListener('click', () => {
-      window.location.href = 'wishlist.html';
-    });
-
-    document.querySelectorAll('.wishlist-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const productId = btn.getAttribute('data-id');
-            toggleWishlist(productId);
-            
-            // Update button state
-            btn.classList.toggle('active');
-            const icon = btn.querySelector('i');
-            icon.className = btn.classList.contains('active') ? 'fas fa-heart' : 'far fa-heart';
-        });
-    });
-
-    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
-    function toggleWishlist(product) {
-      const index = wishlist.indexOf(product.id);
-      
-      if (index === -1) {
-        wishlist.push(product.id);
-      } else {
-        wishlist.splice(index, 1);
-      }
-      
-      localStorage.setItem('wishlist', JSON.stringify(wishlist));
-      updateWishlistBadge();
-      
-      // Update the wishlist button in the product card
-      const wishlistBtn = document.querySelector(`.product-card[data-id="${product.id}"] .add-to-wishlist`);
-      if (wishlistBtn) {
-        wishlistBtn.classList.toggle('active');
-        const icon = wishlistBtn.querySelector('i');
-        icon.className = wishlistBtn.classList.contains('active') ? 'fas fa-heart' : 'far fa-heart';
-      }
-    }
-
-    function updateWishlistBadge() {
-      wishlistBadge.textContent = wishlist.length;
-      wishlistBadge.style.display = wishlist.length > 0 ? 'flex' : 'none';
-      
-      // Update header wishlist button icon
-      if (headerWishlistBtn) {
-        const icon = headerWishlistBtn.querySelector('i');
-        if (wishlist.length > 0) {
-          icon.className = 'fas fa-heart';
-        } else {
-          icon.className = 'far fa-heart';
-        }
-      }
-    }
-  </script>
+  <script src="../js/wishlist.js"></script>
 </body>
 </html> 

@@ -17,6 +17,8 @@ const cartTotal = document.querySelector('.cart-total');
 const checkoutBtn = document.querySelector('.checkout-btn');
 const productGallery = document.querySelector('.product-gallery');
 const mainImageContainer = document.querySelector('.main-image');
+const headerWishlistBtn = document.querySelector('.nav-actions .wishlist-btn');
+const wishlistBadge = document.querySelector('.wishlist-btn .badge');
 
 // State
 let currentProduct = null;
@@ -226,6 +228,24 @@ function renderProductDetails() {
     
     // Update reviews
     renderReviews();
+    
+    // Update wishlist button state
+    updateWishlistButtonState();
+}
+
+// Update Wishlist Button State
+function updateWishlistButtonState() {
+    if (!currentProduct) return;
+    
+    const isInWishlist = wishlist.includes(currentProduct.id);
+    addToWishlistBtn.classList.toggle('active', isInWishlist);
+    
+    const icon = addToWishlistBtn.querySelector('i');
+    if (isInWishlist) {
+        icon.className = 'fas fa-heart';
+    } else {
+        icon.className = 'far fa-heart';
+    }
 }
 
 // Render Color Options
@@ -425,11 +445,15 @@ function renderRelatedProducts() {
     
     relatedProductsGrid.innerHTML = relatedProducts.map(product => {
         const fixedImagePath = product.images[0].replace('/public/images/', '/backend/public/images/');
+        const isInWishlist = wishlist.includes(product.id);
         return `
             <div class="product-card">
                 <div class="product-image">
                     <img src="${fixedImagePath}" alt="${product.name}">
                     ${product.discount ? `<span class="product-discount">-${product.discount}%</span>` : ''}
+                    <button class="wishlist-btn ${isInWishlist ? 'active' : ''}" data-id="${product.id}">
+                        <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i>
+                    </button>
                 </div>
                 <div class="product-info">
                     <div class="product-category">${product.category}</div>
@@ -442,6 +466,19 @@ function renderRelatedProducts() {
             </div>
         `;
     }).join('');
+    
+    // Add event listeners to wishlist buttons
+    document.querySelectorAll('.wishlist-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const productId = btn.getAttribute('data-id');
+            toggleWishlist(productId);
+            
+            // Update button state
+            btn.classList.toggle('active');
+            const icon = btn.querySelector('i');
+            icon.className = btn.classList.contains('active') ? 'fas fa-heart' : 'far fa-heart';
+        });
+    });
     
     // Add event listeners to quick view buttons
     const quickViewButtons = relatedProductsContainer.querySelectorAll('.quick-view-btn');
@@ -502,14 +539,17 @@ function toggleWishlist(productId = currentProduct.id) {
     
     if (index === -1) {
         wishlist.push(productId);
-        addToWishlistBtn.classList.add('active');
     } else {
         wishlist.splice(index, 1);
-        addToWishlistBtn.classList.remove('active');
     }
     
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
     updateWishlistBadge();
+    
+    // Update wishlist button state if it's the current product
+    if (productId === currentProduct.id) {
+        updateWishlistButtonState();
+    }
 }
 
 // Update Cart Badge
@@ -523,9 +563,18 @@ function updateCartBadge() {
 
 // Update Wishlist Badge
 function updateWishlistBadge() {
-    const wishlistBadge = document.querySelector('.wishlist-btn .badge');
     wishlistBadge.textContent = wishlist.length;
     wishlistBadge.style.display = wishlist.length > 0 ? 'flex' : 'none';
+    
+    // Update header wishlist button icon
+    if (headerWishlistBtn) {
+        const icon = headerWishlistBtn.querySelector('i');
+        if (wishlist.length > 0) {
+            icon.className = 'fas fa-heart';
+        } else {
+            icon.className = 'far fa-heart';
+        }
+    }
 }
 
 // Show Cart Modal
@@ -654,6 +703,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cart modal
     closeModalBtn.addEventListener('click', hideCartModal);
     cartOverlay.addEventListener('click', hideCartModal);
+    
+    // Header wishlist button
+    headerWishlistBtn.addEventListener('click', () => {
+        window.location.href = 'wishlist.html';
+    });
     
     // Checkout button
     checkoutBtn.addEventListener('click', () => {

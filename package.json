@@ -1,0 +1,20 @@
+{
+  "name": "better-call-sofa",
+  "version": "1.0.0",
+  "description": "A Node.js backend for a furniture-themed e-commerce website, built with Express.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edwiyyin/Better-Call-Sofa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edwiyyin/Better-Call-Sofa/issues"
+  },
+  "homepage": "https://github.com/Edwiyyin/Better-Call-Sofa#readme"
+}

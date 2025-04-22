@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Better Call Sofa</title>
-  <link href="../css/home.css" rel="stylesheet" type="text/css">
+  <title>Register - Better Call Sofa</title>
   <link href="../css/common.css" rel="stylesheet" type="text/css">
+  <link href="../css/register.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
       <nav>
         <div class="logo">Better <span>Call Sofa</span></div>
         <ul class="nav-links">
-          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="home.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="categories.html">Categories</a></li>
         </ul>
@@ -39,64 +39,86 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Elevate Your Living Space</h1>
-          <p>Discover our carefully curated collection of modern and comfortable furniture pieces designed for contemporary living.</p>
-          <a href="#" class="btn">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features">
-    <div class="container">
-      <div class="section-title">
-        <h2>Why Choose Us?</h2>
-        <p>We offer the best furniture shopping experience</p>
-      </div>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-truck"></i>
+  <!-- Register Container -->
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Create an Account</h2>
+      <p class="login-subtitle">Join Better Call Sofa to save your favorites and checkout faster</p>
+      
+      <form id="register-form">
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <div class="input-with-icon">
+            <i class="fas fa-user"></i>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
           </div>
-          <h3>Free Shipping</h3>
-          <p>Enjoy free shipping on all orders over $499. Fast delivery to your doorstep.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-shield-alt"></i>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-with-icon">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
           </div>
-          <h3>2-Year Warranty</h3>
-          <p>All our products come with a 2-year warranty for your peace of mind.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-undo"></i>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-with-icon">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" name="password" placeholder="Create a password" required>
+            <button type="button" class="toggle-password">
+              <i class="far fa-eye"></i>
+            </button>
           </div>
-          <h3>Easy Returns</h3>
-          <p>Not satisfied? Return within 30 days for a full refund, no questions asked.</p>
+          <div class="password-strength">
+            <div class="strength-bar">
+              <div class="strength-progress"></div>
+            </div>
+            <span class="strength-text">Password strength: <span>Weak</span></span>
+          </div>
         </div>
+        
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <div class="input-with-icon">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+            <button type="button" class="toggle-password">
+              <i class="far fa-eye"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="checkbox-container">
+            <input type="checkbox" id="terms" name="terms" required>
+            <span class="checkmark"></span>
+            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+          </label>
+        </div>
+        
+        <button type="submit" class="login-btn">Create Account</button>
+      </form>
+      
+      <div class="divider">
+        <span>or</span>
       </div>
-    </div>
-  </section>
-
-  <!-- Cart Modal -->
-  <div class="modal-overlay" id="modal-overlay"></div>
-  <div class="modal" id="cart-modal">
-    <div class="modal-header">
-      <div class="modal-title">Shopping Cart</div>
-      <button class="close-modal" id="close-modal">&times;</button>
-    </div>
-    <div class="modal-body" id="cart-items">
-      <!-- Cart items will be populated here -->
-    </div>
-    <div class="modal-footer">
-      <button class="checkout-btn">Proceed to Checkout</button>
+      
+      <div class="social-login">
+        <button class="social-btn google-btn">
+          <i class="fab fa-google"></i>
+          Continue with Google
+        </button>
+        <button class="social-btn facebook-btn">
+          <i class="fab fa-facebook-f"></i>
+          Continue with Facebook
+        </button>
+      </div>
+      
+      <div class="login-footer">
+        Already have an account? <a href="login.html">Sign In</a>
+      </div>
     </div>
   </div>
 
@@ -105,7 +127,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3>FurniCraft</h3>
+          <h3>Better Call Sofa</h3>
           <p>Quality furniture for modern living. We provide stylish and comfortable furniture pieces for every home.</p>
           <div class="social-links">
             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -150,6 +172,6 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="../js/home.js"></script>
+  <script src="../js/register.js"></script>
 </body>
-</html>
+</html> 
