@@ -268,12 +268,17 @@ function updateCartItemQuantity(productId, change) {
 }
 
 // Remove item from cart
-function removeFromCart(productId) {
-  cart = cart.filter(item => item.id !== productId);
+function removeFromCart(itemId) {
+  cart = cart.filter(item => item.id !== itemId);
   localStorage.setItem('cart', JSON.stringify(cart));
-  updateCartBadge();
-  renderCartItems();
+  updateCartUI();
+  
+  // Close cart if empty
+  if (cart.length === 0) {
+    closeCart();
+  }
 }
+
 
 // Initialize the page
 function init() {

@@ -34,13 +34,23 @@ userBtn.addEventListener('click', () => {
 // Wishlist Functions
 function toggleWishlist(product) {
   const index = wishlist.indexOf(product.id);
+  
   if (index === -1) {
     wishlist.push(product.id);
   } else {
     wishlist.splice(index, 1);
   }
+  
   localStorage.setItem('wishlist', JSON.stringify(wishlist));
-  renderProducts();
+  updateWishlistBadge();
+  
+  // Update the wishlist button in the product card
+  const wishlistBtn = document.querySelector(`.product-card[data-id="${product.id}"] .add-to-wishlist`);
+  if (wishlistBtn) {
+    wishlistBtn.classList.toggle('active');
+    const icon = wishlistBtn.querySelector('i');
+    icon.className = wishlistBtn.classList.contains('active') ? 'fas fa-heart' : 'far fa-heart';
+  }
 }
 
 function updateWishlistBadge() {

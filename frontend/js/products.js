@@ -1,16 +1,16 @@
 // DOM Elements
 const productsGrid = document.querySelector('.products-grid');
-const filterRadios = document.querySelectorAll('.filter-list input[type="radio"]');
-const priceRange = document.querySelector('.price-range input[type="range"]');
-const minPriceInput = document.querySelector('.price-inputs input:first-child');
-const maxPriceInput = document.querySelector('.price-inputs input:last-child');
+const filterCheckboxes = document.querySelectorAll('.filter-list input[type="checkbox"]');
+const priceRange = document.querySelector('#price-range');
+const minPriceInput = document.querySelector('#min-price');
+const maxPriceInput = document.querySelector('#max-price');
 const applyFiltersBtn = document.querySelector('.apply-filters-btn');
-const sortSelect = document.querySelector('.products-sort select');
-const cartModal = document.querySelector('.modal');
-const cartOverlay = document.querySelector('.modal-overlay');
-const closeModalBtn = document.querySelector('.close-modal');
-const cartItemsContainer = document.querySelector('.modal-body');
-const cartTotal = document.querySelector('.cart-total');
+const sortSelect = document.querySelector('#sort-by');
+const cartModal = document.querySelector('#cart-modal');
+const cartOverlay = document.querySelector('#modal-overlay');
+const closeModalBtn = document.querySelector('#close-modal');
+const cartItemsContainer = document.querySelector('#cart-items');
+const cartTotal = document.querySelector('#cart-total');
 const checkoutBtn = document.querySelector('.checkout-btn');
 const productsCount = document.getElementById('products-count');
 const paginationContainer = document.querySelector('.pagination');
@@ -18,9 +18,6 @@ const prevPageBtn = document.querySelector('.prev-page');
 const nextPageBtn = document.querySelector('.next-page');
 const pageNumbers = document.querySelector('.page-numbers');
 const categoryFilterButtons = document.querySelectorAll('.filter-option');
-const roomtypeFilterButtons = document.querySelectorAll('.roomtype-filter-option');
-const materialFilterButtons = document.querySelectorAll('.material-filter-option');
-
 
 // State
 let products = [];
@@ -30,16 +27,14 @@ let itemsPerPage = 12;
 let totalPages = 1;
 let filteredProducts = [];
 let activeCategory = 'all';
-let activeRoomType = 'all';
-let activeMaterial = 'all';
 let filters = {
   categories: [],
   priceRange: {
     min: 0,
     max: 1000
   },
-  roomType: [],
-  material: []
+  rooms: [],
+  materials: []
 };
 
 // Fetch Products
@@ -85,8 +80,6 @@ function renderProductCard(product) {
       </div>
       <div class="product-info">
         <div class="product-category">${product.category}</div>
-        <div class="product-roomtype">${product.roomType}</div>
-        <div class="product-material">${product.material}</div>
         <h3 class="product-name">${product.name}</h3>
         <div class="product-price">
           <span class="current-price">$${discountedPrice.toFixed(2)}</span>
@@ -114,17 +107,21 @@ function filterProducts() {
     product.price <= filters.priceRange.max
   );
   
-  // Filter by room type - updated to use activeRoomType
-  if (activeRoomType !== 'all') {
+  // Filter by room type
+  if (filters.rooms.length > 0) {
     filtered = filtered.filter(product => 
-      product.roomType.toLowerCase() === activeRoomType
+      filters.rooms.some(room => 
+        product.roomType.toLowerCase() === room.toLowerCase()
+      )
     );
   }
   
-  // Filter by material - updated to use activeMaterial
-  if (activeMaterial !== 'all') {
+  // Filter by material
+  if (filters.materials.length > 0) {
     filtered = filtered.filter(product => 
-      product.material.toLowerCase() === activeMaterial
+      filters.materials.some(material => 
+        product.material.toLowerCase() === material.toLowerCase()
+      )
     );
   }
   
@@ -149,6 +146,7 @@ function filterProducts() {
   
   return filtered;
 }
+
 // Update Pagination
 function updatePagination() {
   totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
@@ -251,7 +249,7 @@ function addToCart(product, quantity = 1) {
       id: product.id,
       name: product.name,
       price: product.discount ? product.price * (1 - product.discount / 100) : product.price,
-      image: product.images[0],
+      image: product.images[0].replace('/public/images/', '/backend/public/images/'),
       quantity: quantity
     });
   }
@@ -266,32 +264,31 @@ function updateCart() {
   updateCartBadge();
   
   // Update cart items
-  cartItemsContainer.innerHTML = cart.map(item => `
-    <div class="cart-item" data-id="${item.id}">
-      <div class="cart-item-image">
-        <img src="${item.image}" alt="${item.name}">
-      </div>
-      <div class="cart-item-info">
-        <h4 class="cart-item-name">${item.name}</h4>
-        <div class="cart-item-price">$${item.price.toFixed(2)}</div>
-        <div class="cart-item-quantity">
-          <button class="quantity-btn decrease">-</button>
-          <input type="number" class="quantity-input" value="${item.quantity}" min="1">
-          <button class="quantity-btn increase">+</button>
+  cartItemsContainer.innerHTML = cart.length === 0 
+    ? '<p class="empty-cart">Your cart is empty</p>'
+    : cart.map(item => `
+      <div class="cart-item" data-id="${item.id}">
+        <div class="cart-item-image">
+          <img src="${item.image}" alt="${item.name}">
         </div>
+        <div class="cart-item-info">
+          <h4 class="cart-item-name">${item.name}</h4>
+          <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+          <div class="cart-item-quantity">
+            <button class="quantity-btn decrease">-</button>
+            <input type="number" class="quantity-input" value="${item.quantity}" min="1">
+            <button class="quantity-btn increase">+</button>
+          </div>
+        </div>
+        <button class="cart-item-remove">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
-      <button class="cart-item-remove">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-  `).join('');
+    `).join('');
   
   // Update cart total
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  cartTotal.innerHTML = `
-    <span>Total:</span>
-    <span>$${total.toFixed(2)}</span>
-  `;
+  cartTotal.textContent = `$${total.toFixed(2)}`;
   
   // Add event listeners to cart items
   document.querySelectorAll('.cart-item').forEach(item => {
@@ -361,8 +358,6 @@ function quickView(product) {
   // Calculate discounted price
   const discountedPrice = product.discount ? product.price * (1 - product.discount / 100) : product.price;
   const isInWishlist = wishlist.includes(product.id);
-  
-  // Fix the image path
   const fixedImagePath = product.images[0].replace('/public/images/', '/backend/public/images/');
   
   // Create modal content
@@ -379,34 +374,15 @@ function quickView(product) {
         <div class="quick-view-info">
           <h3 class="product-name">${product.name}</h3>
           <div class="product-category">${product.category}</div>
-          <div class="product-roomtype">${product.roomType}</div>
-          <div class="product-material">${product.material}</div>
           <div class="product-price">
             <span class="current-price">$${discountedPrice.toFixed(2)}</span>
             ${product.discount ? `<span class="original-price">$${product.price.toFixed(2)}</span>
             <span class="discount-badge">-${product.discount}%</span>` : ''}
           </div>
           <div class="product-description">
-            <p>${product.description}</p>
+            <p>${product.description || 'No description available'}</p>
           </div>
-          <div class="product-options">
-            <div class="option-group">
-              <label>Color:</label>
-              <div class="color-options">
-                ${product.colors.map(color => `
-                  <button class="color-option" style="background-color: ${color}"></button>
-                `).join('')}
-              </div>
-            </div>
-            <div class="option-group">
-              <label>Size:</label>
-              <div class="size-options">
-                ${product.sizes.map(size => `
-                  <button class="size-option">${size}</button>
-                `).join('')}
-              </div>
-            </div>
-          </div>
+
           <div class="add-to-cart">
             <div class="quantity-selector">
               <button class="quantity-btn decrease">-</button>
@@ -502,65 +478,42 @@ function closeQuickView() {
   }, 300);
 }
 
-// Event Listeners
-filterRadios.forEach(radio => {
+// Event Listeners for filters
+document.querySelectorAll('.filter-list input[type="radio"]').forEach(radio => {
   radio.addEventListener('change', () => {
     const filterType = radio.name;
     const value = radio.value;
     
     if (filterType === 'category') {
-      // Update activeCategory instead of filters.categories
       activeCategory = value.toLowerCase();
-      // Update active state of category buttons
-      categoryFilterButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.toLowerCase() === activeCategory);
-      });
-    
     } else if (filterType === 'roomType') {
-      // Update activeRoomType instead of filters.roomType
-      activeRoomType = value.toLowerCase();
-      // Update active state of room type buttons
-      roomtypeFilterButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.toLowerCase() === activeRoomType);
-      });
-
+      filters.rooms = [value];
     } else if (filterType === 'material') {
-      // Update activeMaterial instead of filters.material
-      activeMaterial = value.toLowerCase();
-      // Update active state of material buttons
-      materialFilterButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.toLowerCase() === activeMaterial);
-      });
-
-    } else {
-      if (radio.checked) {
-        filters[filterType].push(value);
-      } else {
-        filters[filterType] = filters[filterType].filter(v => v !== value);
-      }
+      filters.materials = [value];
     }
-
     
     renderProducts();
   });
 });
 
 // Category filter buttons
-categoryFilterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    // Remove active class from all buttons
-    categoryFilterButtons.forEach(btn => btn.classList.remove('active'));
-    
-    // Add active class to clicked button
-    button.classList.add('active');
-    
-    // Update active category
-    activeCategory = button.textContent.toLowerCase();
-    
-    // Render products with new filter
-    renderProducts();
+if (categoryFilterButtons) {
+  categoryFilterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      categoryFilterButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // Add active class to clicked button
+      button.classList.add('active');
+      
+      // Update active category
+      activeCategory = button.textContent.toLowerCase();
+      
+      // Render products with new filter
+      renderProducts();
+    });
   });
-});
+}
 
 priceRange.addEventListener('input', (e) => {
   const value = e.target.value;
@@ -613,21 +566,11 @@ closeModalBtn.addEventListener('click', closeCart);
 cartOverlay.addEventListener('click', closeCart);
 
 checkoutBtn.addEventListener('click', () => {
-  // TODO: Implement checkout functionality
-  console.log('Proceeding to checkout with items:', cart);
-});
-
-// Header wishlist button
-headerWishlistBtn.addEventListener('click', () => {
-  window.location.href = 'wishlist.html';
-});
-
-// User button - redirect to login page
-userBtn.addEventListener('click', () => {
-  window.location.href = 'login.html';
+  // Redirect to checkout page
+  window.location.href = 'checkout.html';
 });
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   fetchProducts();
-}); 
+});
