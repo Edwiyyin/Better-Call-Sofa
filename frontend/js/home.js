@@ -13,7 +13,8 @@ const wishlistBtn = document.querySelector('.wishlist-btn');
 
 // Cart state
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+// We'll use the wishlist from state.js instead of redefining it here
+// let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
 // Fetch products from the JSON file
 async function fetchProducts() {
@@ -33,6 +34,7 @@ function renderProductCard(product) {
     ? (product.price * (1 - product.discount / 100)).toFixed(2) 
     : null;
   
+  // Use the global wishlist from state.js
   const isInWishlist = wishlist.includes(product.id);
   
   return `
@@ -85,10 +87,12 @@ async function renderProducts(filter = 'all', searchTerm = '') {
   }
   
   // Render the filtered products
-  productGrid.innerHTML = filteredProducts.map(product => renderProductCard(product)).join('');
-  
-  // Add event listeners to the newly created elements
-  addProductEventListeners();
+  if (productGrid) {
+    productGrid.innerHTML = filteredProducts.map(product => renderProductCard(product)).join('');
+    
+    // Add event listeners to the newly created elements
+    addProductEventListeners();
+  }
 }
 
 // Add event listeners to product buttons
@@ -148,28 +152,6 @@ async function addToCart(productId) {
   }
 }
 
-// Toggle product in wishlist
-function toggleWishlist(productId) {
-  const index = wishlist.indexOf(productId);
-  
-  if (index === -1) {
-    wishlist.push(productId);
-  } else {
-    wishlist.splice(index, 1);
-  }
-  
-  localStorage.setItem('wishlist', JSON.stringify(wishlist));
-  updateWishlistBadge();
-  
-  // Update the wishlist button in the product card
-  const wishlistBtn = document.querySelector(`.product-card[data-category] .add-to-wishlist[data-id="${productId}"]`);
-  if (wishlistBtn) {
-    wishlistBtn.classList.toggle('active');
-    const icon = wishlistBtn.querySelector('i');
-    icon.className = wishlistBtn.classList.contains('active') ? 'fas fa-heart' : 'far fa-heart';
-  }
-}
-
 // Quick view product
 async function quickView(productId) {
   const products = await fetchProducts();
@@ -184,28 +166,17 @@ async function quickView(productId) {
 // Update cart badge
 function updateCartBadge() {
   const cartBadge = document.querySelector('.cart-btn .badge');
-  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-  cartBadge.textContent = totalItems;
-  cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
-}
-
-// Update wishlist badge
-function updateWishlistBadge() {
-  const wishlistBadge = document.querySelector('.wishlist-btn .badge');
-  wishlistBadge.textContent = wishlist.length;
-  wishlistBadge.style.display = wishlist.length > 0 ? 'flex' : 'none';
-  
-  // Update header wishlist button icon
-  const icon = wishlistBtn.querySelector('i');
-  if (wishlist.length > 0) {
-    icon.className = 'fas fa-heart';
-  } else {
-    icon.className = 'far fa-heart';
+  if (cartBadge) {
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    cartBadge.textContent = totalItems;
+    cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
   }
 }
 
 // Render cart items
 function renderCartItems() {
+  if (!cartItems) return;
+  
   if (cart.length === 0) {
     cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
     return;
@@ -309,60 +280,66 @@ function init() {
   // Render products
   renderProducts();
   
-  // Update badges
+  // Update cart badge
   updateCartBadge();
-  updateWishlistBadge();
   
   // Filter options
-  filterOptions.forEach(option => {
-    option.addEventListener('click', () => {
-      // Remove active class from all options
-      filterOptions.forEach(opt => opt.classList.remove('active'));
-      
-      // Add active class to clicked option
-      option.classList.add('active');
-      
-      // Get the filter value
-      const filter = option.textContent.toLowerCase();
-      
-      // Render filtered products
-      renderProducts(filter, searchInput.value);
+  if (filterOptions) {
+    filterOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        // Remove active class from all options
+        filterOptions.forEach(opt => opt.classList.remove('active'));
+        
+        // Add active class to clicked option
+        option.classList.add('active');
+        
+        // Get the filter value
+        const filter = option.textContent.toLowerCase();
+        
+        // Render filtered products
+        renderProducts(filter, searchInput ? searchInput.value : '');
+      });
     });
-  });
+  }
   
   // Search functionality
-  searchButton.addEventListener('click', () => {
-    const searchTerm = searchInput.value;
-    const activeFilter = document.querySelector('.filter-option.active').textContent.toLowerCase();
-    renderProducts(activeFilter, searchTerm);
-  });
+  if (searchButton && searchInput) {
+    searchButton.addEventListener('click', () => {
+      const searchTerm = searchInput.value;
+      const activeFilter = document.querySelector('.filter-option.active').textContent.toLowerCase();
+      renderProducts(activeFilter, searchTerm);
+    });
+  }
   
   // Cart modal
-  cartBtn.addEventListener('click', () => {
-    cartModal.classList.add('active');
-    modalOverlay.classList.add('active');
-    renderCartItems();
-  });
+  if (cartBtn && cartModal && modalOverlay) {
+    cartBtn.addEventListener('click', () => {
+      cartModal.classList.add('active');
+      modalOverlay.classList.add('active');
+      renderCartItems();
+    });
   
-  closeModal.addEventListener('click', () => {
-    cartModal.classList.remove('active');
-    modalOverlay.classList.remove('active');
-  });
+    if (closeModal) {
+      closeModal.addEventListener('click', () => {
+        cartModal.classList.remove('active');
+        modalOverlay.classList.remove('active');
+      });
+    }
   
-  modalOverlay.addEventListener('click', () => {
-    cartModal.classList.remove('active');
-    modalOverlay.classList.remove('active');
-  });
-  
-  // Wishlist button
-  wishlistBtn.addEventListener('click', () => {
-    window.location.href = 'wishlist.html';
-  });
+    modalOverlay.addEventListener('click', () => {
+      cartModal.classList.remove('active');
+      modalOverlay.classList.remove('active');
+    });
+  }
   
   // User button - redirect to login page
-  userBtn.addEventListener('click', () => {
-    window.location.href = 'login.html';
-  });
+  if (userBtn) {
+    userBtn.addEventListener('click', () => {
+      window.location.href = 'login.html';
+    });
+  }
+  
+  // NOTE: We're NOT adding a click handler to wishlistBtn here to allow state.js to handle it
 }
 
 // Initialize when DOM is loaded

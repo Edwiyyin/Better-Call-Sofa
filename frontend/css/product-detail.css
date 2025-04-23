@@ -209,7 +209,7 @@
 .size-option.active,
 .material-option.active {
   background-color: var(--primary-color);
-  color: white;
+  color: inherit; /* or use a specific color */
   border-color: var(--primary-color);
 }
 

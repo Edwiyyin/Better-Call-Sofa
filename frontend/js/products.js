@@ -1,6 +1,6 @@
 // DOM Elements
 const productsGrid = document.querySelector('.products-grid');
-const filterCheckboxes = document.querySelectorAll('.filter-list input[type="checkbox"]');
+const filterRadios = document.querySelectorAll('.filter-list input[type="radio"]');
 const priceRange = document.querySelector('.price-range input[type="range"]');
 const minPriceInput = document.querySelector('.price-inputs input:first-child');
 const maxPriceInput = document.querySelector('.price-inputs input:last-child');
@@ -18,27 +18,28 @@ const prevPageBtn = document.querySelector('.prev-page');
 const nextPageBtn = document.querySelector('.next-page');
 const pageNumbers = document.querySelector('.page-numbers');
 const categoryFilterButtons = document.querySelectorAll('.filter-option');
-const headerWishlistBtn = document.querySelector('.nav-actions .wishlist-btn');
-const wishlistBadge = document.querySelector('.wishlist-btn .badge');
-const userBtn = document.querySelector('.user-btn');
+const roomtypeFilterButtons = document.querySelectorAll('.roomtype-filter-option');
+const materialFilterButtons = document.querySelectorAll('.material-filter-option');
+
 
 // State
 let products = [];
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 let currentPage = 1;
 let itemsPerPage = 12;
 let totalPages = 1;
 let filteredProducts = [];
 let activeCategory = 'all';
+let activeRoomType = 'all';
+let activeMaterial = 'all';
 let filters = {
   categories: [],
   priceRange: {
     min: 0,
     max: 1000
   },
-  rooms: [],
-  materials: []
+  roomType: [],
+  material: []
 };
 
 // Fetch Products
@@ -52,7 +53,6 @@ async function fetchProducts() {
     filteredProducts = [...products];
     updatePagination();
     renderProducts();
-    updateWishlistBadge();
     updateCartBadge();
   } catch (error) {
     console.error('Error fetching products:', error);
@@ -85,6 +85,8 @@ function renderProductCard(product) {
       </div>
       <div class="product-info">
         <div class="product-category">${product.category}</div>
+        <div class="product-roomtype">${product.roomType}</div>
+        <div class="product-material">${product.material}</div>
         <h3 class="product-name">${product.name}</h3>
         <div class="product-price">
           <span class="current-price">$${discountedPrice.toFixed(2)}</span>
@@ -112,21 +114,17 @@ function filterProducts() {
     product.price <= filters.priceRange.max
   );
   
-  // Filter by room type
-  if (filters.rooms.length > 0) {
+  // Filter by room type - updated to use activeRoomType
+  if (activeRoomType !== 'all') {
     filtered = filtered.filter(product => 
-      filters.rooms.some(room => 
-        product.roomType.toLowerCase() === room.toLowerCase()
-      )
+      product.roomType.toLowerCase() === activeRoomType
     );
   }
   
-  // Filter by material
-  if (filters.materials.length > 0) {
+  // Filter by material - updated to use activeMaterial
+  if (activeMaterial !== 'all') {
     filtered = filtered.filter(product => 
-      filters.materials.some(material => 
-        product.material.toLowerCase() === material.toLowerCase()
-      )
+      product.material.toLowerCase() === activeMaterial
     );
   }
   
@@ -151,7 +149,6 @@ function filterProducts() {
   
   return filtered;
 }
-
 // Update Pagination
 function updatePagination() {
   totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
@@ -225,19 +222,19 @@ function renderProducts() {
   // Render products for current page
   productsGrid.innerHTML = productsToShow.map(product => renderProductCard(product)).join('');
   
-// In the renderProducts function:
-document.querySelectorAll('.product-card').forEach(card => {
-  const productId = card.dataset.id;
-  const product = products.find(p => p.id === productId);
-  
-  card.querySelector('.add-to-cart').addEventListener('click', () => addToCart(product));
-  card.querySelector('.add-to-wishlist').addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    toggleWishlist(product);
+  // Add event listeners to product cards
+  document.querySelectorAll('.product-card').forEach(card => {
+    const productId = card.dataset.id;
+    const product = products.find(p => p.id === productId);
+    
+    card.querySelector('.add-to-cart').addEventListener('click', () => addToCart(product));
+    card.querySelector('.add-to-wishlist').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleWishlist(product);
+    });
+    card.querySelector('.quick-view').addEventListener('click', () => quickView(product));
   });
-  card.querySelector('.quick-view').addEventListener('click', () => quickView(product));
-});
   
   // Update pagination
   updatePagination();
@@ -266,10 +263,7 @@ function addToCart(product, quantity = 1) {
 
 function updateCart() {
   // Update cart badge
-  const cartBadge = document.querySelector('.cart-btn .badge');
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  cartBadge.textContent = totalItems;
-  cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
+  updateCartBadge();
   
   // Update cart items
   cartItemsContainer.innerHTML = cart.map(item => `
@@ -347,43 +341,6 @@ function closeCart() {
   cartOverlay.classList.remove('active');
 }
 
-// Wishlist Functions
-function toggleWishlist(product) {
-  const index = wishlist.indexOf(product.id);
-  
-  if (index === -1) {
-    wishlist.push(product.id);
-  } else {
-    wishlist.splice(index, 1);
-  }
-  
-  localStorage.setItem('wishlist', JSON.stringify(wishlist));
-  updateWishlistBadge();
-  
-  // Update the wishlist button in the product card
-  const wishlistBtn = document.querySelector(`.product-card[data-id="${product.id}"] .add-to-wishlist`);
-  if (wishlistBtn) {
-    wishlistBtn.classList.toggle('active');
-    const icon = wishlistBtn.querySelector('i');
-    icon.className = wishlistBtn.classList.contains('active') ? 'fas fa-heart' : 'far fa-heart';
-  }
-}
-
-function updateWishlistBadge() {
-  wishlistBadge.textContent = wishlist.length;
-  wishlistBadge.style.display = wishlist.length > 0 ? 'flex' : 'none';
-  
-  // Update header wishlist button icon
-  if (headerWishlistBtn) {
-    const icon = headerWishlistBtn.querySelector('i');
-    if (wishlist.length > 0) {
-      icon.className = 'fas fa-heart';
-    } else {
-      icon.className = 'far fa-heart';
-    }
-  }
-}
-
 function updateCartBadge() {
   const cartBadge = document.querySelector('.cart-btn .badge');
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -405,6 +362,9 @@ function quickView(product) {
   const discountedPrice = product.discount ? product.price * (1 - product.discount / 100) : product.price;
   const isInWishlist = wishlist.includes(product.id);
   
+  // Fix the image path
+  const fixedImagePath = product.images[0].replace('/public/images/', '/backend/public/images/');
+  
   // Create modal content
   modal.innerHTML = `
     <div class="modal-header">
@@ -414,11 +374,13 @@ function quickView(product) {
     <div class="modal-body">
       <div class="quick-view-content">
         <div class="quick-view-image">
-          <img src="${product.images[0]}" alt="${product.name}">
+          <img src="${fixedImagePath}" alt="${product.name}">
         </div>
         <div class="quick-view-info">
           <h3 class="product-name">${product.name}</h3>
           <div class="product-category">${product.category}</div>
+          <div class="product-roomtype">${product.roomType}</div>
+          <div class="product-material">${product.material}</div>
           <div class="product-price">
             <span class="current-price">$${discountedPrice.toFixed(2)}</span>
             ${product.discount ? `<span class="original-price">$${product.price.toFixed(2)}</span>
@@ -523,6 +485,7 @@ function quickView(product) {
 
 function closeQuickView() {
   const modalOverlay = document.getElementById('quick-view-overlay');
+  if (!modalOverlay) return; // Check if modal exists
   const modal = document.getElementById('quick-view-modal');
   
   modalOverlay.classList.remove('active');
@@ -540,10 +503,10 @@ function closeQuickView() {
 }
 
 // Event Listeners
-filterCheckboxes.forEach(checkbox => {
-  checkbox.addEventListener('change', () => {
-    const filterType = checkbox.name;
-    const value = checkbox.value;
+filterRadios.forEach(radio => {
+  radio.addEventListener('change', () => {
+    const filterType = radio.name;
+    const value = radio.value;
     
     if (filterType === 'category') {
       // Update activeCategory instead of filters.categories
@@ -552,13 +515,31 @@ filterCheckboxes.forEach(checkbox => {
       categoryFilterButtons.forEach(btn => {
         btn.classList.toggle('active', btn.textContent.toLowerCase() === activeCategory);
       });
+    
+    } else if (filterType === 'roomType') {
+      // Update activeRoomType instead of filters.roomType
+      activeRoomType = value.toLowerCase();
+      // Update active state of room type buttons
+      roomtypeFilterButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === activeRoomType);
+      });
+
+    } else if (filterType === 'material') {
+      // Update activeMaterial instead of filters.material
+      activeMaterial = value.toLowerCase();
+      // Update active state of material buttons
+      materialFilterButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === activeMaterial);
+      });
+
     } else {
-      if (checkbox.checked) {
+      if (radio.checked) {
         filters[filterType].push(value);
       } else {
         filters[filterType] = filters[filterType].filter(v => v !== value);
       }
     }
+
     
     renderProducts();
   });

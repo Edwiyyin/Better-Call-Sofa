@@ -17,12 +17,8 @@
         <ul class="nav-links">
           <li><a href="home.html">Home</a></li>
           <li><a href="products.html" class="active">Products</a></li>
-          <li><a href="categories.html">Categories</a></li>
         </ul>
         <div class="nav-actions">
-          <button class="search-btn">
-            <i class="fas fa-search"></i>
-          </button>
           <button class="wishlist-btn">
             <i class="far fa-heart"></i>
             <span class="badge">0</span>
@@ -31,7 +27,7 @@
             <i class="fas fa-shopping-cart"></i>
             <span class="badge">0</span>
           </button>
-          <button class="user-btn">
+          <button class="user-btn" id="user-btn">
             <i class="far fa-user"></i>
           </button>
         </div>
@@ -60,27 +56,27 @@
             <ul class="filter-list">
               <li>
                 <label>
-                  <input type="checkbox" name="category" value="sofa"> Sofa
+                  <input type="radio" name="category" value="sofa"> Sofa
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="checkbox" name="category" value="chair"> Chair
+                  <input type="radio" name="category" value="chair"> Chair
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="checkbox" name="category" value="table"> Table
+                  <input type="radio" name="category" value="table"> Table
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="checkbox" name="category" value="bed"> Bed
+                  <input type="radio" name="category" value="bed"> Bed
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="checkbox" name="category" value="storage"> Storage
+                  <input type="radio" name="category" value="storage"> Storage
                 </label>
               </li>
             </ul>
@@ -103,22 +99,22 @@
             <ul class="filter-list">
               <li>
                 <label>
-                  <input type="checkbox" name="room" value="living room"> Living Room
+                  <input type="radio" name="roomType" value="living room"> Living Room
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="checkbox" name="room" value="bedroom"> Bedroom
+                  <input type="radio" name="roomType" value="bedroom"> Bedroom
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="checkbox" name="room" value="dining room"> Dining Room
+                  <input type="radio" name="roomType" value="dining room"> Dining Room
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="checkbox" name="room" value="office"> Office
+                  <input type="radio" name="roomType" value="office"> Office
                 </label>
               </li>
             </ul>
@@ -129,22 +125,17 @@
             <ul class="filter-list">
               <li>
                 <label>
-                  <input type="checkbox" name="material" value="fabric"> Fabric
+                  <input type="radio" name="material" value="fabric"> Fabric
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="checkbox" name="material" value="wood"> Wood
+                  <input type="radio" name="material" value="wood"> Wood
                 </label>
               </li>
               <li>
                 <label>
-                  <input type="checkbox" name="material" value="metal"> Metal
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input type="checkbox" name="material" value="leather"> Leather
+                  <input type="radio" name="material" value="metal"> Metal
                 </label>
               </li>
             </ul>
@@ -215,7 +206,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3>FurniCraft</h3>
+          <h3>Better Call Sofa</h3>
           <p>Quality furniture for modern living. We provide stylish and comfortable furniture pieces for every home.</p>
           <div class="social-links">
             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -260,64 +251,7 @@
   </footer>
 
   <!-- JavaScript -->
+  <script src="../js/state.js"></script>
   <script src="../js/products.js"></script>
-  <script>
-    const headerWishlistBtn = document.querySelector('.nav-actions .wishlist-btn');
-    const wishlistBadge = document.querySelector('.wishlist-btn .badge');
-
-    headerWishlistBtn.addEventListener('click', () => {
-      window.location.href = 'wishlist.html';
-    });
-
-    document.querySelectorAll('.wishlist-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const productId = btn.getAttribute('data-id');
-            toggleWishlist(productId);
-            
-            // Update button state
-            btn.classList.toggle('active');
-            const icon = btn.querySelector('i');
-            icon.className = btn.classList.contains('active') ? 'fas fa-heart' : 'far fa-heart';
-        });
-    });
-
-    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
-    function toggleWishlist(product) {
-      const index = wishlist.indexOf(product.id);
-      
-      if (index === -1) {
-        wishlist.push(product.id);
-      } else {
-        wishlist.splice(index, 1);
-      }
-      
-      localStorage.setItem('wishlist', JSON.stringify(wishlist));
-      updateWishlistBadge();
-      
-      // Update the wishlist button in the product card
-      const wishlistBtn = document.querySelector(`.product-card[data-id="${product.id}"] .add-to-wishlist`);
-      if (wishlistBtn) {
-        wishlistBtn.classList.toggle('active');
-        const icon = wishlistBtn.querySelector('i');
-        icon.className = wishlistBtn.classList.contains('active') ? 'fas fa-heart' : 'far fa-heart';
-      }
-    }
-
-    function updateWishlistBadge() {
-      wishlistBadge.textContent = wishlist.length;
-      wishlistBadge.style.display = wishlist.length > 0 ? 'flex' : 'none';
-      
-      // Update header wishlist button icon
-      if (headerWishlistBtn) {
-        const icon = headerWishlistBtn.querySelector('i');
-        if (wishlist.length > 0) {
-          icon.className = 'fas fa-heart';
-        } else {
-          icon.className = 'far fa-heart';
-        }
-      }
-    }
-  </script>
 </body>
-</html> 
+</html>

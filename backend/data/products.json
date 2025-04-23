@@ -40,7 +40,7 @@
     "category": "table",
     "colors": ["oak", "brown"],
     "sizes": ["2-seater", "4-seater"],
-    "material": "oak veneer",
+    "material": "wood",
     "roomType": "dining room"
   },
   {
@@ -65,7 +65,7 @@
     "category": "chair",
     "colors": ["black", "birch", "brown"],
     "sizes": ["standard"],
-    "material": "bentwood/fabric",
+    "material": "fabric",
     "roomType": "living room"
   },
   {
@@ -90,7 +90,7 @@
     "category": "bed",
     "colors": ["white", "black-brown", "oak veneer"],
     "sizes": ["twin", "queen", "king"],
-    "material": "engineered wood",
+    "material": "wood",
     "roomType": "bedroom"
   },
   {
@@ -112,7 +112,7 @@
     "category": "table",
     "colors": ["white", "black", "walnut effect"],
     "sizes": ["rectangle", "square"],
-    "material": "particleboard",
+    "material": "wood",
     "roomType": "living room"
   },
   {
@@ -137,7 +137,7 @@
     "category": "storage",
     "colors": ["white", "birch veneer", "black-brown"],
     "sizes": ["standard", "narrow", "tall"],
-    "material": "particleboard",
+    "material": "wood",
     "roomType": "living room"
   },
   {
@@ -159,7 +159,7 @@
     "category": "storage",
     "colors": ["white stain", "black-brown", "dark gray stain"],
     "sizes": ["6-drawer", "8-drawer"],
-    "material": "solid pine",
+    "material": "wood",
     "roomType": "bedroom"
   },
   {
@@ -181,7 +181,7 @@
     "category": "storage",
     "colors": ["white", "black-brown", "walnut effect"],
     "sizes": ["2x2", "2x4", "4x4"],
-    "material": "particleboard",
+    "material": "wood",
     "roomType": "multi-purpose"
   },
   {
@@ -228,7 +228,7 @@
     "category": "table",
     "colors": ["black"],
     "sizes": ["4-seater"],
-    "material": "melamine/steel",
+    "material": "wood",
     "roomType": "dining room"
   },
   {
@@ -250,7 +250,7 @@
     "category": "storage",
     "colors": ["black", "white"],
     "sizes": ["standard"],
-    "material": "particleboard/glass",
+    "material": "wood",
     "roomType": "living room"
   },
   {
@@ -295,7 +295,7 @@
     "category": "storage",
     "colors": ["white", "oak effect", "black-brown"],
     "sizes": ["tall", "medium", "corner"],
-    "material": "particleboard",
+    "material": "wood",
     "roomType": "bedroom"
   },
   {
@@ -345,7 +345,7 @@
     "category": "table",
     "colors": ["white stain", "black-brown", "light brown"],
     "sizes": ["standard"],
-    "material": "solid pine",
+    "material": "wood",
     "roomType": "living room"
   },
   {
@@ -357,20 +357,17 @@
     "discount": 5,
     "currency": "USD",
     "images": [
-      "/public/images/16/beige-anthracite/trotten-desk-1.jpg",
-      "/public/images/16/beige-anthracite/trotten-desk-2.jpg",
-      "/public/images/16/beige-anthracite/trotten-desk-3.jpg",
-      "/public/images/16/beige-white/trotten-desk-1.jpg",
-      "/public/images/16/beige-white/trotten-desk-2.jpg",
-      "/public/images/16/beige-white/trotten-desk-3.jpg",
+      "/public/images/16/black/trotten-desk-1.jpg",
+      "/public/images/16/black/trotten-desk-2.jpg",
+      "/public/images/16/black/trotten-desk-3.jpg",
       "/public/images/16/white/trotten-desk-1.jpg",
       "/public/images/16/white/trotten-desk-2.jpg",
       "/public/images/16/white/trotten-desk-3.jpg"
     ],
-    "category": "desk",
-    "colors": ["white", "black", "oak veneer"],
+    "category": "table",
+    "colors": ["white", "black"],
     "sizes": ["standard", "corner"],
-    "material": "particleboard/steel",
+    "material": "metal",
     "roomType": "office"
   },
   {
@@ -392,7 +389,7 @@
     "category": "storage",
     "colors": ["white", "anthracite"],
     "sizes": ["6-drawer", "8-drawer"],
-    "material": "particleboard",
+    "material": "wood",
     "roomType": "bedroom"
   },
   {
@@ -436,7 +433,7 @@
     "category": "table",
     "colors": ["ash veneer"],
     "sizes": ["standard"],
-    "material": "ash veneer",
+    "material": "wood",
     "roomType": "living room"
   },
   {
@@ -455,7 +452,7 @@
     "category": "storage",
     "colors": ["black"],
     "sizes": ["standard"],
-    "material": "steel/solid pine",
+    "material": "metal",
     "roomType": "multi-purpose"
   },
   {
@@ -477,7 +474,7 @@
     "category": "bed",
     "colors": ["white/light gray", "dark brown/black"],
     "sizes": ["twin", "queen", "king"],
-    "material": "particleboard/steel",
+    "material": "wood",
     "roomType": "bedroom"
   },
   {
@@ -499,7 +496,7 @@
     "category": "storage",
     "colors": ["white"],
     "sizes": ["small", "medium", "large"],
-    "material": "fiberboard",
+    "material": "metal",
     "roomType": "multi-purpose"
   },
   {
@@ -521,7 +518,7 @@
     "category": "table",
     "colors": ["white", "birch"],
     "sizes": ["gateleg"],
-    "material": "solid birch",
+    "material": "wood",
     "roomType": "dining room"
   },
   {
@@ -546,7 +543,7 @@
     "category": "storage",
     "colors": ["white", "black-brown", "walnut effect"],
     "sizes": ["standard"],
-    "material": "particleboard",
+    "material": "wood",
     "roomType": "living room"
   },
   {
@@ -565,7 +562,7 @@
     "category": "storage",
     "colors": ["white", "black-brown"],
     "sizes": ["5-drawer", "6-drawer"],
-    "material": "particleboard",
+    "material": "wood",
     "roomType": "bedroom"
   }
 ]
