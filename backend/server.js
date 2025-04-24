@@ -82,6 +82,10 @@ app.get('/payment.html', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/templates/payment.html'));
 });
 
+app.get('/confirmation.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/templates/confirmation.html'));
+});
+
 const server = app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
