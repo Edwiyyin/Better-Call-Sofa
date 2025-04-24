@@ -146,18 +146,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize cart
     updateCartBadge();
   });
-
   
 // Checkout functionality
 document.querySelector('.checkout-btn')?.addEventListener('click', () => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length === 0) {
-      alert('Your cart is empty');
+      alert('Your cart is empty! Please add items to your cart before proceeding to checkout.');
       return;
     }
     
-    // Save cart to localStorage before proceeding
-    localStorage.setItem('cart', JSON.stringify(cart));
-    
-    // Redirect to checkout page
     window.location.href = 'checkout.html';
   });
