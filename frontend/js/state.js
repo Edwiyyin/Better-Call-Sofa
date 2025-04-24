@@ -1,4 +1,3 @@
-// DOM Elements
 const headerWishlistBtn = document.querySelector('.nav-actions .wishlist-btn');
 const wishlistBadge = document.querySelector('.wishlist-btn .badge');
 const cartBtn = document.getElementById('cart-btn');

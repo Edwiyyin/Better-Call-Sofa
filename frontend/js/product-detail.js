@@ -33,20 +33,59 @@ let currentImageIndex = 0;
 let touchStartX = 0;
 let touchEndX = 0;
 
+// Helper function to fix image paths
+function fixImagePath(path) {
+    if (!path) return '';
+    
+    // Use a default image if path is empty
+    if (path.trim() === '') {
+        return '../images/product-placeholder.jpg';
+    }
+    
+    // If path is already absolute or starts with backend, return it
+    if (path.startsWith('http') || path.startsWith('/backend')) {
+        return path;
+    }
+    
+    // If path starts with /public/images, replace with /backend/public/images
+    if (path.startsWith('/public/images/')) {
+        return path.replace('/public/images/', '/backend/public/images/');
+    }
+    
+    // If path starts with /images, add ../
+    if (path.startsWith('/images/')) {
+        return '..' + path;
+    }
+    
+    // Otherwise, assume it's a relative path and add backend
+    return '/backend' + path;
+}
+
 // Fetch Product Data
 async function fetchProductData() {
     try {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
         
-        const response = await fetch('/backend/data/products.json');
+        // Debug
+        console.log("Fetching product with ID:", productId);
+        
+        const response = await fetch('/api/products');
+
         allProducts = await response.json();
+        
+        // Debug
+        console.log("All products:", allProducts);
         
         currentProduct = allProducts.find(product => product.id === productId);
         
         if (!currentProduct) {
             throw new Error('Product not found');
         }
+        
+        // Debug
+        console.log("Current product:", currentProduct);
+        console.log("Current product images:", currentProduct.images);
         
         // Get related products (same category or material)
         relatedProducts = allProducts.filter(product => 
@@ -67,7 +106,19 @@ async function fetchProductData() {
         initSwipeFunctionality();
     } catch (error) {
         console.error('Error fetching product data:', error);
-        // Handle error (show error message to user)
+        // Show error message
+        const productDetailSection = document.querySelector('.product-detail');
+        if (productDetailSection) {
+            productDetailSection.innerHTML = `
+                <div class="container">
+                    <div class="error-message">
+                        <h2>Error Loading Product</h2>
+                        <p>${error.message}</p>
+                        <a href="products.html" class="btn">Return to Products</a>
+                    </div>
+                </div>
+            `;
+        }
     }
 }
 
@@ -158,8 +209,9 @@ function showNextImage() {
 function updateMainImage() {
     if (!currentProduct || !currentProduct.images.length) return;
     
-    const fixedMainImagePath = currentProduct.images[currentImageIndex].replace('/public/images/', '/backend/public/images/');
-    mainImage.src = fixedMainImagePath;
+    const imagePath = fixImagePath(currentProduct.images[currentImageIndex]);
+    console.log("Updating main image to:", imagePath);
+    mainImage.src = imagePath;
     
     // Update active thumbnail
     document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
@@ -169,32 +221,51 @@ function updateMainImage() {
 
 // Render Product Details
 function renderProductDetails() {
+    console.log("Rendering product details for:", currentProduct.name);
+    
     // Update breadcrumb
     document.querySelector('.breadcrumb .active').textContent = currentProduct.name;
     
-    // Update main image
-    const fixedMainImagePath = currentProduct.images[0].replace('/public/images/', '/backend/public/images/');
-    mainImage.src = fixedMainImagePath;
-    mainImage.alt = currentProduct.name;
+    // Update main image with fixed path
+    if (currentProduct.images && currentProduct.images.length > 0) {
+        const imagePath = fixImagePath(currentProduct.images[0]);
+        console.log("Setting main image to:", imagePath);
+        mainImage.src = imagePath;
+        mainImage.alt = currentProduct.name;
+    } else {
+        console.warn("No images available for product:", currentProduct.name);
+        mainImage.src = '../images/product-placeholder.jpg';
+        mainImage.alt = "Product image not available";
+    }
     
     // Update thumbnails
     const thumbnailContainer = document.getElementById('thumbnail-images');
-    thumbnailContainer.innerHTML = currentProduct.images.map((image, index) => {
-        const fixedImagePath = image.replace('/public/images/', '/backend/public/images/');
-        return `
-            <div class="thumbnail ${index === 0 ? 'active' : ''}" data-index="${index}">
-                <img src="${fixedImagePath}" alt="${currentProduct.name} - View ${index + 1}">
-            </div>
-        `;
-    }).join('');
-    
-    // Add click event listeners to thumbnails
-    document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
-        thumb.addEventListener('click', () => {
-            currentImageIndex = index;
-            updateMainImage();
-        });
-    });
+    if (thumbnailContainer) {
+        if (currentProduct.images && currentProduct.images.length > 0) {
+            thumbnailContainer.innerHTML = currentProduct.images.map((image, index) => {
+                const imagePath = fixImagePath(image);
+                return `
+                    <div class="thumbnail ${index === 0 ? 'active' : ''}" data-index="${index}">
+                        <img src="${imagePath}" alt="${currentProduct.name} - View ${index + 1}">
+                    </div>
+                `;
+            }).join('');
+            
+            // Add click event listeners to thumbnails
+            document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
+                thumb.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    updateMainImage();
+                });
+            });
+        } else {
+            thumbnailContainer.innerHTML = `
+                <div class="thumbnail active">
+                    <img src="../images/product-placeholder.jpg" alt="Product image not available">
+                </div>
+            `;
+        }
+    }
     
     // Update product info
     document.querySelector('.product-name').textContent = currentProduct.name;
@@ -251,6 +322,8 @@ function updateWishlistButtonState() {
 // Render Color Options
 function renderColorOptions() {
     const colorContainer = document.querySelector('.color-options');
+    if (!colorContainer || !currentProduct.colors) return;
+    
     colorContainer.innerHTML = currentProduct.colors.map(color => `
         <div class="color-option" data-color="${color}">
             <span class="color-swatch" style="background-color: ${color}"></span>
@@ -269,12 +342,20 @@ function renderColorOptions() {
             updateProductImages(selectedColor);
         });
     });
+    
+    // Set first option as active
+    const firstColorOption = document.querySelector('.color-option');
+    if (firstColorOption) {
+        firstColorOption.classList.add('active');
+    }
 }
 
 // Update Product Images based on color
 function updateProductImages(selectedColor) {
     // Clear existing thumbnails
     const thumbnailContainer = document.getElementById('thumbnail-images');
+    if (!thumbnailContainer) return;
+    
     thumbnailContainer.innerHTML = '';
     
     // Filter images for the selected color
@@ -286,19 +367,22 @@ function updateProductImages(selectedColor) {
     const imagesToShow = colorImages.length > 0 ? colorImages : currentProduct.images;
     
     // Update main image
-    const fixedMainImagePath = imagesToShow[0].replace('/public/images/', '/backend/public/images/');
-    mainImage.src = fixedMainImagePath;
-    mainImage.alt = `${currentProduct.name} - ${selectedColor}`;
+    if (imagesToShow.length > 0) {
+        const mainImagePath = fixImagePath(imagesToShow[0]);
+        console.log("Updating color-specific main image to:", mainImagePath);
+        mainImage.src = mainImagePath;
+        mainImage.alt = `${currentProduct.name} - ${selectedColor}`;
+    }
     
     // Add thumbnails
     imagesToShow.forEach((image, index) => {
-        const fixedImagePath = image.replace('/public/images/', '/backend/public/images/');
+        const imagePath = fixImagePath(image);
         const thumbnail = document.createElement('div');
         thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
-        thumbnail.innerHTML = `<img src="${fixedImagePath}" alt="${currentProduct.name} - ${selectedColor} - View ${index + 1}">`;
+        thumbnail.innerHTML = `<img src="${imagePath}" alt="${currentProduct.name} - ${selectedColor} - View ${index + 1}">`;
         thumbnail.addEventListener('click', () => {
-            const fixedMainImagePath = image.replace('/public/images/', '/backend/public/images/');
-            mainImage.src = fixedMainImagePath;
+            const clickedImagePath = fixImagePath(image);
+            mainImage.src = clickedImagePath;
             document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
             thumbnail.classList.add('active');
         });
@@ -309,6 +393,8 @@ function updateProductImages(selectedColor) {
 // Render Size Options
 function renderSizeOptions() {
     const sizeContainer = document.querySelector('.size-options');
+    if (!sizeContainer || !currentProduct.sizes) return;
+    
     sizeContainer.innerHTML = currentProduct.sizes.map(size => `
         <div class="size-option" data-size="${size}">${size}</div>
     `).join('');
@@ -320,43 +406,45 @@ function renderSizeOptions() {
             option.classList.add('active');
         });
     });
+    
+    // Set first option as active
+    const firstSizeOption = document.querySelector('.size-option');
+    if (firstSizeOption) {
+        firstSizeOption.classList.add('active');
+    }
 }
 
 // Render Material Options
 function renderMaterialOptions() {
     const materialContainer = document.querySelector('.material-options');
-    materialContainer.innerHTML = currentProduct.material ? `
-        <div class="material-option" data-material="${currentProduct.material}">${currentProduct.material}</div>
-    ` : '';
+    if (!materialContainer) return;
     
-    // Add click event listeners
-    document.querySelectorAll('.material-option').forEach(option => {
-        option.addEventListener('click', () => {
-            document.querySelectorAll('.material-option').forEach(opt => opt.classList.remove('active'));
-            option.classList.add('active');
-        });
-    });
+    materialContainer.innerHTML = currentProduct.material ? `
+        <div class="material-option active" data-material="${currentProduct.material}">${currentProduct.material}</div>
+    ` : '';
 }
 
 // Render Specifications
 function renderSpecifications() {
     const specsTable = document.querySelector('.specifications-table');
+    if (!specsTable) return;
+    
     specsTable.innerHTML = `
         <tr>
             <th>Category</th>
-            <td>${currentProduct.category}</td>
+            <td>${currentProduct.category || 'N/A'}</td>
         </tr>
         <tr>
             <th>Material</th>
-            <td>${currentProduct.material}</td>
+            <td>${currentProduct.material || 'N/A'}</td>
         </tr>
         <tr>
             <th>Room Type</th>
-            <td>${currentProduct.roomType}</td>
+            <td>${currentProduct.roomType || 'N/A'}</td>
         </tr>
         <tr>
             <th>Stock</th>
-            <td>${currentProduct.stock} units</td>
+            <td>${currentProduct.stock || 0} units</td>
         </tr>
     `;
 }
@@ -365,6 +453,8 @@ function renderSpecifications() {
 function renderReviews() {
     // This is a placeholder for reviews since they're not in the product data
     const reviewsList = document.querySelector('.reviews-list');
+    if (!reviewsList) return;
+    
     reviewsList.innerHTML = `
         <div class="review-item">
             <div class="review-header">
@@ -442,14 +532,21 @@ function renderRelatedProducts() {
     
     relatedProductsContainer.style.display = 'block';
     const relatedProductsGrid = relatedProductsContainer.querySelector('.products-grid');
+    if (!relatedProductsGrid) {
+        console.warn("Products grid not found in related products container");
+        return;
+    }
     
     relatedProductsGrid.innerHTML = relatedProducts.map(product => {
-        const fixedImagePath = product.images[0].replace('/public/images/', '/backend/public/images/');
+        const imagePath = product.images && product.images.length > 0 ? 
+            fixImagePath(product.images[0]) : 
+            '../images/product-placeholder.jpg';
+            
         const isInWishlist = wishlist.includes(product.id);
         return `
             <div class="product-card">
                 <div class="product-image">
-                    <img src="${fixedImagePath}" alt="${product.name}">
+                    <img src="${imagePath}" alt="${product.name}">
                     ${product.discount ? `<span class="product-discount">-${product.discount}%</span>` : ''}
                     <button class="wishlist-btn ${isInWishlist ? 'active' : ''}" data-id="${product.id}">
                         <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i>
@@ -459,7 +556,7 @@ function renderRelatedProducts() {
                     <div class="product-category">${product.category}</div>
                     <h3 class="product-name">${product.name}</h3>
                     <div class="product-price">
-                        <span class="current-price">$${(product.price * (1 - product.discount / 100)).toFixed(2)}</span>
+                        <span class="current-price">$${(product.price * (1 - (product.discount || 0) / 100)).toFixed(2)}</span>
                         ${product.discount ? `<span class="original-price">$${product.price.toFixed(2)}</span>` : ''}
                     </div>
                 </div>
@@ -470,6 +567,8 @@ function renderRelatedProducts() {
     // Add event listeners to wishlist buttons
     document.querySelectorAll('.wishlist-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             const productId = btn.getAttribute('data-id');
             toggleWishlist(productId);
             
@@ -480,11 +579,10 @@ function renderRelatedProducts() {
         });
     });
     
-    // Add event listeners to quick view buttons
-    const quickViewButtons = relatedProductsContainer.querySelectorAll('.quick-view-btn');
-    quickViewButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const productId = button.getAttribute('data-product-id');
+    // Add click event to product cards
+    document.querySelectorAll('.product-card').forEach((card, index) => {
+        card.addEventListener('click', () => {
+            const productId = relatedProducts[index].id;
             window.location.href = `/product-detail.html?id=${productId}`;
         });
     });
@@ -502,13 +600,15 @@ function addToCart(productId = currentProduct.id) {
         return;
     }
     
-    const fixedImagePath = currentProduct.images[0].replace('/public/images/', '/backend/public/images/');
+    const imagePath = currentProduct.images && currentProduct.images.length > 0 ? 
+        fixImagePath(currentProduct.images[0]) : 
+        '../images/product-placeholder.jpg';
     
     const cartItem = {
         id: productId,
         name: currentProduct.name,
         price: currentProduct.price,
-        image: fixedImagePath,
+        image: imagePath,
         color: selectedColor,
         size: selectedSize,
         material: selectedMaterial,
@@ -555,6 +655,8 @@ function toggleWishlist(productId = currentProduct.id) {
 // Update Cart Badge
 function updateCartBadge() {
     const cartBadge = document.querySelector('.cart-btn .badge');
+    if (!cartBadge) return;
+    
     const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
     
     cartBadge.textContent = totalItems;
@@ -563,6 +665,8 @@ function updateCartBadge() {
 
 // Update Wishlist Badge
 function updateWishlistBadge() {
+    if (!wishlistBadge) return;
+    
     wishlistBadge.textContent = wishlist.length;
     wishlistBadge.style.display = wishlist.length > 0 ? 'flex' : 'none';
     
@@ -592,6 +696,28 @@ function hideCartModal() {
 
 // Render Cart Items
 function renderCartItems() {
+    if (!cartItemsContainer) return;
+    
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <a href="products.html" class="btn">Continue Shopping</a>
+            </div>
+        `;
+        
+        if (cartTotal) {
+            cartTotal.textContent = `Total: $0.00`;
+        }
+        
+        if (checkoutBtn) {
+            checkoutBtn.disabled = true;
+        }
+        
+        return;
+    }
+    
     cartItemsContainer.innerHTML = cart.map(item => `
         <div class="cart-item">
             <div class="cart-item-image">
@@ -617,7 +743,13 @@ function renderCartItems() {
     
     // Update cart total
     const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+    if (cartTotal) {
+        cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+    }
+    
+    if (checkoutBtn) {
+        checkoutBtn.disabled = false;
+    }
     
     // Add event listeners for cart items
     addCartItemEventListeners();

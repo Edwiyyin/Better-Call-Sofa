@@ -40,7 +40,8 @@ let filters = {
 // Fetch Products
 async function fetchProducts() {
   try {
-    const response = await fetch('/backend/data/products.json');
+    // Try the API endpoint first
+    const response = await fetch('/api/products');
     if (!response.ok) {
       throw new Error('Failed to fetch products');
     }
