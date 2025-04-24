@@ -74,6 +74,14 @@ app.get('/wishlist.html', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/templates/wishlist.html'));
 });
 
+app.get('/checkout.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/templates/checkout.html'));
+});
+
+app.get('/payment.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/templates/payment.html'));
+});
+
 const server = app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

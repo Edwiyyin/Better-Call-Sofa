@@ -146,3 +146,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize cart
     updateCartBadge();
   });
+
+  
+// Checkout functionality
+document.querySelector('.checkout-btn')?.addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert('Your cart is empty');
+      return;
+    }
+    
+    // Save cart to localStorage before proceeding
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Redirect to checkout page
+    window.location.href = 'checkout.html';
+  });
