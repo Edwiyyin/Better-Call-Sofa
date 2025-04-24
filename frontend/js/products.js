@@ -6,12 +6,6 @@ const minPriceInput = document.querySelector('#min-price');
 const maxPriceInput = document.querySelector('#max-price');
 const applyFiltersBtn = document.querySelector('.apply-filters-btn');
 const sortSelect = document.querySelector('#sort-by');
-const cartModal = document.querySelector('#cart-modal');
-const cartOverlay = document.querySelector('#modal-overlay');
-const closeModalBtn = document.querySelector('#close-modal');
-const cartItemsContainer = document.querySelector('#cart-items');
-const cartTotal = document.querySelector('#cart-total');
-const checkoutBtn = document.querySelector('.checkout-btn');
 const productsCount = document.getElementById('products-count');
 const paginationContainer = document.querySelector('.pagination');
 const prevPageBtn = document.querySelector('.prev-page');
@@ -19,14 +13,14 @@ const nextPageBtn = document.querySelector('.next-page');
 const pageNumbers = document.querySelector('.page-numbers');
 const categoryFilterButtons = document.querySelectorAll('.filter-option');
 
-// State
+// State - remove wishlist declaration since it's in state.js
 let products = [];
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let currentPage = 1;
 let itemsPerPage = 12;
 let totalPages = 1;
 let filteredProducts = [];
 let activeCategory = 'all';
+// Remove this line: let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 let filters = {
   categories: [],
   priceRange: {
@@ -37,40 +31,56 @@ let filters = {
   materials: []
 };
 
-// Fetch Products
+// Fix for products not loading
 async function fetchProducts() {
   try {
-  const response = await fetch('/api/products');
+    console.log('Fetching products...');
+    const response = await fetch('/api/products');
     if (!response.ok) {
-      throw new Error('Failed to fetch products');
+      throw new Error(`Failed to fetch products: ${response.status} ${response.statusText}`);
     }
-    products = await response.json();
+    const data = await response.json();
+    console.log('Products loaded:', data);
+    
+    products = data;
+    
+    // Set filtered products to all products initially
     filteredProducts = [...products];
+    
+    // Update pagination based on filtered products
     updatePagination();
+    
+    // Render products to the grid
     renderProducts();
-    updateCartBadge();
+    
+    // Make sure the count is updated
+    productsCount.textContent = filteredProducts.length;
   } catch (error) {
     console.error('Error fetching products:', error);
-    productsGrid.innerHTML = '<p class="error">Failed to load products. Please try again later.</p>';
+    productsGrid.innerHTML = `<p class="error">Failed to load products: ${error.message}</p>`;
   }
 }
-
-// Render Product Card
+// Updated renderProducts function to handle image paths better
 function renderProductCard(product) {
   const discountedPrice = product.discount ? product.price * (1 - product.discount / 100) : product.price;
-  const fixedImagePath = product.images[0].replace('/public/images/', '/backend/public/images/');
+  
+  // Fix image path issues - be more flexible with path formats
+  let imagePath = product.images && product.images.length > 0 ? product.images[0] : '/api/placeholder/400/320';
+  
+  // Handle different image path formats
+  if (imagePath.includes('/public/images/')) {
+    imagePath = imagePath.replace('/public/images/', '/backend/public/images/');
+  }
+  
   const isInWishlist = wishlist.includes(product.id);
   
   return `
     <div class="product-card" data-id="${product.id}">
       <div class="product-image">
-        <img src="${fixedImagePath}" alt="${product.name}">
+        <img src="${imagePath}" alt="${product.name}">
         ${product.discount ? `<span class="product-discount">-${product.discount}%</span>` : ''}
         <div class="product-actions">
-          <button class="product-action-btn add-to-cart" title="Add to Cart">
-            <i class="fas fa-shopping-cart"></i>
-          </button>
-          <button class="product-action-btn add-to-wishlist ${isInWishlist ? 'active' : ''}" title="Add to Favorites">
+          <button class="product-action-btn add-to-wishlist ${isInWishlist ? 'active' : ''}" data-id="${product.id}" title="Add to Favorites">
             <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i>
           </button>
           <button class="product-action-btn quick-view" title="Quick View">
@@ -225,7 +235,6 @@ function renderProducts() {
     const productId = card.dataset.id;
     const product = products.find(p => p.id === productId);
     
-    card.querySelector('.add-to-cart').addEventListener('click', () => addToCart(product));
     card.querySelector('.add-to-wishlist').addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -238,111 +247,40 @@ function renderProducts() {
   updatePagination();
 }
 
-// Cart Functions
-function addToCart(product, quantity = 1) {
-  const existingItem = cart.find(item => item.id === product.id);
+// Wishlist Functions
+function toggleWishlist(product) {
+  const index = wishlist.indexOf(product.id);
   
-  if (existingItem) {
-    existingItem.quantity += quantity;
+  if (index === -1) {
+    // Add to wishlist
+    wishlist.push(product.id);
+    // Update button state
+    const wishlistBtn = document.querySelector(`.add-to-wishlist[data-id="${product.id}"]`);
+    if (wishlistBtn) {
+      wishlistBtn.classList.add('active');
+      wishlistBtn.querySelector('i').className = 'fas fa-heart';
+    }
   } else {
-    cart.push({
-      id: product.id,
-      name: product.name,
-      price: product.discount ? product.price * (1 - product.discount / 100) : product.price,
-      image: product.images[0].replace('/public/images/', '/backend/public/images/'),
-      quantity: quantity
-    });
+    // Remove from wishlist
+    wishlist.splice(index, 1);
+    // Update button state
+    const wishlistBtn = document.querySelector(`.add-to-wishlist[data-id="${product.id}"]`);
+    if (wishlistBtn) {
+      wishlistBtn.classList.remove('active');
+      wishlistBtn.querySelector('i').className = 'far fa-heart';
+    }
   }
   
-  localStorage.setItem('cart', JSON.stringify(cart));
-  updateCart();
-  openCart();
+  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  updateWishlistBadge();
 }
 
-function updateCart() {
-  // Update cart badge
-  updateCartBadge();
-  
-  // Update cart items
-  cartItemsContainer.innerHTML = cart.length === 0 
-    ? '<p class="empty-cart">Your cart is empty</p>'
-    : cart.map(item => `
-      <div class="cart-item" data-id="${item.id}">
-        <div class="cart-item-image">
-          <img src="${item.image}" alt="${item.name}">
-        </div>
-        <div class="cart-item-info">
-          <h4 class="cart-item-name">${item.name}</h4>
-          <div class="cart-item-price">$${item.price.toFixed(2)}</div>
-          <div class="cart-item-quantity">
-            <button class="quantity-btn decrease">-</button>
-            <input type="number" class="quantity-input" value="${item.quantity}" min="1">
-            <button class="quantity-btn increase">+</button>
-          </div>
-        </div>
-        <button class="cart-item-remove">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-    `).join('');
-  
-  // Update cart total
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  cartTotal.textContent = `$${total.toFixed(2)}`;
-  
-  // Add event listeners to cart items
-  document.querySelectorAll('.cart-item').forEach(item => {
-    const productId = item.dataset.id;
-    
-    item.querySelector('.decrease').addEventListener('click', () => {
-      const cartItem = cart.find(i => i.id === productId);
-      if (cartItem.quantity > 1) {
-        cartItem.quantity -= 1;
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCart();
-      }
-    });
-    
-    item.querySelector('.increase').addEventListener('click', () => {
-      const cartItem = cart.find(i => i.id === productId);
-      cartItem.quantity += 1;
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCart();
-    });
-    
-    item.querySelector('.quantity-input').addEventListener('change', (e) => {
-      const cartItem = cart.find(i => i.id === productId);
-      const newQuantity = parseInt(e.target.value);
-      if (newQuantity > 0) {
-        cartItem.quantity = newQuantity;
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCart();
-      }
-    });
-    
-    item.querySelector('.cart-item-remove').addEventListener('click', () => {
-      cart = cart.filter(i => i.id !== productId);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCart();
-    });
-  });
-}
-
-function openCart() {
-  cartModal.classList.add('active');
-  cartOverlay.classList.add('active');
-}
-
-function closeCart() {
-  cartModal.classList.remove('active');
-  cartOverlay.classList.remove('active');
-}
-
-function updateCartBadge() {
-  const cartBadge = document.querySelector('.cart-btn .badge');
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  cartBadge.textContent = totalItems;
-  cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
+function updateWishlistBadge() {
+  const wishlistBadge = document.querySelector('.wishlist-btn .badge');
+  if (wishlistBadge) {
+    wishlistBadge.textContent = wishlist.length;
+    wishlistBadge.style.display = wishlist.length > 0 ? 'flex' : 'none';
+  }
 }
 
 function quickView(product) {
@@ -363,7 +301,6 @@ function quickView(product) {
   // Create modal content
   modal.innerHTML = `
     <div class="modal-header">
-      <div class="modal-title">Quick View</div>
       <button class="close-modal" id="close-quick-view">&times;</button>
     </div>
     <div class="modal-body">
@@ -382,20 +319,9 @@ function quickView(product) {
           <div class="product-description">
             <p>${product.description || 'No description available'}</p>
           </div>
-
-          <div class="add-to-cart">
-            <div class="quantity-selector">
-              <button class="quantity-btn decrease">-</button>
-              <input type="number" class="quantity-input" value="1" min="1" max="10">
-              <button class="quantity-btn increase">+</button>
-            </div>
-            <button class="add-to-cart-btn" data-id="${product.id}">
-              <i class="fas fa-shopping-cart"></i> Add to Cart
-            </button>
-            <button class="add-to-wishlist-btn ${isInWishlist ? 'active' : ''}" data-id="${product.id}">
-              <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i>
-            </button>
-          </div>
+          <button class="add-to-wishlist-btn ${isInWishlist ? 'active' : ''}" data-id="${product.id}">
+            <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i> Add to Wishlist
+          </button>
           <div class="view-details-link">
             <a href="product-detail.html?id=${product.id}">View Full Details</a>
           </div>
@@ -417,35 +343,7 @@ function quickView(product) {
   // Add event listeners
   const closeBtn = document.getElementById('close-quick-view');
   closeBtn.addEventListener('click', closeQuickView);
-  
   modalOverlay.addEventListener('click', closeQuickView);
-  
-  // Quantity buttons
-  const quantityInput = modal.querySelector('.quantity-input');
-  const decreaseBtn = modal.querySelector('.decrease');
-  const increaseBtn = modal.querySelector('.increase');
-  
-  decreaseBtn.addEventListener('click', () => {
-    const currentValue = parseInt(quantityInput.value);
-    if (currentValue > 1) {
-      quantityInput.value = currentValue - 1;
-    }
-  });
-  
-  increaseBtn.addEventListener('click', () => {
-    const currentValue = parseInt(quantityInput.value);
-    if (currentValue < 10) {
-      quantityInput.value = currentValue + 1;
-    }
-  });
-  
-  // Add to cart button
-  const addToCartBtn = modal.querySelector('.add-to-cart-btn');
-  addToCartBtn.addEventListener('click', () => {
-    const quantity = parseInt(quantityInput.value);
-    addToCart(product, quantity);
-    closeQuickView();
-  });
   
   // Add to wishlist button
   const addToWishlistBtn = modal.querySelector('.add-to-wishlist-btn');
@@ -562,15 +460,8 @@ nextPageBtn.addEventListener('click', () => {
   }
 });
 
-closeModalBtn.addEventListener('click', closeCart);
-cartOverlay.addEventListener('click', closeCart);
-
-checkoutBtn.addEventListener('click', () => {
-  // Redirect to checkout page
-  window.location.href = 'checkout.html';
-});
-
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('Products page loaded');
   fetchProducts();
 });

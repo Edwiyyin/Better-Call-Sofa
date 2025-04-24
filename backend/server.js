@@ -17,7 +17,7 @@ app.use('/backend/public/images', express.static(path.join(__dirname, 'public/im
 // API endpoint to get all products
 app.get('/api/products', (req, res) => {
   try {
-    const productsData = fs.readFileSync(path.join(__dirname, '/data/products.json'), 'utf8');
+    const productsData = fs.readFileSync(path.join(__dirname, 'data/products.json'), 'utf8');
     const products = JSON.parse(productsData);
     res.json(products);
   } catch (error) {

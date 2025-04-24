@@ -23,10 +23,10 @@
             <i class="far fa-heart"></i>
             <span class="badge">0</span>
           </button>
-          <button class="cart-btn" id="cart-btn">
+          <button class="cart-btn">
             <i class="fas fa-shopping-cart"></i>
             <span class="badge">0</span>
-          </button>
+        </button>
           <button class="user-btn" id="user-btn">
             <i class="far fa-user"></i>
           </button>
@@ -320,15 +320,14 @@
       </div>
     </div>
   </section>
-
-  <!-- Cart Modal -->
-  <div class="modal-overlay" id="modal-overlay"></div>
-  <div class="modal" id="cart-modal">
-    <div class="modal-header">
-      <div class="modal-title">Shopping Cart</div>
-      <button class="close-modal" id="close-modal">&times;</button>
+<!-- Cart Modal -->
+  <div class="modal-overlay"></div>
+  <div class="cart-modal">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart-modal">&times;</button>
     </div>
-    <div class="modal-body" id="cart-items">
+    <div class="cart-items">
       <!-- Cart items will be populated here -->
       <div class="empty-cart-message" id="empty-cart-message">
         <i class="fas fa-shopping-cart"></i>
@@ -336,15 +335,14 @@
         <a href="products.html" class="btn">Continue Shopping</a>
       </div>
     </div>
-    <div class="modal-footer">
+    <div class="cart-footer">
       <div class="cart-total">
         <span>Total:</span>
-        <span id="cart-total-amount">$0.00</span>
+        <span id="cart-total">$0.00</span>
       </div>
       <button class="checkout-btn">Proceed to Checkout</button>
     </div>
   </div>
-
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -395,6 +393,7 @@
   </footer>
 
   <!-- JavaScript -->
+  <script type="module" src="js/cart.js"></script>
   <script src="../js/product-detail.js"></script>
   <script src="../js/state.js"></script>
 </body>

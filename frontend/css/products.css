@@ -352,22 +352,20 @@
 }
 
 .quick-view-info .add-to-wishlist-btn {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--light);
-  border: 1px solid var(--light-gray);
+  padding: 0.8rem 1.5rem;
+  background-color: white;
+  color: var(--primary);
+  border: 1px solid var(--primary);
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .quick-view-info .add-to-wishlist-btn:hover {
-  background-color: var(--danger);
+  background-color: var(--primary);
   color: white;
-  border-color: var(--danger);
+  border-color: var(--primary);
 }
 
 .quick-view-info .view-details-link {
