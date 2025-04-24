@@ -247,9 +247,17 @@
 }
 
 .add-to-cart-btn {
-  flex-grow: 1;
-  padding: 12px 20px;
-  font-weight: 500;
+  background-color: var(--primary);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.add-to-cart-btn:hover {
+  background-color: var(--primary-dark);
 }
 
 .add-to-wishlist-btn {

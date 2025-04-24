@@ -97,6 +97,21 @@
     flex: 1;
   }
   
+  .proceed-to-payment {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .proceed-to-payment:hover {
+    background-color: var(--primary-dark);
+  }
+
   .order-summary {
     background-color: white;
     padding: 2rem;
@@ -175,16 +190,15 @@
     margin-top: 1rem;
   }
   
-  #proceed-to-payment {
-    width: 100%;
-    margin-top: 1.5rem;
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  
-  #use-current-location {
-    width: 100%;
-    margin-top: 1rem;
+  .use-current-location {
+    background-color: var(--light-gray);
+    color: var(--dark);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
   }
   
   /* Map styles */

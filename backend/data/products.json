@@ -11,15 +11,15 @@
       "/public/images/1/gray/kivik-sofa-1.jpg",
       "/public/images/1/gray/kivik-sofa-2.jpg",
       "/public/images/1/gray/kivik-sofa-3.jpg",
-      "/public/images/1/gray-turquoise/kivik-sofa-1.jpg",
-      "/public/images/1/gray-turquoise/kivik-sofa-2.jpg",
-      "/public/images/1/gray-turquoise/kivik-sofa-3.jpg",
-      "/public/images/1/tresund-atrachite/kivik-sofa-1.jpg",
-      "/public/images/1/tresund-atrachite/kivik-sofa-2.jpg",
-      "/public/images/1/tresund-atrachite/kivik-sofa-3.jpg"
+      "/public/images/1/blue/kivik-sofa-1.jpg",
+      "/public/images/1/blue/kivik-sofa-2.jpg",
+      "/public/images/1/blue/kivik-sofa-3.jpg",
+      "/public/images/1/black/kivik-sofa-1.jpg",
+      "/public/images/1/black/kivik-sofa-2.jpg",
+      "/public/images/1/black/kivik-sofa-3.jpg"
     ],
     "category": "sofa",
-    "colors": ["beige", "gray", "dark blue"],
+    "colors": ["gray", "blue", "black"],
     "sizes": ["2-seater", "3-seater", "sectional"],
     "material": "fabric",
     "roomType": "living room"
@@ -38,7 +38,7 @@
       "/public/images/2/oak/morbylanga-table-3.jpg"
     ],
     "category": "table",
-    "colors": ["oak", "brown"],
+    "colors": ["oak"],
     "sizes": ["2-seater", "4-seater"],
     "material": "wood",
     "roomType": "dining room"
@@ -55,15 +55,15 @@
       "/public/images/3/beige/poang-chair-1.jpg",
       "/public/images/3/beige/poang-chair-2.jpg",
       "/public/images/3/beige/poang-chair-3.jpg",
-      "/public/images/3/knisa-black/poang-chair-1.jpg",
-      "/public/images/3/knisa-black/poang-chair-2.jpg",
-      "/public/images/3/knisa-black/poang-chair-3.jpg",
-      "/public/images/3/light-green/poang-chair-1.jpg",
-      "/public/images/3/light-green/poang-chair-2.jpg",
-      "/public/images/3/light-green/poang-chair-3.jpg"
+      "/public/images/3/back/poang-chair-1.jpg",
+      "/public/images/3/black/poang-chair-2.jpg",
+      "/public/images/3/back/poang-chair-3.jpg",
+      "/public/images/3/green/poang-chair-1.jpg",
+      "/public/images/3/green/poang-chair-2.jpg",
+      "/public/images/3/green/poang-chair-3.jpg"
     ],
     "category": "chair",
-    "colors": ["black", "birch", "brown"],
+    "colors": ["beige", "black", "green"],
     "sizes": ["standard"],
     "material": "fabric",
     "roomType": "living room"
@@ -88,7 +88,7 @@
       "/public/images/4/white/malm-bed-3.jpg"
     ],
     "category": "bed",
-    "colors": ["white", "black-brown", "oak veneer"],
+    "colors": ["dark-brown-veneer", "oak-veneer", "white"],
     "sizes": ["twin", "queen", "king"],
     "material": "wood",
     "roomType": "bedroom"
@@ -102,15 +102,15 @@
     "discount": 0,
     "currency": "USD",
     "images": [
-      "/public/images/5/black-brown/lack-table-1.jpg",
-      "/public/images/5/black-brown/lack-table-2.jpg",
-      "/public/images/5/black-brown/lack-table-3.jpg",
+      "/public/images/5/brown/lack-table-1.jpg",
+      "/public/images/5/brown/lack-table-2.jpg",
+      "/public/images/5/brown/lack-table-3.jpg",
       "/public/images/5/white/lack-table-1.jpg",
       "/public/images/5/white/lack-table-2.jpg",
       "/public/images/5/white/lack-table-3.jpg"
     ],
     "category": "table",
-    "colors": ["white", "black", "walnut effect"],
+    "colors": ["white", "brown"],
     "sizes": ["rectangle", "square"],
     "material": "wood",
     "roomType": "living room"
@@ -135,7 +135,7 @@
       "/public/images/6/white/billy-bookcase-3.jpg"
     ],
     "category": "storage",
-    "colors": ["white", "birch veneer", "black-brown"],
+    "colors": ["brown-walnut", "oak", "white"],
     "sizes": ["standard", "narrow", "tall"],
     "material": "wood",
     "roomType": "living room"
@@ -157,7 +157,7 @@
       "/public/images/7/white-stained/hemnes-dresser-3.jpg"
     ],
     "category": "storage",
-    "colors": ["white stain", "black-brown", "dark gray stain"],
+    "colors": ["gray-stained", "white-stained"],
     "sizes": ["6-drawer", "8-drawer"],
     "material": "wood",
     "roomType": "bedroom"
@@ -179,7 +179,7 @@
       "/public/images/8/white/kallax-shelf-3.jpg"
     ],
     "category": "storage",
-    "colors": ["white", "black-brown", "walnut effect"],
+    "colors": ["oak", "white"],
     "sizes": ["2x2", "2x4", "4x4"],
     "material": "wood",
     "roomType": "multi-purpose"
@@ -193,18 +193,18 @@
     "discount": 10,
     "currency": "USD",
     "images": [
-      "/public/images/9/gray-green/uppland-armchair-1.jpg",
-      "/public/images/9/gray-green/uppland-armchair-2.jpg",
-      "/public/images/9/gray-green/uppland-armchair-3.jpg",
-      "/public/images/9/light-beige/uppland-armchair-1.jpg",
-      "/public/images/9/light-beige/uppland-armchair-2.jpg",
-      "/public/images/9/light-beige/uppland-armchair-3.jpg",
+      "/public/images/9/green/uppland-armchair-1.jpg",
+      "/public/images/9/green/uppland-armchair-2.jpg",
+      "/public/images/9/green/uppland-armchair-3.jpg",
+      "/public/images/9/beige/uppland-armchair-1.jpg",
+      "/public/images/9/beige/uppland-armchair-2.jpg",
+      "/public/images/9/beige/uppland-armchair-3.jpg",
       "/public/images/9/multicolor/uppland-armchair-1.jpg",
       "/public/images/9/multicolor/uppland-armchair-2.jpg",
       "/public/images/9/multicolor/uppland-armchair-3.jpg"
     ],
     "category": "chair",
-    "colors": ["beige", "gray", "dark blue"],
+    "colors": ["green", "beige", "multicolor"],
     "sizes": ["standard"],
     "material": "fabric",
     "roomType": "living room"
@@ -226,7 +226,7 @@
       "/public/images/10/white/danderyd-table-3.jpg"
     ],
     "category": "table",
-    "colors": ["black"],
+    "colors": ["black" , "white"],
     "sizes": ["4-seater"],
     "material": "wood",
     "roomType": "dining room"
@@ -273,7 +273,7 @@
       "/public/images/12/dark-gray/friheten-sofa-3.jpg"
     ],
     "category": "sofa",
-    "colors": ["dark gray", "beige", "blue"],
+    "colors": ["black", "brown-orange", "dark-gray"],
     "sizes": ["corner"],
     "material": "fabric",
     "roomType": "living room"
@@ -293,7 +293,7 @@
       "/public/images/13/white/pax-wardrobe-3.jpg"
     ],
     "category": "storage",
-    "colors": ["white", "oak effect", "black-brown"],
+    "colors": ["gray-beige", "white"],
     "sizes": ["tall", "medium", "corner"],
     "material": "wood",
     "roomType": "bedroom"
@@ -318,7 +318,7 @@
       "/public/images/14/skiftebo-yellow/strandmon-chair-3.jpg"
     ],
     "category": "chair",
-    "colors": ["dark gray", "yellow", "blue"],
+    "colors": ["gray", "kelinge-beige", "skiftebo-yellow"],
     "sizes": ["standard"],
     "material": "fabric",
     "roomType": "living room"
@@ -343,7 +343,7 @@
       "/public/images/15/white/hemnes-coffee-table-3.jpg"
     ],
     "category": "table",
-    "colors": ["white stain", "black-brown", "light brown"],
+    "colors": ["black-brown", "light-brown", "white"],
     "sizes": ["standard"],
     "material": "wood",
     "roomType": "living room"
@@ -365,7 +365,7 @@
       "/public/images/16/white/trotten-desk-3.jpg"
     ],
     "category": "table",
-    "colors": ["white", "black"],
+    "colors": ["black" , "white"],
     "sizes": ["standard", "corner"],
     "material": "metal",
     "roomType": "office"
@@ -387,7 +387,7 @@
       "/public/images/17/white/nordli-chest-3.jpg"
     ],
     "category": "storage",
-    "colors": ["white", "anthracite"],
+    "colors": ["black", "white"],
     "sizes": ["6-drawer", "8-drawer"],
     "material": "wood",
     "roomType": "bedroom"
@@ -412,7 +412,7 @@
       "/public/images/18/viarp-beige/soderhamn-sofa-3.jpg"
     ],
     "category": "sofa",
-    "colors": ["dark gray", "blue", "beige"],
+    "colors": ["dark-blue", "light-green", "viarp-beige"],
     "sizes": ["3-section", "4-section", "5-section"],
     "material": "fabric",
     "roomType": "living room"
@@ -472,7 +472,7 @@
       "/public/images/21/white/songesand-bed-3.jpg"
     ],
     "category": "bed",
-    "colors": ["white/light gray", "dark brown/black"],
+    "colors": ["brown", "white"],
     "sizes": ["twin", "queen", "king"],
     "material": "wood",
     "roomType": "bedroom"
@@ -494,7 +494,7 @@
       "/public/images/22/wood/skadis-pegboard-3.jpg"
     ],
     "category": "storage",
-    "colors": ["white"],
+    "colors": ["black", "wood"],
     "sizes": ["small", "medium", "large"],
     "material": "metal",
     "roomType": "multi-purpose"
@@ -516,7 +516,7 @@
       "/public/images/23/white/norden-table-3.jpg"
     ],
     "category": "table",
-    "colors": ["white", "birch"],
+    "colors": ["birch", "white"],
     "sizes": ["gateleg"],
     "material": "wood",
     "roomType": "dining room"
@@ -541,7 +541,7 @@
       "/public/images/24/stubbarp-white/besta-tv-3.jpg"
     ],
     "category": "storage",
-    "colors": ["white", "black-brown", "walnut effect"],
+    "colors": ["oak", "stubbarp-black", "stubbarp-white"],
     "sizes": ["standard"],
     "material": "wood",
     "roomType": "living room"
@@ -560,7 +560,7 @@
       "/public/images/25/white/kullen-chest-3.jpg"
     ],
     "category": "storage",
-    "colors": ["white", "black-brown"],
+    "colors": ["white"],
     "sizes": ["5-drawer", "6-drawer"],
     "material": "wood",
     "roomType": "bedroom"
