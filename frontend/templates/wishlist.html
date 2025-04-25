@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist - Better Call Sofa</title>
+  <link href="../css/wishlist.css" rel="stylesheet" type="text/css">
+  <link href="../css/common.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Better <span>Call Sofa</span></div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="wishlist-btn">
+            <i class="far fa-heart"></i>
+            <span class="badge">0</span>
+          </button>
+          <button class="cart-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge">0</span>
+        </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Wishlist Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Your Wishlist</h1>
+      <div class="breadcrumb">
+        <a href="home.html">Home</a> / <span>Wishlist</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wishlist Section -->
+  <section class="wishlist-section">
+    <div class="container">
+      <div class="wishlist-content">
+        <div class="wishlist-header">
+          <div class="wishlist-count">
+            Showing <span id="wishlist-count">0</span> items
+          </div>
+          <button class="clear-wishlist-btn" id="clear-wishlist-btn">
+            <i class="fas fa-trash"></i> Clear Wishlist
+          </button>
+        </div>
+        
+        <div class="wishlist-grid" id="wishlist-grid">
+          <!-- Wishlist items will be populated here -->
+          <div class="empty-wishlist">
+            <i class="far fa-heart"></i>
+            <h3>Your wishlist is empty</h3>
+            <p>Browse our products and add items to your wishlist</p>
+            <a href="products.html" class="btn">Browse Products</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Cart Modal -->
+<div class="modal-overlay"></div>
+<div class="cart-modal">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="close-cart-modal">&times;</button>
+  </div>
+  <div class="cart-items">
+    <!-- Cart items will be populated here -->
+    <div class="empty-cart-message" id="empty-cart-message">
+      <i class="fas fa-shopping-cart"></i>
+      <p>Your cart is empty</p>
+      <a href="products.html" class="btn">Continue Shopping</a>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cart-total">$0.00</span>
+    </div>
+    <button class="checkout-btn">Proceed to Checkout</button>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Better Call Sofa</h3>
+          <p>Quality furniture for modern living. We provide stylish and comfortable furniture pieces for every home.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="#">Living Room</a></li>
+            <li><a href="#">Bedroom</a></li>
+            <li><a href="#">Dining Room</a></li>
+            <li><a href="#">Office</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Warranty</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p>Subscribe to get special offers and once-in-a-lifetime deals.</p>
+          <form>
+            <input type="email" placeholder="Enter your email" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--light-gray); border-radius: 4px;">
+            <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Better Call Sofa . All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script type="module" src="js/cart.js"></script>
+  <script src="../js/wishlist.js"></script>
+  <script src="../js/state.js"></script>
+</body>
+</html>
