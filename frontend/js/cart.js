@@ -1,6 +1,3 @@
-// Cart functionality
-import dataService from './data-service.js';
-
 document.addEventListener('DOMContentLoaded', async function() {
     const cartBtn = document.querySelector('.cart-btn');
     const closeCartBtn = document.querySelector('.close-cart-modal');
