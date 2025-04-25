@@ -1238,12 +1238,737 @@
         "required": true
       }
     ]
+  },
+  {
+    "id": "51",
+    "name": "SKRUVBY Sideboard",
+    "description": "The SKRUVBY series has a traditional look with matching solitary storage units. The sideboard has a top panel with a warm oak feel, open shelves and closed storage in a drawer and behind grooved doors.",
+    "stock": 15,
+    "price": 149.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/51/black-blue/skruvby-sideboard-1.jpg",
+      "/public/images/51/black-blue/skruvby-sideboard-2.jpg",
+      "/public/images/51/black-blue/skruvby-sideboard-3.jpg",
+      "/public/images/51/white/skruvby-sideboard-1.jpg",
+      "/public/images/51/white/skruvby-sideboard-2.jpg",
+      "/public/images/51/white/skruvby-sideboard-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["black-blue", "white"],
+    "sizes": ["47 1/4x14 3/4x35 3/8 inches"],
+    "material": "particleboard/oak veneer",
+    "roomType": "living room",
+    "rating": {
+      "stars": 5,
+      "count": 58
+    },
+    "features": ["Open shelves", "Closed storage", "Grooved doors"]
+  }, 
+  {
+    "id": "52",
+    "name": "LOMMARP Cabinet",
+    "description": "This storage series is inspired by traditional carpentry, combining style and functions for today's urban lifestyles. Use it wherever you need storage — and mix with other furniture for a personal look.",
+    "stock": 18,
+    "price": 449.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/52/dark-blue-green/lommarp-cabinet-1.jpg",
+      "/public/images/52/dark-blue-green/lommarp-cabinet-2.jpg",
+      "/public/images/52/dark-blue-green/lommarp-cabinet-3.jpg",
+      "/public/images/52/black/lommarp-cabinet-1.jpg",
+      "/public/images/52/black/lommarp-cabinet-2.jpg",
+      "/public/images/52/black/lommarp-cabinet-3.jpg",
+      "/public/images/52/light-beige/lommarp-cabinet-1.jpg",
+      "/public/images/52/light-beige/lommarp-cabinet-2.jpg",
+      "/public/images/52/light-beige/lommarp-cabinet-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["dark blue-green", "black", "light-beige"],
+    "sizes": ["40 1/8x39 3/4 inches"],
+    "material": "solid wood/veneer",
+    "roomType": "living room",
+    "rating": {
+      "stars": 5,
+      "count": 329
+    },
+    "notes": "Best seller",
+    "features": ["Traditional carpentry style", "Versatile storage solution"]
+  },
+  {
+    "id": "53",
+    "name": "HEMNES Storage combination with doors/drawers",
+    "description": "This pair offers plenty of closed and open storage. Both with a grey-green color that brings nature's harmonious color scale into your room – and stained shelves which highlight the beauty of the solid wood.",
+    "stock": 8,
+    "price": 1007.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/53/gray-green/hemnes-storage-1.jpg",
+      "/public/images/53/gray-green/hemnes-storage-2.jpg",
+      "/public/images/53/gray-green/hemnes-storage-3.jpg",
+      "/public/images/53/white/hemnes-storage-1.jpg",
+      "/public/images/53/white/hemnes-storage-2.jpg",
+      "/public/images/53/white/hemnes-storage-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["gray-green/light brown stained", "white"],
+    "sizes": ["106 1/4x77 1/2 inches"],
+    "material": "solid wood",
+    "roomType": "living room",
+    "rating": {
+      "stars": 4,
+      "count": 22
+    },
+    "notes": "New",
+    "features": ["Closed and open storage", "Solid wood construction"]
+  },
+  {
+    "id": "54",
+    "name": "LANESUND Sideboard",
+    "description": "A piece of furniture that has both space for displaying and storing things. Put something nice on top to complete the look and enjoy a solid, practical storage solution that's also an eye-catcher.",
+    "stock": 10,
+    "price": 599.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/54/gray-brown/lanesund-sideboard-1.jpg",
+      "/public/images/54/gray-brown/lanesund-sideboard-2.jpg",
+      "/public/images/54/gray-brown/lanesund-sideboard-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["gray-brown"],
+    "sizes": ["63 3/8x18 1/2x31 7/8 inches"],
+    "material": "solid wood",
+    "roomType": "living room",
+    "rating": {
+      "stars": 4,
+      "count": 21
+    },
+    "features": ["Display and storage space", "Solid construction"]
+  },
+  {
+    "id": "55",
+    "name": "HEMNES Glass-door cabinet with 3 drawers",
+    "description": "Sustainable beauty from sustainably-sourced solid pine, a natural and renewable material that gets more beautiful with each passing year. Like it? Combine with other products in the HEMNES series.",
+    "stock": 15,
+    "price": 379.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/55/white-stain/hemnes-cabinet-1.jpg",
+      "/public/images/55/white-stain/hemnes-cabinet-2.jpg",
+      "/public/images/55/white-stain/hemnes-cabinet-3.jpg",
+      "/public/images/55/black/hemnes-cabinet-1.jpg",
+      "/public/images/55/black/hemnes-cabinet-2.jpg",
+      "/public/images/55/black/hemnes-cabinet-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["white stain/light brown", "black"],
+    "sizes": ["35 3/8x77 1/2 inches"],
+    "material": "solid pine",
+    "roomType": "living room",
+    "rating": {
+      "stars": 5,
+      "count": 808
+    },
+    "notes": "Best seller",
+    "features": ["Glass doors", "3 drawers", "Sustainable material"]
+  },
+  {
+    "id": "57",
+    "name": "HAUGA Sideboard",
+    "description": "Traditional sideboard with storage behind glass doors, in a drawer and on open shelves. Great for dinnerware, books and various beloved items. Use on its own or with other furniture in the HAUGA series.",
+    "stock": 12,
+    "price": 199.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/57/white/hauga-sideboard-1.jpg",
+      "/public/images/57/white/hauga-sideboard-2.jpg",
+      "/public/images/57/white/hauga-sideboard-3.jpg",
+      "/public/images/57/gray/hauga-sideboard-1.jpg",
+      "/public/images/57/gray/hauga-sideboard-2.jpg",
+      "/public/images/57/gray/hauga-sideboard-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["white", "gray"],
+    "sizes": ["55 1/8x17 7/8x33 inches"],
+    "material": "particleboard/foil",
+    "roomType": "living room",
+    "rating": {
+      "stars": 0,
+      "count": 0
+    },
+    "notes": "New",
+    "features": ["Glass doors", "Drawer storage", "Open shelves"]
+  },
+  {
+    "id": "58",
+    "name": "IDANAS Cabinet with bi-folding doors",
+    "description": "IDANAS series combines timeless design with modern functionality. With its clever folding doors shut, the cabinet adds elegance to your home. Ideal for storing clothes, table cloths and other small items.",
+    "stock": 10,
+    "price": 399.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/58/white/idanas-cabinet-1.jpg",
+      "/public/images/58/white/idanas-cabinet-2.jpg",
+      "/public/images/58/white/idanas-cabinet-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["white"],
+    "sizes": ["47 5/8x53 1/8 inches"],
+    "material": "particleboard/foil",
+    "roomType": "living room",
+    "rating": {
+      "stars": 5,
+      "count": 189
+    },
+    "features": [
+      "Bi-folding doors",
+      "Meets US Federal Stability Standard",
+      "Versatile storage solution"
+    ],
+    "safety": "Complies with US Federal Stability Standard"
+  },
+  {
+    "id": "59",
+    "name": "TONSTAD Storage with sliding glass doors",
+    "description": "Classic design meets beautifully brushed veneer in the TONSTAD series – giving the furniture a unique character. This combination has both hidden and open storage, so you can choose what to display.",
+    "stock": 7,
+    "price": 499.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/59/oak-veneer/tonstad-storage-1.jpg",
+      "/public/images/59/oak-veneer/tonstad-storage-2.jpg",
+      "/public/images/59/oak-veneer/tonstad-storage-3.jpg",
+      "/public/images/59/dark-oak/tonstad-storage-1.jpg",
+      "/public/images/59/dark-oak/tonstad-storage-2.jpg",
+      "/public/images/59/dark-oak/tonstad-storage-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["oak veneer/clear glass", "dark oak"],
+    "sizes": ["32 1/8x18 5/8x78 7/8 inches"],
+    "material": "wood veneer/glass",
+    "roomType": "living room",
+    "rating": {
+      "stars": 4,
+      "count": 5
+    },
+    "features": [
+      "Sliding glass doors",
+      "Combination of hidden and open storage",
+      "Classic brushed veneer design"
+    ]
+  }, 
+  {
+    "id": "60",
+    "name": "KALKNÄS Cabinet with sliding doors",
+    "description": "Hide all clutter behind the finely embossed doors and display your decorative objects behind the glass doors. KALKNÄS cabinet also comes prepared for cable management so you can easily add lighting.",
+    "stock": 9,
+    "price": 229.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/60/white/kalknas-cabinet-1.jpg",
+      "/public/images/60/white/kalknas-cabinet-2.jpg",
+      "/public/images/60/white/kalknas-cabinet-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["white"],
+    "sizes": ["47 5/8x16 7/8x38 5/8 inches"],
+    "material": "particleboard/glass",
+    "roomType": "living room",
+    "rating": {
+      "stars": 4,
+      "count": 81
+    },
+    "notes": "Last chance to buy",
+    "features": [
+      "Sliding doors",
+      "Embossed and glass doors",
+      "Prepared for cable management",
+      "Display and hidden storage"
+    ]
+  },
+  {
+    "id": "61",
+    "name": "MALSJÖ Sideboard",
+    "description": "A piece of furniture that has both space for displaying and storing things. Put something nice on top to complete the look and enjoy a solid, practical storage solution that's also an eye-catcher.",
+    "stock": 12,
+    "price": 549.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/61/black-stained/malsjo-sideboard-1.jpg",
+      "/public/images/61/black-stained/malsjo-sideboard-2.jpg",
+      "/public/images/61/black-stained/malsjo-sideboard-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["black stained"],
+    "sizes": ["57 1/8x36 1/4 inches"],
+    "material": "solid wood",
+    "roomType": "living room",
+    "rating": {
+      "stars": 5,
+      "count": 125
+    },
+    "features": [
+      "Display and storage space",
+      "Solid wood construction",
+      "Elegant design"
+    ]
+  }, 
+  {
+    "id": "62",
+    "name": "ONSEVIG Rug, low pile",
+    "description": "The faded oriental expression of this rug adds a special touch to your room. A good choice for those who want a durable, stain-resistant rug that is just as great on the sofa as under the dining table.",
+    "stock": 25,
+    "price": 99.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/62/multicolor/onsevig-rug-1.jpg",
+      "/public/images/62/multicolor/onsevig-rug-2.jpg",
+      "/public/images/62/multicolor/onsevig-rug-3.jpg"
+    ],
+    "category": "rugs",
+    "colors": ["multicolor"],
+    "sizes": ["5'3\"x7'9\""],
+    "material": "polypropylene",
+    "pileHeight": "low",
+    "roomType": "living room/dining room",
+    "rating": {
+      "stars": 5,
+      "count": 238
+    },
+    "features": [
+      "Faded oriental design",
+      "Durable and stain-resistant",
+      "Versatile placement"
+    ],
+    "recommendedAccessory": {
+      "name": "STOPP FILT Rug underlay with anti-slip",
+      "size": "5'5\"x7'9\"",
+      "price": "$0.33/sq feet"
+    }
+  },
+  {
+    "id": "63",
+    "name": "STOENSE Rug, low pile",
+    "description": "The thick, soft-spun pile is all about comfort, combined with gentle colors and a light sheen that bring harmony to the room. Large floor? Place several rugs together – the thick pile conceals the edges.",
+    "stock": 30,
+    "price": 149.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/63/off-white/stoense-rug-1.jpg",
+      "/public/images/63/off-white/stoense-rug-2.jpg",
+      "/public/images/63/off-white/stoense-rug-3.jpg",
+      "/public/images/63/gray/stoense-rug-1.jpg",
+      "/public/images/63/gray/stoense-rug-2.jpg",
+      "/public/images/63/gray/stoense-rug-3.jpg"
+    ],
+    "category": "rugs",
+    "colors": ["off-white", "gray"],
+    "sizes": ["6'7\"x9'10\""],
+    "material": "polyester",
+    "pileHeight": "low",
+    "roomType": "living room",
+    "rating": {
+      "stars": 5,
+      "count": 4612
+    },
+    "features": [
+      "Thick, soft-spun pile",
+      "Light sheen finish",
+      "Modular placement options"
+    ],
+    "recommendedAccessory": {
+      "name": "STOPP FILT Rug underlay with anti-slip",
+      "size": "6'3\"x9'2\"",
+      "price": "$0.31/sq feet"
+    }
+  }, 
+  {
+    "id": "64",
+    "name": "VÄGSKYLT Door mat",
+    "description": "A warm and cheerful expression greets you as you walk through the door. The playful design welcomes you home.",
+    "stock": 50,
+    "price": 12.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/64/pink-orange/vagskylt-mat-1.jpg",
+      "/public/images/64/pink-orange/vagskylt-mat-2.jpg",
+      "/public/images/64/pink-orange/vagskylt-mat-3.jpg",
+      "/public/images/64/green-black/vagskylt-mat-1.jpg",
+      "/public/images/64/green-black/vagskylt-mat-2.jpg",
+      "/public/images/64/green-black/vagskylt-mat-3.jpg"
+    ],
+    "category": "door mats",
+    "colors": ["pink/orange", "green/black"],
+    "sizes": ["2'0\"x2'11\""],
+    "material": "rubber/polyester",
+    "roomType": "entryway",
+    "rating": {
+      "stars": 5,
+      "count": 33
+    },
+    "features": [
+      "Durable construction",
+      "Playful design",
+      "Non-slip backing"
+    ]
+  },
+  {
+    "id": "66",
+    "name": "GADBIERG Rug, low pile",
+    "description": "The faded oriental expression of this rug adds a special touch to your room. A good choice for those who want a durable, stain-resistant rug that is just as great on the sofa as under the dining table.",
+    "stock": 15,
+    "price": 99.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/66/red-pink/gadbierg-rug-1.jpg",
+      "/public/images/66/red-pink/gadbierg-rug-2.jpg",
+      "/public/images/66/red-pink/gadbierg-rug-3.jpg"
+    ],
+    "category": "rugs",
+    "colors": ["red-pink"],
+    "sizes": ["5'3\"x7'10\""],
+    "material": "polypropylene",
+    "pileHeight": "low",
+    "roomType": "living room/dining room",
+    "rating": {
+      "stars": 4.5,
+      "count": 38
+    },
+    "features": [
+      "Faded oriental design",
+      "Durable and stain-resistant",
+      "Versatile placement"
+    ],
+    "recommendedAccessory": {
+      "name": "STOPP FILT Rug underlay with anti-slip",
+      "size": "5'5\"x7'9\"",
+      "price": "$0.33/sq feet"
+    }
+  },
+  {
+    "id": "67",
+    "name": "SONHULT Nesting tables, set of 2",
+    "description": "Mix and match like never before with the 2 SONHULT nest tables. Change the style and expression whenever you like by switching which legs go on which table top.",
+    "stock": 20,
+    "price": 69.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/67/gray-walnut/sonhult-tables-1.jpg",
+      "/public/images/67/gray-walnut/sonhult-tables-2.jpg",
+      "/public/images/67/gray-walnut/sonhult-tables-3.jpg",
+      "/public/images/67/yellow-birch/sonhult-tables-1.jpg",
+      "/public/images/67/yellow-birch/sonhult-tables-2.jpg",
+      "/public/images/67/yellow-birch/sonhult-tables-3.jpg"
+    ],
+    "category": "tables",
+    "colors": ["gray/walnut effect", "yellow/birch"],
+    "sizes": ["set of 2"],
+    "material": "particleboard/veneer",
+    "roomType": "living room",
+    "rating": {
+      "stars": 5,
+      "count": 43
+    },
+    "features": [
+      "Interchangeable legs and tops",
+      "Space-saving nesting design",
+      "Mix-and-match styling options"
+    ]
+  },
+  {
+    "id": "68",
+    "name": "HOLMERUD Coffee table",
+    "description": "HOLMERUD coffee table has a distinctive architectural shape that will draw attention. The design also offers practical, open storage spaces where you can display your things and keep them close at hand.",
+    "stock": 15,
+    "price": 79.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/68/oak-effect/holmerud-table-1.jpg",
+      "/public/images/68/oak-effect/holmerud-table-2.jpg",
+      "/public/images/68/oak-effect/holmerud-table-3.jpg",
+      "/public/images/68/dark-oak/holmerud-table-1.jpg",
+      "/public/images/68/dark-oak/holmerud-table-2.jpg",
+      "/public/images/68/dark-oak/holmerud-table-3.jpg"
+    ],
+    "category": "tables",
+    "colors": ["oak effect", "dark oak"],
+    "sizes": ["35 3/8x21 5/8 inches"],
+    "material": "particleboard/veneer",
+    "roomType": "living room",
+    "rating": {
+      "stars": 5,
+      "count": 78
+    },
+    "features": [
+      "Architectural design",
+      "Open storage spaces",
+      "Distinctive shape"
+    ]
+  }, 
+  {
+    "id": "69",
+    "name": "STARKVIND Table with air purifier",
+    "description": "Both a side table and an air purifier that improves the indoor air quality. STARKVIND can be adjusted manually, set to auto mode or be connected to DIRIGERA hub for full control via IKEA Home smart app.",
+    "stock": 18,
+    "price": 159.99,
+    "regularPrice": 199.99,
+    "discount": 20,
+    "currency": "USD",
+    "priceValidUntil": "2025-05-06",
+    "images": [
+      "/public/images/69/stained-oak/starkvind-table-1.jpg",
+      "/public/images/69/stained-oak/starkvind-table-2.jpg",
+      "/public/images/69/stained-oak/starkvind-table-3.jpg",
+      "/public/images/69/white/starkvind-table-1.jpg",
+      "/public/images/69/white/starkvind-table-2.jpg",
+      "/public/images/69/white/starkvind-table-3.jpg"
+    ],
+    "category": "tables",
+    "colors": ["stained oak veneer/dark brown smart", "white"],
+    "sizes": ["standard"],
+    "material": "wood veneer/smart technology",
+    "roomType": "living room",
+    "rating": {
+      "stars": 5,
+      "count": 83
+    },
+    "certifications": ["AHAM Certified"],
+    "features": [
+      "Air purifier function",
+      "Smart home compatible",
+      "Manual/auto modes",
+      "Multi-functional design"
+    ],
+    "requiredAccessories": [
+      {
+        "name": "STARKVIND Filter for gas cleaning",
+        "price": 26.00
+      }
+    ],
+    "notes": "Best seller, IKEA Family price valid until 2025-05-06"
+  }, 
+  {
+    "id": "70",
+    "name": "HAVSTA Nesting tables, set of 2",
+    "description": "Carefully designed details in solid pine with a brushed surface adds a rustic feel and charm to your home. These nesting tables can be used in various ways – individually or pushed together to save space.",
+    "stock": 12,
+    "price": 189.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/70/gray-beige/havsta-tables-1.jpg",
+      "/public/images/70/gray-beige/havsta-tables-2.jpg",
+      "/public/images/70/gray-beige/havsta-tables-3.jpg",
+      "/public/images/70/black/havsta-tables-1.jpg",
+      "/public/images/70/black/havsta-tables-2.jpg",
+      "/public/images/70/black/havsta-tables-3.jpg",
+      "/public/images/70/white/havsta-tables-1.jpg",
+      "/public/images/70/white/havsta-tables-2.jpg",
+      "/public/images/70/white/havsta-tables-3.jpg"
+    ],
+    "category": "tables",
+    "colors": ["gray-beige", "black", "white"],
+    "sizes": ["set of 2"],
+    "material": "solid pine",
+    "roomType": "living room",
+    "rating": {
+      "stars": 5,
+      "count": 173
+    },
+    "notes": "Last chance to buy",
+    "features": [
+      "Solid pine construction",
+      "Brushed surface finish",
+      "Space-saving nesting design",
+      "Rustic charm"
+    ]
+  },
+  {
+    "id": "71",
+    "name": "DELSIÓN Kitchen faucet",
+    "description": "DELSIÓN brass faucet's high spout makes it easier to wash things like large pots. We've given it durable parts and put it through some of the toughest tests, so we can give you a guarantee of quality.",
+    "stock": 25,
+    "price": 86.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/71/brass/delsion-faucet-1.jpg",
+      "/public/images/71/brass/delsion-faucet-2.jpg",
+      "/public/images/71/brass/delsion-faucet-3.jpg",
+      "/public/images/71/black/delsion-faucet-1.jpg",
+      "/public/images/71/black/delsion-faucet-2.jpg",
+      "/public/images/71/black/delsion-faucet-3.jpg"
+    ],
+    "category": "kitchen",
+    "colors": ["brass color", "black"],
+    "sizes": ["standard"],
+    "material": "brass/metal",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 4,
+      "count": 194
+    },
+    "warranty": "10 year limited warranty",
+    "features": [
+      "High spout design",
+      "Durable construction",
+      "Rigorously tested",
+      "Easy-to-clean"
+    ],
+    "notes": "Best seller"
+  },
+  {
+    "id": "72",
+    "name": "KILSVIKEN Sink",
+    "description": "The natural color variations of the quartz make each KILSVIKEN sink one of a kind bringing a unique look to your kitchen. The surface is durable and resistant to heat and stains.",
+    "stock": 15,
+    "price": 227.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/72/black-quartz/kilsviken-sink-1.jpg",
+      "/public/images/72/black-quartz/kilsviken-sink-2.jpg",
+      "/public/images/72/black-quartz/kilsviken-sink-3.jpg",
+      "/public/images/72/gray/kilsviken-sink-1.jpg",
+      "/public/images/72/gray/kilsviken-sink-2.jpg",
+      "/public/images/72/gray/kilsviken-sink-3.jpg"
+    ],
+    "category": "kitchen",
+    "colors": ["black quartz composite", "gray"],
+    "sizes": ["22x18 1/8 inches"],
+    "material": "quartz composite",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 4,
+      "count": 119
+    },
+    "warranty": "25 year limited warranty",
+    "features": [
+      "Unique natural variations",
+      "Heat and stain resistant",
+      "Durable quartz surface"
+    ]
+  },
+  {
+    "id": "73",
+    "name": "SEKTION/MAXIMERA Wall cabinet with 2 doors/2 drawers",
+    "description": "SEKTION kitchen system gives you endless possibilities to design your dream kitchen. Paired with AXSTAD fronts in grey-green, you get a timeless look that can feel either modern or traditional.",
+    "stock": 8,
+    "price": 467.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/73/sinarp-brown/sektion-cabinet-1.jpg",
+      "/public/images/73/sinarp-brown/sektion-cabinet-2.jpg",
+      "/public/images/73/sinarp-brown/sektion-cabinet-3.jpg",
+      "/public/images/73/white/sektion-cabinet-1.jpg",
+      "/public/images/73/white/sektion-cabinet-2.jpg",
+      "/public/images/73/white/sektion-cabinet-3.jpg"
+    ],
+    "category": "kitchen",
+    "colors": ["sinarp-brown", "white"],
+    "frontOptions": ["Sinarp brown"],
+    "sizes": ["30x15x40 inches"],
+    "material": "particleboard/foil",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 5,
+      "count": 3
+    },
+    "warranty": "25 year limited warranty",
+    "notes": "New. Suspension rail sold separately. To be finished with legs and plinth, sold separately.",
+    "features": [
+      "SEKTION kitchen system",
+      "2 doors and 2 drawers",
+      "Customizable design",
+      "Timeless aesthetic"
+    ]
+  },   
+  {
+    "id": "74",
+    "name": "TORNVIKEN Kitchen island",
+    "description": "The TORNVIKEN series is ideal when you need more workspace, more storage – more kitchen. Combine a kitchen island with shelves to create a rustic kitchen where you can cook together. Everyone can fit!",
+    "stock": null,
+    "price": 399.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/74/off-white-oak/tornviken-island-1.jpg",
+      "/public/images/74/off-white-oak/tornviken-island-2.jpg",
+      "/public/images/74/off-white-oak/tornviken-island-3.jpg",
+      "/public/images/74/gray/tornviken-island-1.jpg",
+      "/public/images/74/gray/tornviken-island-2.jpg",
+      "/public/images/74/gray/tornviken-island-3.jpg"
+    ],
+    "category": "kitchen",
+    "colors": ["off-white/oak", "gray"],
+    "frontOptions": [],
+    "sizes": ["49 5/8x30 3/8 inches"],
+    "material": "solid wood and fiberboard",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 4.5,
+      "count": 780
+    },
+    "warranty": "10 year limited warranty",
+    "notes": "Best seller. Assembly required. Delivery and in-store stock availability may vary.",
+    "features": [
+      "Spacious countertop",
+      "2 open storage shelves",
+      "Rustic design",
+      "Solid oak top"
+    ]
+  }, 
+  {
+    "id": "75",
+    "name": "VADHOLMA Kitchen island",
+    "description": "Gather around the kitchen island! VADHOLMA is the home’s given meeting point and perfect when you cook together. Plenty of storage – and the generous butcher block gives you a robust workspace.",
+    "stock": null,
+    "price": 499.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/75/black-oak/vadholma-island-1.jpg",
+      "/public/images/75/black-oak/vadholma-island-2.jpg",
+      "/public/images/75/black-oak/vadholma-island-3.jpg"
+    ],
+    "category": "kitchen",
+    "colors": ["black/oak"],
+    "frontOptions": [],
+    "sizes": ["49 5/8x31 1/8x35 3/8 inches"],
+    "material": "solid oak and powder-coated steel",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 4.6,
+      "count": 265
+    },
+    "warranty": "10 year limited warranty",
+    "notes": "Butcher block top. Assembly required. Delivery and in-store availability may vary.",
+    "features": [
+      "Durable butcher block top",
+      "2 slatted lower shelves",
+      "Robust steel frame",
+      "Spacious work surface"
+    ]
   }
-
-
-
-
-
+  
+  
 
 
 ]
