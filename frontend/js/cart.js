@@ -1,5 +1,7 @@
 // Cart functionality
-document.addEventListener('DOMContentLoaded', function() {
+import dataService from './data-service.js';
+
+document.addEventListener('DOMContentLoaded', async function() {
     const cartBtn = document.querySelector('.cart-btn');
     const closeCartBtn = document.querySelector('.close-cart-modal');
     const cartModal = document.querySelector('.cart-modal');
@@ -10,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const emptyCartMessage = document.getElementById('empty-cart-message');
     
     // Cart state
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = await dataService.getCart();
     
     // Update cart badge
     function updateCartBadge() {
@@ -102,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Decrease quantity
-    function decreaseQuantity(e) {
+    async function decreaseQuantity(e) {
       const cartItem = e.target.closest('.cart-item');
       const id = cartItem.dataset.id;
       const itemIndex = cart.findIndex(item => item.id === id);
@@ -112,13 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
         cartItem.querySelector('.quantity-input').value = cart[itemIndex].quantity;
       }
       
-      localStorage.setItem('cart', JSON.stringify(cart));
+      await dataService.saveCart(cart);
       updateCartTotal();
       updateCartBadge();
     }
     
     // Increase quantity
-    function increaseQuantity(e) {
+    async function increaseQuantity(e) {
       const cartItem = e.target.closest('.cart-item');
       const id = cartItem.dataset.id;
       const itemIndex = cart.findIndex(item => item.id === id);
@@ -128,32 +130,32 @@ document.addEventListener('DOMContentLoaded', function() {
         cartItem.querySelector('.quantity-input').value = cart[itemIndex].quantity;
       }
       
-      localStorage.setItem('cart', JSON.stringify(cart));
+      await dataService.saveCart(cart);
       updateCartTotal();
       updateCartBadge();
     }
     
     // Remove cart item
-    function removeCartItem(e) {
+    async function removeCartItem(e) {
       const id = e.target.closest('.cart-item-remove').dataset.id;
       cart = cart.filter(item => item.id !== id);
       
-      localStorage.setItem('cart', JSON.stringify(cart));
+      await dataService.saveCart(cart);
       renderCartItems();
       updateCartBadge();
     }
     
     // Initialize cart
     updateCartBadge();
-  });
+});
   
 // Checkout functionality
-document.querySelector('.checkout-btn')?.addEventListener('click', () => {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+document.querySelector('.checkout-btn')?.addEventListener('click', async () => {
+    const cart = await dataService.getCart();
     if (cart.length === 0) {
       alert('Your cart is empty! Please add items to your cart before proceeding to checkout.');
       return;
     }
     
     window.location.href = 'checkout.html';
-  });
+});

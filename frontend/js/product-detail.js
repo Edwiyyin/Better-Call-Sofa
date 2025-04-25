@@ -302,6 +302,29 @@ function renderProductDetails() {
     
     // Update wishlist button state
     updateWishlistButtonState();
+    
+    // Set max quantity based on product stock
+    const stockAmount = currentProduct.stock || 10;
+    if (quantityInput) {
+        quantityInput.setAttribute('max', stockAmount);
+        quantityInput.value = Math.min(parseInt(quantityInput.value) || 1, stockAmount);
+    }
+    
+    // Update stock display in the UI
+    const stockDisplay = document.createElement('div');
+    stockDisplay.className = 'stock-display';
+    stockDisplay.innerHTML = `<span>${stockAmount} in stock</span>`;
+    
+    // Insert stock display after quantity selector or create one if it doesn't exist
+    const stockDisplayContainer = document.querySelector('.stock-display');
+    if (stockDisplayContainer) {
+        stockDisplayContainer.replaceWith(stockDisplay);
+    } else {
+        const quantitySelector = document.querySelector('.quantity-selector');
+        if (quantitySelector) {
+            quantitySelector.parentNode.insertBefore(stockDisplay, quantitySelector.nextSibling);
+        }
+    }
 }
 
 // Update Wishlist Button State
@@ -600,6 +623,13 @@ function addToCart(productId = currentProduct.id) {
         return;
     }
     
+    // Check if quantity doesn't exceed stock
+    if (quantity > (currentProduct.stock || 0)) {
+        alert(`Sorry, only ${currentProduct.stock} items in stock.`);
+        quantityInput.value = currentProduct.stock;
+        return;
+    }
+    
     const imagePath = currentProduct.images && currentProduct.images.length > 0 ? 
         fixImagePath(currentProduct.images[0]) : 
         '../images/product-placeholder.jpg';
@@ -623,7 +653,13 @@ function addToCart(productId = currentProduct.id) {
     );
     
     if (existingItemIndex !== -1) {
-        cart[existingItemIndex].quantity += quantity;
+        // Check if the combined quantity doesn't exceed stock
+        const newTotal = cart[existingItemIndex].quantity + quantity;
+        if (newTotal > (currentProduct.stock || 0)) {
+            alert(`Sorry, you can't add ${quantity} more items. Stock limit is ${currentProduct.stock}.`);
+            return;
+        }
+        cart[existingItemIndex].quantity = newTotal;
     } else {
         cart.push(cartItem);
     }
@@ -832,6 +868,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add to wishlist button
     addToWishlistBtn.addEventListener('click', () => toggleWishlist());
     
+    // Quantity buttons on product page
+    const decreaseBtn = document.querySelector('.quantity-selector .decrease');
+    const increaseBtn = document.querySelector('.quantity-selector .increase');
+    
+    if (decreaseBtn) {
+        decreaseBtn.addEventListener('click', () => {
+            const input = document.querySelector('.quantity-selector .quantity-input');
+            if (input) {
+                const currentValue = parseInt(input.value) || 1;
+                input.value = Math.max(1, currentValue - 1);
+            }
+        });
+    }
+    
+    if (increaseBtn) {
+        increaseBtn.addEventListener('click', () => {
+            const input = document.querySelector('.quantity-selector .quantity-input');
+            if (input) {
+                const currentValue = parseInt(input.value) || 1;
+                const maxValue = parseInt(input.getAttribute('max')) || (currentProduct?.stock || 10);
+                input.value = Math.min(maxValue, currentValue + 1);
+            }
+        });
+    }
+    
     // Cart modal
     closeModalBtn.addEventListener('click', hideCartModal);
     cartOverlay.addEventListener('click', hideCartModal);
@@ -846,4 +907,4 @@ document.addEventListener('DOMContentLoaded', () => {
         // Implement checkout functionality
         alert('Proceeding to checkout...');
     });
-}); 
+});

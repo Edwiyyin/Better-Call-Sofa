@@ -8,9 +8,9 @@
     "discount": 10,
     "currency": "USD",
     "images": [
-      "/public/images/1/gray/kivik-sofa-1.jpg",
-      "/public/images/1/gray/kivik-sofa-2.jpg",
-      "/public/images/1/gray/kivik-sofa-3.jpg",
+      "/public/images/1/black/kivik-sofa-1.jpg",
+      "/public/images/1/black/kivik-sofa-2.jpg",
+      "/public/images/1/black/kivik-sofa-3.jpg",
       "/public/images/1/blue/kivik-sofa-1.jpg",
       "/public/images/1/blue/kivik-sofa-2.jpg",
       "/public/images/1/blue/kivik-sofa-3.jpg",
@@ -19,7 +19,7 @@
       "/public/images/1/black/kivik-sofa-3.jpg"
     ],
     "category": "sofa",
-    "colors": ["beige", "gray", "dark blue"],
+    "colors": ["black", "blue", "gray"],
     "sizes": ["2-seater", "3-seater", "sectional"],
     "material": "fabric",
     "roomType": "living room"
@@ -55,15 +55,15 @@
       "/public/images/3/beige/poang-chair-1.jpg",
       "/public/images/3/beige/poang-chair-2.jpg",
       "/public/images/3/beige/poang-chair-3.jpg",
-      "/public/images/3/back/poang-chair-1.jpg",
+      "/public/images/3/black/poang-chair-1.jpg",
       "/public/images/3/black/poang-chair-2.jpg",
-      "/public/images/3/back/poang-chair-3.jpg",
+      "/public/images/3/black/poang-chair-3.jpg",
       "/public/images/3/green/poang-chair-1.jpg",
       "/public/images/3/green/poang-chair-2.jpg",
       "/public/images/3/green/poang-chair-3.jpg"
     ],
     "category": "chair",
-    "colors": ["black", "birch", "brown"],
+    "colors": ["beige", "black", "green"],
     "sizes": ["standard"],
     "material": "fabric",
     "roomType": "living room"
@@ -110,7 +110,7 @@
       "/public/images/5/white/lack-table-3.jpg"
     ],
     "category": "table",
-    "colors": ["white", "brown"],
+    "colors": ["brown", "white"],
     "sizes": ["rectangle", "square"],
     "material": "wood",
     "roomType": "living room"
@@ -149,6 +149,9 @@
     "discount": 5,
     "currency": "USD",
     "images": [
+      "/public/images/7/black/hemnes-dresser-1.jpg",
+      "/public/images/7/black/hemnes-dresser-2.jpg",
+      "/public/images/7/black/hemnes-dresser-3.jpg",
       "/public/images/7/gray-stained/hemnes-dresser-1.jpg",
       "/public/images/7/gray-stained/hemnes-dresser-2.jpg",
       "/public/images/7/gray-stained/hemnes-dresser-3.jpg",
@@ -157,7 +160,7 @@
       "/public/images/7/white-stained/hemnes-dresser-3.jpg"
     ],
     "category": "storage",
-    "colors": ["gray-stained", "white-stained"],
+    "colors": ["black", "gray-stained", "white-stained"],
     "sizes": ["6-drawer", "8-drawer"],
     "material": "wood",
     "roomType": "bedroom"
@@ -204,7 +207,7 @@
       "/public/images/9/multicolor/uppland-armchair-3.jpg"
     ],
     "category": "chair",
-    "colors": ["beige", "gray", "dark blue"],
+    "colors": ["green", "beige", "multicolor"],
     "sizes": ["standard"],
     "material": "fabric",
     "roomType": "living room"
@@ -273,7 +276,7 @@
       "/public/images/12/dark-gray/friheten-sofa-3.jpg"
     ],
     "category": "sofa",
-    "colors": ["dark gray", "beige", "blue"],
+    "colors": ["black", "brown-orange", "dark-gray"],
     "sizes": ["corner"],
     "material": "fabric",
     "roomType": "living room"
@@ -310,15 +313,15 @@
       "/public/images/14/gray/strandmon-chair-1.jpg",
       "/public/images/14/gray/strandmon-chair-2.jpg",
       "/public/images/14/gray/strandmon-chair-3.jpg",
-      "/public/images/14/kelinge-beige/strandmon-chair-1.jpg",
-      "/public/images/14/kelinge-beige/strandmon-chair-2.jpg",
-      "/public/images/14/kelinge-beige/strandmon-chair-3.jpg",
-      "/public/images/14/skiftebo-yellow/strandmon-chair-1.jpg",
-      "/public/images/14/skiftebo-yellow/strandmon-chair-2.jpg",
-      "/public/images/14/skiftebo-yellow/strandmon-chair-3.jpg"
+      "/public/images/14/beige/strandmon-chair-1.jpg",
+      "/public/images/14/beige/strandmon-chair-2.jpg",
+      "/public/images/14/beige/strandmon-chair-3.jpg",
+      "/public/images/14/yellow/strandmon-chair-1.jpg",
+      "/public/images/14/yellow/strandmon-chair-2.jpg",
+      "/public/images/14/yellow/strandmon-chair-3.jpg"
     ],
     "category": "chair",
-    "colors": ["dark gray", "yellow", "blue"],
+    "colors": ["gray", "beige", "yellow"],
     "sizes": ["standard"],
     "material": "fabric",
     "roomType": "living room"
@@ -364,8 +367,8 @@
       "/public/images/16/white/trotten-desk-2.jpg",
       "/public/images/16/white/trotten-desk-3.jpg"
     ],
-    "category": "desk",
-    "colors": ["white", "black", "oak veneer"],
+    "category": "table",
+    "colors": ["black", "white"],
     "sizes": ["standard", "corner"],
     "material": "metal",
     "roomType": "office"
@@ -412,7 +415,7 @@
       "/public/images/18/viarp-beige/soderhamn-sofa-3.jpg"
     ],
     "category": "sofa",
-    "colors": ["dark gray", "blue", "beige"],
+    "colors": ["dark-blue", "light-green", "viarp-beige"],
     "sizes": ["3-section", "4-section", "5-section"],
     "material": "fabric",
     "roomType": "living room"
@@ -431,7 +434,7 @@
       "/public/images/19/ash-veneer/lisabo-table-3.jpg"
     ],
     "category": "table",
-    "colors": ["ash veneer"],
+    "colors": ["ash-veneer"],
     "sizes": ["standard"],
     "material": "wood",
     "roomType": "living room"
@@ -483,7 +486,7 @@
     "description": "Perfect for your home office, but goes just as well in a bathroom, hallway or kitchen to have small items close at hand. Complete with SKÅDIS accessories to create the best storage for your needs.",
     "stock": 25,
     "price": 19.99,
-    "discount": 0,
+    "discount": 20,
     "currency": "USD",
     "images": [
       "/public/images/22/black/songesand-bed-1.jpg",
@@ -541,7 +544,7 @@
       "/public/images/24/stubbarp-white/besta-tv-3.jpg"
     ],
     "category": "storage",
-    "colors": ["white", "black-brown", "walnut effect"],
+    "colors": ["oak", "stubbarp-black", "stubbarp-white"],
     "sizes": ["standard"],
     "material": "wood",
     "roomType": "living room"
@@ -561,7 +564,7 @@
     ],
     "category": "storage",
     "colors": ["white"],
-    "sizes": ["5-drawer", "6-drawer"],
+    "sizes": ["3-drawer", "4-drawer"],
     "material": "wood",
     "roomType": "bedroom"
   },
@@ -571,7 +574,7 @@
     "description": "Simple and smart! When all you need is a wardrobe with all the basic functions. If storage space is still not enough, why not add another wardrobe from the RAKKESTAD series?",
     "stock": 15,
     "price": 249.99,
-    "discount": 0,
+    "discount": 10,
     "currency": "USD",
     "images": [
       "/public/images/26/black-brown/rakkestad-wardrobe-1.jpg",
@@ -580,13 +583,9 @@
     ],
     "category": "storage",
     "colors": ["black-brown"],
-    "sizes": ["46 1/8x69 1/4 inches"],
-    "material": "particleboard/foil",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 5,
-      "count": 386
-    }
+    "sizes": ["3-door", "wide", "tall"],
+    "material": "wood",
+    "roomType": "bedroom"
   }, 
   {
     "id": "27",
@@ -603,13 +602,9 @@
     ],
     "category": "storage",
     "colors": ["light beige"],
-    "sizes": ["23 3/8x21 5/8x73 1/8 inches"],
-    "material": "particleboard/foil",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 5,
-      "count": 3
-    }
+    "sizes": ["2-door", "narrow", "standard"],
+    "material": "wood",
+    "roomType": "bedroom"
   }, 
   {
     "id": "28",
@@ -617,7 +612,7 @@
     "description": "This wardrobe is inspired by classic Scandinavian furniture design with clean lines and an airy expression. It works as storage for your clothes and belongings – and will be a statement piece in your home.",
     "stock": 8,
     "price": 399.99,
-    "discount": 0,
+    "discount": 5,
     "currency": "USD",
     "images": [
       "/public/images/28/bamboo/nordkisa-wardrobe-1.jpg",
@@ -626,13 +621,9 @@
     ],
     "category": "storage",
     "colors": ["bamboo"],
-    "sizes": ["47 1/4x73 1/4 inches"],
-    "material": "bamboo/steel",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 5,
-      "count": 272
-    }
+    "sizes": ["sliding-door", "open", "compact"],
+    "material": "wood",
+    "roomType": "bedroom"
   },
   {
     "id": "29",
@@ -652,13 +643,9 @@
     ],
     "category": "storage",
     "colors": ["white", "gray"],
-    "sizes": ["100 3/4x21 5/8x78 3/8 inches"],
-    "material": "particleboard/foil",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 5,
-      "count": 2
-    }
+    "sizes": ["wide", "extra-wide", "with-drawers"],
+    "material": "wood",
+    "roomType": "bedroom"
   },
   {
     "id": "30",
@@ -675,13 +662,9 @@
     ],
     "category": "storage",
     "colors": ["white"],
-    "sizes": ["68 1/2-94 1/2x15 3/4x87 inches"],
-    "material": "particleboard/foil",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 5,
-      "count": 10
-    }
+   "sizes": ["combination", "modular", "customizable"],
+    "material": "wood",
+    "roomType": "bedroom"
   },
   {
     "id": "31",
@@ -689,7 +672,7 @@
     "description": "Keep it simple. Here's a basic solution to get you started, and space for more interiors if you want to upgrade.",
     "stock": 7,
     "price": 690.00,
-    "discount": 0,
+    "discount": 20,
     "currency": "USD",
     "images": [
       "/public/images/31/dark-gray/pax-wardrobe-1.jpg",
@@ -700,14 +683,10 @@
       "/public/images/31/white/pax-wardrobe-3.jpg"
     ],
     "category": "storage",
-    "colors": ["dark gray", "white"],
-    "sizes": ["78 3/4x26x79 1/4 inches", "200x66x201 cm"],
-    "material": "particleboard/foil",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 4,
-      "count": 3
-    }
+    "colors": ["dark-gray", "white"],
+    "sizes": ["sliding-door", "tall", "wide"],
+    "material": "wood",
+    "roomType": "bedroom"
   },
   {
     "id": "32",
@@ -715,7 +694,7 @@
     "description": "Keep it simple. Here's a basic solution to get you started, and space for more interiors if you want to upgrade.",
     "stock": 5,
     "price": 705.00,
-    "discount": 0,
+    "discount": 10,
     "currency": "USD",
     "images": [
       "/public/images/32/dark-gray-mirror-glass/pax-wardrobe-1.jpg",
@@ -726,14 +705,10 @@
       "/public/images/32/white-mirror-glass-green/pax-wardrobe-3.jpg"
     ],
     "category": "storage",
-    "colors": ["dark gray mirror glass", "white mirror glass green"],
-    "sizes": ["59x23 5/8x79 1/4 inches"],
-    "material": "glass/particleboard",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 0,
-      "count": 0
-    }
+    "colors": ["dark gray/mirror glass", "white/mirror glass"],
+    "sizes": ["combination", "mirror", "glass-door"],
+    "material": "glass/wood",
+    "roomType": "bedroom"
   },
   {
     "id": "33",
@@ -741,7 +716,7 @@
     "description": "Keep it simple. Here's a basic solution to get you started, and space for more interiors if you want to upgrade.",
     "stock": 8,
     "price": 545.00,
-    "discount": 0,
+    "discount": 40,
     "currency": "USD",
     "images": [
       "/public/images/33/gray-beige/pax-wardrobe-1.jpg",
@@ -756,13 +731,9 @@
     ],
     "category": "storage",
     "colors": ["gray-beige", "dark gray", "white"],
-    "sizes": ["59x23 5/8x79 1/4 inches", "150x60x201 cm"],
-    "material": "particleboard/foil",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 4,
-      "count": 5
-    }
+    "sizes": ["combination", "wide", "narrow"],
+    "material": "wood",
+    "roomType": "bedroom"
   },
   {
     "id": "34",
@@ -782,13 +753,9 @@
     ],
     "category": "storage",
     "colors": ["dark gray/mirror glass", "white"],
-    "sizes": ["59x16 7/8x79 1/4 inches", "150x43x201 cm"],
-    "material": "glass/particleboard",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 0,
-      "count": 0
-    }
+   "sizes": ["sliding-door", "mirror", "compact"],
+    "material": "glass/wood",
+    "roomType": "bedroom"
   },
   {
     "id": "35",
@@ -807,14 +774,10 @@
       "/public/images/35/white/pax-wardrobe-3.jpg"
     ],
     "category": "storage",
-    "colors": ["dark gray/dark brown stained oak effect", "white"],
-    "sizes": ["39 3/8x23 5/8x79 1/4 inches", "100x60x201 cm"],
-    "material": "particleboard/foil",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 5,
-      "count": 2
-    }
+    "colors": ["dark gray/oak", "white"],
+    "sizes": ["combination", "oak", "dark-oak"],
+    "material": "wood",
+    "roomType": "bedroom"
   }, 
   {
     "id": "36",
@@ -822,7 +785,7 @@
     "description": "ÄNGSIÖN bathroom furniture has a modern appeal with minimal details so you can start each day with a clean slate. This combo has 2 spacious drawers and room on the sink for toothbrush and soap.",
     "stock": 7,
     "price": 489.00,
-    "discount": 0,
+    "discount": 30,
     "currency": "USD",
     "images": [
       "/public/images/36/oak-effect/angson-vanity-1.jpg",
@@ -837,14 +800,9 @@
     ],
     "category": "bathroom",
     "colors": ["oak effect", "brown", "white"],
-    "sizes": ["37x21 3/4x27 5/8 inches"],
-    "material": "particleboard/melamine",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 4,
-      "count": 4
-    },
-    "notes": "Silicone is needed for installation, not included."
+    "sizes": ["vanity", "single-sink", "double-sink"],
+    "material": "wood",
+    "roomType": "bathroom"
   },
   {
     "id": "37",
@@ -852,7 +810,7 @@
     "description": "A mirror cabinet that charms with the warm look of wood combined with integrated lighting that brightens the space and helps you to carry out your daily routines. To be completed with RODRET wireless dimmer/power switch, sold separately.",
     "stock": 9,
     "price": 318.00,
-    "discount": 0,
+    "discount": 10,
     "currency": "USD",
     "images": [
       "/public/images/37/oak-effect/faxalven-cabinet-1.jpg",
@@ -867,19 +825,9 @@
     ],
     "category": "bathroom",
     "colors": ["oak effect", "brown", "white"],
-    "sizes": ["24x6x37 inches"],
+    "sizes": ["mirror-cabinet", "with-lighting", "wall-mounted"],
     "material": "wood/glass",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 5,
-      "count": 4
-    },
-    "accessories": {
-      "required": {
-        "name": "RODRET Wireless dimmer/power switch",
-        "price": 8.99
-      }
-    }
+    "roomType": "bathroom"
   },
   {
     "id": "38",
@@ -899,14 +847,9 @@
     ],
     "category": "bathroom",
     "colors": ["brass", "chrome"],
-    "sizes": ["standard"],
-    "material": "brass/metal",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 4,
-      "count": 22
-    },
-    "notes": "Last chance to buy"
+    "sizes": ["faucet", "wall-mounted", "deck-mounted"],
+    "material": "metal",
+    "roomType": "bathroom"
   }, 
   {
     "id": "39",
@@ -928,16 +871,10 @@
       "/public/images/39/oak/angson-vanity-3.jpg"
     ],
     "category": "bathroom",
-    "colors": ["brown oak effect/black marble effect", "white", "brown"],
-    "sizes": ["31x21 1/2x30 5/8 inches"],
-    "material": "wood/glass/marble",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 0,
-      "count": 0
-    },
-    "notes": "Silicone is needed for installation, not included.",
-    "warranty": "10 year limited warranty"
+    "colors": ["brown-oak", "white", "oak"],
+    "sizes": ["vanity", "marble-top", "glass-sink"],
+    "material": "wood/glass/ceramic",
+    "roomType": "bathroom"
   },
   {
     "id": "40",
@@ -945,7 +882,7 @@
     "description": "Ceramic sink are admired for their smooth, durability beauty. Made with quality materials and the best manufacturing techniques, we proudly offer a 10-year warranty on all our ceramic sinks.",
     "stock": 20,
     "price": 100.00,
-    "discount": 0,
+    "discount": 5,
     "currency": "USD",
     "images": [
       "/public/images/40/white/tornviken-sink-1.jpg",
@@ -954,14 +891,9 @@
     ],
     "category": "bathroom",
     "colors": ["white"],
-    "sizes": ["17 3/4 inches"],
+    "sizes": ["sink", "countertop", "undermount"],
     "material": "ceramic",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 5,
-      "count": 125
-    },
-    "warranty": "10 year limited warranty"
+    "roomType": "bathroom"
   },
   {
     "id": "41",
@@ -969,7 +901,7 @@
     "description": "This elegant and generously sized statement piece in dark grey glass brings an unexpected and refined look to your bathroom. Pairs beautifully with our wash-basin cabinets and TOLKEN countertops.",
     "stock": 12,
     "price": 190.00,
-    "discount": 0,
+    "discount": 10,
     "currency": "USD",
     "images": [
       "/public/images/41/glass-dark-gray/oxmyren-sink-1.jpg",
@@ -978,14 +910,9 @@
     ],
     "category": "bathroom",
     "colors": ["glass/dark gray"],
-    "sizes": ["22x13 3/4 inches"],
+    "sizes": ["sink", "rectangular", "oval"],
     "material": "glass",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 3.5,
-      "count": 31
-    },
-    "warranty": "10 year limited warranty"
+    "roomType": "bathroom"
   },
   {
     "id": "42",
@@ -993,7 +920,7 @@
     "description": "RAMEBO mirror has a gold-colored frame with beautiful ornaments in a vintage style. The ornaments can easily be removed and put back for variation – either way, the mirror is an eye-catcher in your home.",
     "stock": 15,
     "price": 219.99,
-    "discount": 0,
+    "discount": 25,
     "currency": "USD",
     "images": [
       "/public/images/42/gold/ramebo-mirror-1.jpg",
@@ -1002,15 +929,9 @@
     ],
     "category": "home decor",
     "colors": ["gold"],
-    "sizes": ["29 1/2x66 1/8 inches"],
+    "sizes": ["large", "ornate", "gold-frame"],
     "material": "metal/glass",
-    "roomType": "any",
-    "rating": {
-      "stars": 4,
-      "count": 52
-    },
-    "notes": "Last chance to buy",
-    "features": ["Removable ornaments for variation", "Vintage style design"]
+    "roomType": "multi-purpose"
   },
   {
     "id": "43",
@@ -1018,7 +939,7 @@
     "description": "By decorating with mirrors, you add depth to a room and give it more life. The round LINDBYN mirror has a soft expression and the black frame and neat design feel elegant.",
     "stock": 25,
     "price": 79.99,
-    "discount": 0,
+    "discount": 20,
     "currency": "USD",
     "images": [
       "/public/images/43/black/lindbyn-mirror-1.jpg",
@@ -1030,14 +951,9 @@
     ],
     "category": "home decor",
     "colors": ["black", "gold"],
-    "sizes": ["31 1/2 inches diameter"],
+    "sizes": ["round", "black-frame", "gold-frame"],
     "material": "metal/glass",
-    "roomType": "any",
-    "rating": {
-      "stars": 4,
-      "count": 836
-    },
-    "features": ["Round shape", "Elegant frame design"]
+    "roomType": "multi-purpose"
   }, 
   {
     "id": "44",
@@ -1045,7 +961,7 @@
     "description": "Colorful shower curtain featuring a fish pattern that brings a playful touch to your bathroom decor.",
     "stock": 50,
     "price": 13.99,
-    "discount": 0,
+    "discount": 15,
     "currency": "USD",
     "images": [
       "/public/images/44/white-blue-fish/vattensjon-curtain-1.jpg",
@@ -1054,14 +970,9 @@
     ],
     "category": "bathroom",
     "colors": ["white blue/fish"],
-    "sizes": ["71x71 inches"],
+    "sizes": ["shower", "standard", "extra-long"],
     "material": "polyester",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 5,
-      "count": 213
-    },
-    "features": ["Fun fish pattern", "Easy to clean"]
+    "roomType": "bathroom"
   },
   {
     "id": "45",
@@ -1069,7 +980,7 @@
     "description": "TÄNNFORSEN bathroom furniture expresses classic elegance with beveled edges that add a crafted look. This combo has 2 spacious drawers and room on the wash-basin for toothbrushes and soap.",
     "stock": 6,
     "price": 709.00,
-    "discount": 0,
+    "discount": 10,
     "currency": "USD",
     "images": [
       "/public/images/45/light-gray/tannforsen-vanity-1.jpg",
@@ -1081,14 +992,9 @@
     ],
     "category": "bathroom",
     "colors": ["light gray", "white"],
-    "sizes": ["49x21 3/4x34 5/8 inches"],
-    "material": "particleboard/melamine",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 4,
-      "count": 3
-    },
-    "notes": "Silicone is needed for installation, not included. Knobs and handles are sold separately."
+    "sizes": ["vanity", "single-sink", "double-sink"],
+    "material": "wood",
+    "roomType": "bathroom"
   }, 
   {
     "id": "46",
@@ -1108,14 +1014,9 @@
     ],
     "category": "bathroom",
     "colors": ["white", "light gray"],
-    "sizes": ["25 1/4x21 7/8x36 3/4 inches"],
-    "material": "particleboard/melamine",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 0,
-      "count": 0
-    },
-    "notes": "Last chance to buy. Silicone is needed for installation, not included. Knobs and handles are sold separately."
+    "sizes": ["vanity", "with-doors", "with-drawers"],
+    "material": "wood",
+    "roomType": "bathroom"
   }, 
   {
     "id": "47",
@@ -1123,7 +1024,7 @@
     "description": "In a shared bathroom, this solution offers your own private drawer – or two. The sink is paired with a roomy countertop where you can place things while getting ready for the day ahead.",
     "stock": 5,
     "price": 628.00,
-    "discount": 0,
+    "discount": 70,
     "currency": "USD",
     "images": [
       "/public/images/47/dark-gray/havback-vanity-1.jpg",
@@ -1138,15 +1039,9 @@
     ],
     "category": "bathroom",
     "colors": ["dark gray", "beige", "white"],
-    "countertopOptions": ["white marble effect/foliated board"],
-    "sizes": ["49x21 1/2x28 3/8 inches"],
-    "material": "particleboard/marble",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 0,
-      "count": 0
-    },
-    "notes": "Silicone is needed for installation, not included. Knobs and handles are sold separately."
+    "sizes": ["vanity", "single-sink", "double-sink"],
+    "material": "wood",
+    "roomType": "bathroom"
   },
   {
     "id": "48",
@@ -1154,7 +1049,7 @@
     "description": "Your own personal space in a shared space. A balanced solution with plenty of drawers for each and every need and 2 sinks that work in unison to ensure everyone gets their teeth brushed in time.",
     "stock": 3,
     "price": 1198.00,
-    "discount": 0,
+    "discount": 40,
     "currency": "USD",
     "images": [
       "/public/images/48/white/tannforsen-vanity-1.jpg",
@@ -1166,17 +1061,9 @@
     ],
     "category": "bathroom",
     "colors": ["white", "light gray"],
-    "countertopOptions": ["brown walnut effect/laminated board"],
-    "sizes": ["61x21 1/2x37 1/8 inches"],
-    "material": "particleboard/laminated board",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 0,
-      "count": 0
-    },
-    "warranty": "10 year limited warranty",
-    "notes": "Last chance to buy. Silicone is needed for installation, not included. Knobs and handles are sold separately.",
-    "features": ["Double sink design", "Ample drawer space"]
+    "sizes": ["double-vanity", "extra-wide"],
+    "material": "wood",
+    "roomType": "bathroom"
   },
   {
     "id": "49",
@@ -1193,15 +1080,9 @@
     ],
     "category": "bathroom",
     "colors": ["white"],
-    "sizes": ["17 3/4x13 3/4 inches"],
-    "material": "particleboard/melamine",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 0,
-      "count": 0
-    },
-    "notes": "Last chance to buy",
-    "features": ["Space-saving design", "Compact storage solution"]
+    "sizes": ["compact", "small", "space-saving"],
+    "material": "wood",
+    "roomType": "bathroom"
   }, 
   {
     "id": "50",
@@ -1217,27 +1098,10 @@
       "/public/images/50/white-oak/enhet-vanity-3.jpg"
     ],
     "category": "bathroom",
-    "colors": ["white/oak effect"],
-    "frontOptions": ["Drawer front oak effect"],
-    "sizes": ["24x18 3/4x24 inches"],
-    "material": "particleboard/foil",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 4,
-      "count": 8
-    },
-    "warranty": "10 year limited warranty",
-    "notes": "Knobs and handles sold separately. Requires RÄNNILEN water trap and strainer and TVÄLLEN sink (sold separately).",
-    "requiredAccessories": [
-      {
-        "name": "RÄNNILEN water trap and strainer",
-        "required": true
-      },
-      {
-        "name": "TVÄLLEN sink",
-        "required": true
-      }
-    ]
+    "colors": ["white-oak"],
+    "sizes": ["2-drawer"],
+    "material": "wood",
+    "roomType": "bathroom"
   },
   {
     "id": "51",
@@ -1257,14 +1121,9 @@
     ],
     "category": "storage",
     "colors": ["black-blue", "white"],
-    "sizes": ["47 1/4x14 3/4x35 3/8 inches"],
-    "material": "particleboard/oak veneer",
-    "roomType": "living room",
-    "rating": {
-      "stars": 5,
-      "count": 58
-    },
-    "features": ["Open shelves", "Closed storage", "Grooved doors"]
+    "sizes": ["sideboard"],
+    "material": "wood",
+    "roomType": "living room"
   }, 
   {
     "id": "52",
@@ -1287,15 +1146,9 @@
     ],
     "category": "storage",
     "colors": ["dark blue-green", "black", "light-beige"],
-    "sizes": ["40 1/8x39 3/4 inches"],
-    "material": "solid wood/veneer",
-    "roomType": "living room",
-    "rating": {
-      "stars": 5,
-      "count": 329
-    },
-    "notes": "Best seller",
-    "features": ["Traditional carpentry style", "Versatile storage solution"]
+    "sizes": ["cabinet"],
+    "material": "wood",
+    "roomType": "living room"
   },
   {
     "id": "53",
@@ -1315,15 +1168,9 @@
     ],
     "category": "storage",
     "colors": ["gray-green/light brown stained", "white"],
-    "sizes": ["106 1/4x77 1/2 inches"],
-    "material": "solid wood",
-    "roomType": "living room",
-    "rating": {
-      "stars": 4,
-      "count": 22
-    },
-    "notes": "New",
-    "features": ["Closed and open storage", "Solid wood construction"]
+    "sizes": ["combination", "with-doors", "with-drawers"],
+    "material": "wood",
+    "roomType": "living room"
   },
   {
     "id": "54",
@@ -1340,14 +1187,9 @@
     ],
     "category": "storage",
     "colors": ["gray-brown"],
-    "sizes": ["63 3/8x18 1/2x31 7/8 inches"],
-    "material": "solid wood",
-    "roomType": "living room",
-    "rating": {
-      "stars": 4,
-      "count": 21
-    },
-    "features": ["Display and storage space", "Solid construction"]
+    "sizes": ["sideboard"],
+    "material": "wood",
+    "roomType": "living room"
   },
   {
     "id": "55",
@@ -1366,16 +1208,32 @@
       "/public/images/55/black/hemnes-cabinet-3.jpg"
     ],
     "category": "storage",
-    "colors": ["white stain/light brown", "black"],
-    "sizes": ["35 3/8x77 1/2 inches"],
-    "material": "solid pine",
-    "roomType": "living room",
-    "rating": {
-      "stars": 5,
-      "count": 808
-    },
-    "notes": "Best seller",
-    "features": ["Glass doors", "3 drawers", "Sustainable material"]
+    "colors": ["white stain", "black"],
+    "sizes": [ "2-drawer","3-drawer"],
+    "material": "wood",
+    "roomType": "living room"
+  },
+  {
+    "id": "56",
+    "name":"Hauga Cabinet",
+    "description": "Traditional cabinet with storage behind glass doors, in a drawer and on open shelves. Great for dinnerware, books and various beloved items. Use on its own or with other furniture in the HAUGA series.",
+    "stock": 20,
+    "price": 299.00,
+    "discount": 10,
+    "currency": "USD",
+    "images": [
+      "/public/images/56/gray/hauga-cabinet-1.jpg",
+      "/public/images/56/gray/hauga-cabinet-2.jpg",
+      "/public/images/56/gray/hauga-cabinet-3.jpg",
+      "/public/images/56/white/hauga-cabinet-1.jpg",
+      "/public/images/56/white/hauga-cabinet-2.jpg",
+      "/public/images/56/white/hauga-cabinet-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["gray", "white"],
+    "sizes": ["cabinet"],
+    "material": "wood",
+    "roomType": "living room"
   },
   {
     "id": "57",
@@ -1395,15 +1253,9 @@
     ],
     "category": "storage",
     "colors": ["white", "gray"],
-    "sizes": ["55 1/8x17 7/8x33 inches"],
-    "material": "particleboard/foil",
-    "roomType": "living room",
-    "rating": {
-      "stars": 0,
-      "count": 0
-    },
-    "notes": "New",
-    "features": ["Glass doors", "Drawer storage", "Open shelves"]
+    "sizes": ["sideboard"],
+    "material": "wood",
+    "roomType": "living room"
   },
   {
     "id": "58",
@@ -1420,19 +1272,9 @@
     ],
     "category": "storage",
     "colors": ["white"],
-    "sizes": ["47 5/8x53 1/8 inches"],
-    "material": "particleboard/foil",
-    "roomType": "living room",
-    "rating": {
-      "stars": 5,
-      "count": 189
-    },
-    "features": [
-      "Bi-folding doors",
-      "Meets US Federal Stability Standard",
-      "Versatile storage solution"
-    ],
-    "safety": "Complies with US Federal Stability Standard"
+    "sizes": ["cabinet"],
+    "material": "wood",
+    "roomType": "living room"
   },
   {
     "id": "59",
@@ -1451,19 +1293,10 @@
       "/public/images/59/dark-oak/tonstad-storage-3.jpg"
     ],
     "category": "storage",
-    "colors": ["oak veneer/clear glass", "dark oak"],
-    "sizes": ["32 1/8x18 5/8x78 7/8 inches"],
-    "material": "wood veneer/glass",
-    "roomType": "living room",
-    "rating": {
-      "stars": 4,
-      "count": 5
-    },
-    "features": [
-      "Sliding glass doors",
-      "Combination of hidden and open storage",
-      "Classic brushed veneer design"
-    ]
+    "colors": ["oak-veneer", "dark-oak"],
+    "sizes": ["standard", "large"],
+    "material": "wood/glass",
+    "roomType": "living room"
   }, 
   {
     "id": "60",
@@ -1480,20 +1313,9 @@
     ],
     "category": "storage",
     "colors": ["white"],
-    "sizes": ["47 5/8x16 7/8x38 5/8 inches"],
-    "material": "particleboard/glass",
-    "roomType": "living room",
-    "rating": {
-      "stars": 4,
-      "count": 81
-    },
-    "notes": "Last chance to buy",
-    "features": [
-      "Sliding doors",
-      "Embossed and glass doors",
-      "Prepared for cable management",
-      "Display and hidden storage"
-    ]
+    "sizes": ["standard", "large"],
+    "material": "wood/glass",
+    "roomType": "living room"
   },
   {
     "id": "61",
@@ -1510,18 +1332,9 @@
     ],
     "category": "storage",
     "colors": ["black stained"],
-    "sizes": ["57 1/8x36 1/4 inches"],
-    "material": "solid wood",
-    "roomType": "living room",
-    "rating": {
-      "stars": 5,
-      "count": 125
-    },
-    "features": [
-      "Display and storage space",
-      "Solid wood construction",
-      "Elegant design"
-    ]
+    "sizes": ["sideboard"],
+    "material": "wood",
+    "roomType": "living room"
   }, 
   {
     "id": "62",
@@ -1538,24 +1351,10 @@
     ],
     "category": "rugs",
     "colors": ["multicolor"],
-    "sizes": ["5'3\"x7'9\""],
+    "sizes": ["small", "medium", "large"],
     "material": "polypropylene",
     "pileHeight": "low",
-    "roomType": "living room/dining room",
-    "rating": {
-      "stars": 5,
-      "count": 238
-    },
-    "features": [
-      "Faded oriental design",
-      "Durable and stain-resistant",
-      "Versatile placement"
-    ],
-    "recommendedAccessory": {
-      "name": "STOPP FILT Rug underlay with anti-slip",
-      "size": "5'5\"x7'9\"",
-      "price": "$0.33/sq feet"
-    }
+    "roomType": "living room"
   },
   {
     "id": "63",
@@ -1575,24 +1374,10 @@
     ],
     "category": "rugs",
     "colors": ["off-white", "gray"],
-    "sizes": ["6'7\"x9'10\""],
+    "sizes": ["small", "medium", "large"],
     "material": "polyester",
     "pileHeight": "low",
-    "roomType": "living room",
-    "rating": {
-      "stars": 5,
-      "count": 4612
-    },
-    "features": [
-      "Thick, soft-spun pile",
-      "Light sheen finish",
-      "Modular placement options"
-    ],
-    "recommendedAccessory": {
-      "name": "STOPP FILT Rug underlay with anti-slip",
-      "size": "6'3\"x9'2\"",
-      "price": "$0.31/sq feet"
-    }
+    "roomType": "living room"
   }, 
   {
     "id": "64",
@@ -1610,20 +1395,30 @@
       "/public/images/64/green-black/vagskylt-mat-2.jpg",
       "/public/images/64/green-black/vagskylt-mat-3.jpg"
     ],
-    "category": "door mats",
+    "category": "rugs",
     "colors": ["pink/orange", "green/black"],
-    "sizes": ["2'0\"x2'11\""],
-    "material": "rubber/polyester",
-    "roomType": "entryway",
-    "rating": {
-      "stars": 5,
-      "count": 33
-    },
-    "features": [
-      "Durable construction",
-      "Playful design",
-      "Non-slip backing"
-    ]
+    "sizes": ["2-doors", "3-doors"],
+    "material": "polypropylene",
+    "roomType": "entryway"
+  },
+  {
+    "id":"65",
+    "name": "Vimpelgras rug",
+    "description": "A warm and cheerful expression greets you as you walk through the door. The playful design welcomes you home.",
+    "stock": 50,
+    "price": 12.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/65/red-geometric/vimpelgras-rug-1.jpg",
+      "/public/images/65/red-geometric/vimpelgras-rug-2.jpg",
+      "/public/images/65/red-geometric/vimpelgras-rug-3.jpg"
+    ],
+    "category": "rugs",
+    "colors": ["red geometric"],
+    "sizes": ["small", "medium"],
+    "material": "polypropylene",
+    "roomType": "entryway"
   },
   {
     "id": "66",
@@ -1640,24 +1435,9 @@
     ],
     "category": "rugs",
     "colors": ["red-pink"],
-    "sizes": ["5'3\"x7'10\""],
+    "sizes": ["small", "medium", "large"],
     "material": "polypropylene",
-    "pileHeight": "low",
-    "roomType": "living room/dining room",
-    "rating": {
-      "stars": 4.5,
-      "count": 38
-    },
-    "features": [
-      "Faded oriental design",
-      "Durable and stain-resistant",
-      "Versatile placement"
-    ],
-    "recommendedAccessory": {
-      "name": "STOPP FILT Rug underlay with anti-slip",
-      "size": "5'5\"x7'9\"",
-      "price": "$0.33/sq feet"
-    }
+    "roomType": "living room/dining room"
   },
   {
     "id": "67",
@@ -1665,7 +1445,7 @@
     "description": "Mix and match like never before with the 2 SONHULT nest tables. Change the style and expression whenever you like by switching which legs go on which table top.",
     "stock": 20,
     "price": 69.99,
-    "discount": 0,
+    "discount": 10,
     "currency": "USD",
     "images": [
       "/public/images/67/gray-walnut/sonhult-tables-1.jpg",
@@ -1678,17 +1458,8 @@
     "category": "tables",
     "colors": ["gray/walnut effect", "yellow/birch"],
     "sizes": ["set of 2"],
-    "material": "particleboard/veneer",
-    "roomType": "living room",
-    "rating": {
-      "stars": 5,
-      "count": 43
-    },
-    "features": [
-      "Interchangeable legs and tops",
-      "Space-saving nesting design",
-      "Mix-and-match styling options"
-    ]
+    "material": "wood",
+    "roomType": "living room"
   },
   {
     "id": "68",
@@ -1696,7 +1467,7 @@
     "description": "HOLMERUD coffee table has a distinctive architectural shape that will draw attention. The design also offers practical, open storage spaces where you can display your things and keep them close at hand.",
     "stock": 15,
     "price": 79.99,
-    "discount": 0,
+    "discount": 5,
     "currency": "USD",
     "images": [
       "/public/images/68/oak-effect/holmerud-table-1.jpg",
@@ -1706,20 +1477,11 @@
       "/public/images/68/dark-oak/holmerud-table-2.jpg",
       "/public/images/68/dark-oak/holmerud-table-3.jpg"
     ],
-    "category": "tables",
+    "category": "table",
     "colors": ["oak effect", "dark oak"],
-    "sizes": ["35 3/8x21 5/8 inches"],
-    "material": "particleboard/veneer",
-    "roomType": "living room",
-    "rating": {
-      "stars": 5,
-      "count": 78
-    },
-    "features": [
-      "Architectural design",
-      "Open storage spaces",
-      "Distinctive shape"
-    ]
+    "sizes": ["standard"],
+    "material": "wood",
+    "roomType": "living room"
   }, 
   {
     "id": "69",
@@ -1742,26 +1504,8 @@
     "category": "tables",
     "colors": ["stained oak veneer/dark brown smart", "white"],
     "sizes": ["standard"],
-    "material": "wood veneer/smart technology",
-    "roomType": "living room",
-    "rating": {
-      "stars": 5,
-      "count": 83
-    },
-    "certifications": ["AHAM Certified"],
-    "features": [
-      "Air purifier function",
-      "Smart home compatible",
-      "Manual/auto modes",
-      "Multi-functional design"
-    ],
-    "requiredAccessories": [
-      {
-        "name": "STARKVIND Filter for gas cleaning",
-        "price": 26.00
-      }
-    ],
-    "notes": "Best seller, IKEA Family price valid until 2025-05-06"
+    "material": "wood",
+    "roomType": "living room"
   }, 
   {
     "id": "70",
@@ -1769,7 +1513,7 @@
     "description": "Carefully designed details in solid pine with a brushed surface adds a rustic feel and charm to your home. These nesting tables can be used in various ways – individually or pushed together to save space.",
     "stock": 12,
     "price": 189.99,
-    "discount": 0,
+    "discount": 20,
     "currency": "USD",
     "images": [
       "/public/images/70/gray-beige/havsta-tables-1.jpg",
@@ -1785,19 +1529,8 @@
     "category": "tables",
     "colors": ["gray-beige", "black", "white"],
     "sizes": ["set of 2"],
-    "material": "solid pine",
-    "roomType": "living room",
-    "rating": {
-      "stars": 5,
-      "count": 173
-    },
-    "notes": "Last chance to buy",
-    "features": [
-      "Solid pine construction",
-      "Brushed surface finish",
-      "Space-saving nesting design",
-      "Rustic charm"
-    ]
+    "material": "wood",
+    "roomType": "living room"
   },
   {
     "id": "71",
@@ -1818,20 +1551,8 @@
     "category": "kitchen",
     "colors": ["brass color", "black"],
     "sizes": ["standard"],
-    "material": "brass/metal",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 4,
-      "count": 194
-    },
-    "warranty": "10 year limited warranty",
-    "features": [
-      "High spout design",
-      "Durable construction",
-      "Rigorously tested",
-      "Easy-to-clean"
-    ],
-    "notes": "Best seller"
+    "material": "metal",
+    "roomType": "kitchen"
   },
   {
     "id": "72",
@@ -1851,19 +1572,9 @@
     ],
     "category": "kitchen",
     "colors": ["black quartz composite", "gray"],
-    "sizes": ["22x18 1/8 inches"],
-    "material": "quartz composite",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 4,
-      "count": 119
-    },
-    "warranty": "25 year limited warranty",
-    "features": [
-      "Unique natural variations",
-      "Heat and stain resistant",
-      "Durable quartz surface"
-    ]
+    "sizes": ["standard"],
+    "material": "stoneware",
+    "roomType": "kitchen"
   },
   {
     "id": "73",
@@ -1883,28 +1594,15 @@
     ],
     "category": "kitchen",
     "colors": ["sinarp-brown", "white"],
-    "frontOptions": ["Sinarp brown"],
-    "sizes": ["30x15x40 inches"],
-    "material": "particleboard/foil",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 5,
-      "count": 3
-    },
-    "warranty": "25 year limited warranty",
-    "notes": "New. Suspension rail sold separately. To be finished with legs and plinth, sold separately.",
-    "features": [
-      "SEKTION kitchen system",
-      "2 doors and 2 drawers",
-      "Customizable design",
-      "Timeless aesthetic"
-    ]
+    "sizes": ["standard"],
+    "material": "wood",
+    "roomType": "kitchen"
   },   
   {
     "id": "74",
     "name": "TORNVIKEN Kitchen island",
     "description": "The TORNVIKEN series is ideal when you need more workspace, more storage – more kitchen. Combine a kitchen island with shelves to create a rustic kitchen where you can cook together. Everyone can fit!",
-    "stock": null,
+    "stock": 10,
     "price": 399.99,
     "discount": 0,
     "currency": "USD",
@@ -1918,28 +1616,15 @@
     ],
     "category": "kitchen",
     "colors": ["off-white/oak", "gray"],
-    "frontOptions": [],
-    "sizes": ["49 5/8x30 3/8 inches"],
-    "material": "solid wood and fiberboard",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 4.5,
-      "count": 780
-    },
-    "warranty": "10 year limited warranty",
-    "notes": "Best seller. Assembly required. Delivery and in-store stock availability may vary.",
-    "features": [
-      "Spacious countertop",
-      "2 open storage shelves",
-      "Rustic design",
-      "Solid oak top"
-    ]
+    "sizes": ["standard"],
+    "material": "wood",
+    "roomType": "kitchen"
   }, 
   {
     "id": "75",
     "name": "VADHOLMA Kitchen island",
     "description": "Gather around the kitchen island! VADHOLMA is the home’s given meeting point and perfect when you cook together. Plenty of storage – and the generous butcher block gives you a robust workspace.",
-    "stock": null,
+    "stock": 7,
     "price": 499.99,
     "discount": 0,
     "currency": "USD",
@@ -1950,22 +1635,9 @@
     ],
     "category": "kitchen",
     "colors": ["black/oak"],
-    "frontOptions": [],
-    "sizes": ["49 5/8x31 1/8x35 3/8 inches"],
-    "material": "solid oak and powder-coated steel",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 4.6,
-      "count": 265
-    },
-    "warranty": "10 year limited warranty",
-    "notes": "Butcher block top. Assembly required. Delivery and in-store availability may vary.",
-    "features": [
-      "Durable butcher block top",
-      "2 slatted lower shelves",
-      "Robust steel frame",
-      "Spacious work surface"
-    ]
+    "sizes": ["small", "medium"],
+    "material": "metal",
+    "roomType": "kitchen"
   }, 
   {
     "id": "76",
@@ -1976,35 +1648,18 @@
     "discount": 0,
     "currency": "USD",
     "images": [
-      "/public/images/74/antique-stain/nordviken-table-1.jpg",
-      "/public/images/74/antique-stain/nordviken-table-2.jpg",
-      "/public/images/74/antique-stain/nordviken-table-3.jpg",
-      "/public/images/74/black/nordviken-table-1.jpg",
-      "/public/images/74/black/nordviken-table-2.jpg",
-      "/public/images/74/black/nordviken-table-3.jpg"
+      "/public/images/76/antique-stain/nordviken-table-1.jpg",
+      "/public/images/76/antique-stain/nordviken-table-2.jpg",
+      "/public/images/76/antique-stain/nordviken-table-3.jpg",
+      "/public/images/76/black/nordviken-table-1.jpg",
+      "/public/images/76/black/nordviken-table-2.jpg",
+      "/public/images/76/black/nordviken-table-3.jpg"
     ],
     "category": "dining tables",
     "colors": ["antique stain", "black"],
-    "sizes": ["82 5/8-113 3/4x41 3/8 inches (extendable)"],
-    "material": "solid wood",
-    "roomType": "dining room",
-    "rating": {
-      "stars": 5,
-      "count": 143
-    },
-    "features": [
-      "Extendable design",
-      "Sturdy construction",
-      "Smooth extension mechanism",
-      "Traditional style"
-    ],
-    "compatibleChairs": [
-      "NORDVIKEN",
-      "SKOGSTA",
-      "BERGMUND", 
-      "INGOLF"
-    ],
-    "notes": "Chairs sold separately"
+    "sizes": ["standard", "extendable"],
+    "material": "wood",
+    "roomType": "dining room"
   },
   {
     "id": "77",
@@ -2015,28 +1670,18 @@
     "discount": 0,
     "currency": "USD",
     "images": [
-      "/public/images/75/black-stained/hagernas-set-1.jpg",
-      "/public/images/75/black-stained/hagernas-set-2.jpg",
-      "/public/images/75/black-stained/hagernas-set-3.jpg",
-      "/public/images/75/antique-stained/hagernas-set-1.jpg",
-      "/public/images/75/antique-stained/hagernas-set-2.jpg",
-      "/public/images/75/antique-stained/hagernas-set-3.jpg"
+      "/public/images/77/black-stained/hagernas-set-1.jpg",
+      "/public/images/77/black-stained/hagernas-set-2.jpg",
+      "/public/images/77/black-stained/hagernas-set-3.jpg",
+      "/public/images/77/antique-stained/hagernas-set-1.jpg",
+      "/public/images/77/antique-stained/hagernas-set-2.jpg",
+      "/public/images/77/antique-stained/hagernas-set-3.jpg"
     ],
     "category": "bar furniture",
     "colors": ["black stained pine", "antique stained pine"],
     "sizes": ["standard"],
-    "material": "pine",
-    "roomType": "kitchen/dining room",
-    "rating": {
-      "stars": 5,
-      "count": 7
-    },
-    "notes": "New",
-    "features": [
-      "Includes 4 bar stools",
-      "Versatile design",
-      "Natural wood finish"
-    ]
+    "material": "wood",
+    "roomType": "dining room"
   },
   {
     "id": "78",
@@ -2047,28 +1692,18 @@
     "discount": 0,
     "currency": "USD",
     "images": [
-      "/public/images/76/aspen-white/ekenabben-shelf-1.jpg",
-      "/public/images/76/aspen-white/ekenabben-shelf-2.jpg",
-      "/public/images/76/aspen-white/ekenabben-shelf-3.jpg",
-      "/public/images/76/aspen-blue/ekenabben-shelf-1.jpg",
-      "/public/images/76/aspen-blue/ekenabben-shelf-2.jpg",
-      "/public/images/76/aspen-blue/ekenabben-shelf-3.jpg"
+      "/public/images/78/aspen-white/ekenabben-shelf-1.jpg",
+      "/public/images/78/aspen-white/ekenabben-shelf-2.jpg",
+      "/public/images/78/aspen-white/ekenabben-shelf-3.jpg",
+      "/public/images/78/aspen-blue/ekenabben-shelf-1.jpg",
+      "/public/images/78/aspen-blue/ekenabben-shelf-2.jpg",
+      "/public/images/78/aspen-blue/ekenabben-shelf-3.jpg"
     ],
     "category": "shelving",
     "colors": ["aspen/white", "aspen/blue"],
-    "sizes": ["27 1/2x13 3/8x60 5/8 inches"],
-    "material": "aspen/particleboard",
-    "roomType": "multi-purpose",
-    "rating": {
-      "stars": 5,
-      "count": 535
-    },
-    "features": [
-      "Open storage design",
-      "Customizable with boxes",
-      "Simple and flexible",
-      "Space-saving"
-    ]
+    "sizes": ["standard"],
+    "material": "plastic/wood",
+    "roomType": "multi-purpose"
   },
   {
     "id": "79",
@@ -2079,30 +1714,18 @@
     "discount": 0,
     "currency": "USD",
     "images": [
-      "/public/images/78/white-stain/hemnes-chest-1.jpg",
-      "/public/images/78/white-stain/hemnes-chest-2.jpg",
-      "/public/images/78/white-stain/hemnes-chest-3.jpg",
-      "/public/images/78/black/hemnes-chest-1.jpg",
-      "/public/images/78/black/hemnes-chest-2.jpg",
-      "/public/images/78/black/hemnes-chest-3.jpg"
+      "/public/images/79/white-stain/hemnes-chest-1.jpg",
+      "/public/images/79/white-stain/hemnes-chest-2.jpg",
+      "/public/images/79/white-stain/hemnes-chest-3.jpg",
+      "/public/images/79/black/hemnes-chest-1.jpg",
+      "/public/images/79/black/hemnes-chest-2.jpg",
+      "/public/images/79/black/hemnes-chest-3.jpg"
     ],
     "category": "storage",
     "colors": ["white stain", "black"],
-    "sizes": ["21 1/4x26 inches"],
-    "material": "solid wood",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 5,
-      "count": 1253
-    },
-    "notes": "Best seller. Requires wall attachment.",
-    "features": [
-      "2 smooth-running drawers",
-      "Classic design",
-      "Solid wood construction",
-      "Space-saving size"
-    ],
-    "safetyNote": "Must be attached to wall"
+    "sizes": ["2-drawer"],
+    "material": "wood",
+    "roomType": "bedroom"
   }, 
   {
     "id": "80",
@@ -2117,24 +1740,11 @@
       "/public/images/80/orange-glass/varmblixt-lamp-2.jpg",
       "/public/images/80/orange-glass/varmblixt-lamp-3.jpg"
     ],
-    "category": "lighting",
+    "category": "home decor",
     "colors": ["orange glass"],
-    "sizes": ["12 inches diameter"],
+    "sizes": ["standard"],
     "material": "glass/metal",
-    "roomType": "any",
-    "lightType": "LED",
-    "mountingOptions": ["table", "wall"],
-    "rating": {
-      "stars": 4,
-      "count": 376
-    },
-    "notes": "Best seller",
-    "features": [
-      "Dual table/wall mounting",
-      "Warm orange glow",
-      "Donut-shaped design",
-      "Energy-efficient LED"
-    ]
+    "roomType": "multi-purpose"
   },
   {
     "id": "81",
@@ -2151,19 +1761,9 @@
     ],
     "category": "home decor",
     "colors": ["blue"],
-    "sizes": ["9 1/2 inches"],
+    "sizes": ["standard"],
     "material": "glass",
-    "roomType": "any",
-    "rating": {
-      "stars": 4,
-      "count": 23
-    },
-    "features": [
-      "Organic fluid shape",
-      "Inspired by Swedish lakes",
-      "Handmade look",
-      "Versatile decorative piece"
-    ]
+    "roomType": "multi-purpose"
   },
   {
     "id": "82",
@@ -2183,28 +1783,9 @@
     ],
     "category": "home decor",
     "colors": ["black", "white"],
-    "sizes": ["4 inches"],
+    "sizes": ["standard"],
     "material": "plastic/metal",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 5,
-      "count": 278
-    },
-    "notes": "Best seller. Batteries sold separately.",
-    "features": [
-      "Quiet quartz movement",
-      "Classic clean design",
-      "Loud alarm function",
-      "Battery operated"
-    ],
-    "requiredAccessories": [
-      {
-        "name": "LADDA Rechargeable battery",
-        "quantity": "2xAA",
-        "price": "$7.99/4 pack"
-      }
-    ],
-    "batteryInfo": "Works with alkaline or rechargeable batteries (2xAA)"
+    "roomType": "bedroom"
   },
   {
     "id": "83",
@@ -2221,20 +1802,9 @@
     ],
     "category": "furniture",
     "colors": ["white"],
-    "sizes": ["39 3/8x19 5/8 inches"],
-    "material": "solid wood",
-    "roomType": "bedroom",
-    "rating": {
-      "stars": 5,
-      "count": 415
-    },
-    "notes": "Best seller",
-    "features": [
-      "Includes mirror",
-      "Dual-purpose design",
-      "Soft romantic silhouette",
-      "Ample workspace"
-    ]
+    "sizes": ["standard"],
+    "material": "wood",
+    "roomType": "bedroom"
   },
   {
     "id": "84",
@@ -2254,22 +1824,9 @@
     ],
     "category": "media furniture",
     "colors": ["white stain", "black"],
-    "sizes": ["96 1/2x77 1/2 inches"],
-    "material": "solid pine",
-    "roomType": "living room",
-    "rating": {
-      "stars": 5,
-      "count": 9
-    },
-    "features": [
-      "Sustainable solid pine construction",
-      "Versatile media storage",
-      "Matches HEMNES series",
-      "Natural wood beauty"
-    ],
-    "financingOptions": {
-      "IKEA Projekt Card": "$108/mo for 6 months"
-    }
+    "sizes": ["standard"],
+    "material": "wood",
+    "roomType": "living room"
   },
   {
     "id": "85",
@@ -2287,19 +1844,8 @@
     "category": "home decor",
     "colors": ["solid wood/black"],
     "sizes": ["set of 3"],
-    "material": "solid wood",
-    "designer": "Inma Bermudez",
-    "roomType": "any",
-    "rating": {
-      "stars": 5,
-      "count": 106
-    },
-    "features": [
-      "Interchangeable legs",
-      "Playful design",
-      "Creative combinations",
-      "Handcrafted look"
-    ]
+    "material": "wood",
+    "roomType": "multi-purpose"
   },
   {
     "id": "86",
@@ -2318,18 +1864,7 @@
     "colors": ["green"],
     "sizes": ["set of 3"],
     "material": "ceramic",
-    "roomType": "any",
-    "rating": {
-      "stars": 5,
-      "count": 880
-    },
-    "notes": "Best seller",
-    "features": [
-      "Low-maintenance decor",
-      "Realistic cactus design",
-      "Ceramic construction",
-      "No watering needed"
-    ]
+    "roomType": "multi-purpose"
   }, 
   {
     "id": "87",
@@ -2340,26 +1875,15 @@
     "discount": 0,
     "currency": "USD",
     "images": [
-      "/public/images/86/clear/silvtjarn-container-1.jpg",
-      "/public/images/86/clear/silvtjarn-container-2.jpg",
-      "/public/images/86/clear/silvtjarn-container-3.jpg"
+      "/public/images/87/clear/silvtjarn-container-1.jpg",
+      "/public/images/87/clear/silvtjarn-container-2.jpg",
+      "/public/images/87/clear/silvtjarn-container-3.jpg"
     ],
     "category": "bathroom accessories",
     "colors": ["clear"],
     "sizes": ["one size"],
     "material": "glass",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 5,
-      "count": 90
-    },
-    "notes": "",
-    "features": [
-      "Decorative design",
-      "Multi-purpose container",
-      "Lid doubles as soap dish",
-      "Glass construction"
-    ]
+    "roomType": "bathroom"
   },
   {
     "id": "88",
@@ -2376,22 +1900,9 @@
     ],
     "category": "plants",
     "colors": ["cherry-blossoms"],
-    "sizes": ["7½ inches"],
-    "material": "recycled plastic",
-    "usage": "indoor/outdoor",
-    "rating": {
-      "stars": 5,
-      "count": 5
-    },
-    "notes": "Last chance to buy",
-    "features": [
-      "Lifelike cherry blossom design",
-      ">50% recycled materials",
-      "Modular assembly",
-      "Year-round beauty",
-      "Low maintenance"
-    ],
-    "assembly": "Comes in parts for easy transport"
+    "sizes": ["one size"],
+    "material": "plastic",
+    "roomType": "multi-purpose"
   },
   {
     "id": "89",
@@ -2406,22 +1917,11 @@
       "/public/images/89/multi/dajlien-exercise-set-2.jpg",
       "/public/images/89/multi/dajlien-exercise-set-3.jpg"
     ],
-    "category": "fitness equipment",
+    "category": "home decor",
     "colors": ["green", "pink"],
     "sizes": ["4-piece set"],
-    "material": "mixed",
-    "roomType": "any",
-    "rating": {
-      "stars": 0,
-      "count": 0
-    },
-    "notes": "Last chance to buy",
-    "features": [
-      "Includes yoga strap",
-      "Knee cushions for support",
-      "Massage ball for recovery",
-      "Convenient storage bag"
-    ]
+    "material": "plastic",
+    "roomType": "multi-purpose"
   },
   {
     "id": "90",
@@ -2439,19 +1939,8 @@
     "category": "bathroom accessories",
     "colors": ["gray"],
     "sizes": ["3-piece set"],
-    "material": "glass and chrome",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 4.5,
-      "count": 5
-    },
-    "notes": "New",
-    "features": [
-      "Chrome-plated details",
-      "3-piece set",
-      "Soap dispenser included",
-      "Tray for organization"
-    ]
+    "material": "glass",
+    "roomType": "bathroom"
   },
   {
     "id": "91",
@@ -2470,18 +1959,7 @@
     "colors": ["brown"],
     "sizes": ["one size"],
     "material": "glass",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 4,
-      "count": 38
-    },
-    "notes": "New",
-    "features": [
-      "Traditional rustic style",
-      "Easy to refill",
-      "Suitable for dish soap or sanitizer",
-      "Pump dispenser design"
-    ]
+    "roomType": "kitchen"
   },  
   {
     "id": "92",
@@ -2498,20 +1976,9 @@
     ],
     "category": "kitchen accessories",
     "colors": ["brown"],
-    "sizes": ["4 inch", "set of 2"],
+    "sizes": ["set of 2"],
     "material": "stoneware",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 3,
-      "count": 2
-    },
-    "notes": "New",
-    "features": [
-      "Set of 2 shakers",
-      "Rustic stoneware design",
-      "Glazed surface finish",
-      "Matches GLADELIG series"
-    ]
+    "roomType": "kitchen"
   },
   {
     "id": "93",
@@ -2528,20 +1995,9 @@
     ],
     "category": "kitchen accessories",
     "colors": ["blue"],
-    "sizes": ["7 ½ inch"],
+    "sizes": ["set of 2"],
     "material": "stoneware",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 4,
-      "count": 6
-    },
-    "notes": "New",
-    "features": [
-      "Oil/vinegar dispenser",
-      "Rustic stoneware design",
-      "Glazed surface finish",
-      "Matches GLADELIG series"
-    ]
+    "roomType": "kitchen"
   },
   {
     "id": "94",
@@ -2558,20 +2014,9 @@
     ],
     "category": "kitchen accessories",
     "colors": ["brown"],
-    "sizes": ["7 ½ inch", "2 pack"],
+    "sizes": ["2 pack"],
     "material": "glass",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 5,
-      "count": 11
-    },
-    "notes": "",
-    "features": [
-      "Trendy restaurant feel",
-      "Sculptural design",
-      "Pack of 2 mills",
-      "Visible storage solution"
-    ]
+    "roomType": "kitchen"
   },
   {
     "id": "95",
@@ -2589,19 +2034,8 @@
     "category": "kitchen accessories",
     "colors": ["stainless steel"],
     "sizes": ["set of 2"],
-    "material": "stainless steel",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 4.5,
-      "count": 11
-    },
-    "notes": "",
-    "features": [
-      "Labeled with S and P",
-      "Clean line design",
-      "Stainless steel material",
-      "Set of 2 shakers"
-    ]
+    "material": "metal",
+    "roomType": "kitchen"
   },
   {
     "id": "96",
@@ -2619,19 +2053,8 @@
     "category": "bathroom accessories",
     "colors": ["chrome"],
     "sizes": ["one size"],
-    "material": "glass and chrome",
-    "roomType": "bathroom",
-    "rating": {
-      "stars": 4.5,
-      "count": 274
-    },
-    "notes": "Last chance to buy",
-    "features": [
-      "Hidden screws",
-      "Chrome finish",
-      "Vintage-inspired design",
-      "Harmonious bathroom look"
-    ]
+    "material": "glass",
+    "roomType": "bathroom"
   },
   {
     "id": "97",
@@ -2649,19 +2072,8 @@
     "category": "kitchen accessories",
     "colors": ["natural"],
     "sizes": ["one size"],
-    "material": "agave leaf fiber and wood",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 4,
-      "count": 116
-    },
-    "notes": "",
-    "features": [
-      "Made from agave leaf fiber",
-      "Sustainable material",
-      "Replacement brush head",
-      "Wooden handle"
-    ]
+    "material": "wood",
+    "roomType": "kitchen"
   },
   {
     "id": "98",
@@ -2676,22 +2088,11 @@
       "/public/images/98/clear/ikea-365-carafe-2.jpg",
       "/public/images/98/clear/ikea-365-carafe-3.jpg"
     ],
-    "category": "drinkware",
+    "category": "multi-purpose",
     "colors": ["clear"],
     "sizes": ["34 oz"],
-    "material": "glass and cork",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 4.5,
-      "count": 2199
-    },
-    "notes": "Best seller",
-    "features": [
-      "Cork stopper",
-      "Tempered glass",
-      "Holds hot and cold beverages",
-      "Simple everyday design"
-    ]
+    "material": "glass/plastic",
+    "roomType": "kitchen"
   },
   {
     "id": "99",
@@ -2707,20 +2108,10 @@
       "/public/images/99/gray-green/svampig-sponge-2.jpg",
       "/public/images/99/gray-green/svampig-sponge-3.jpg"
     ],
-    "category": "cleaning",
+    "category": "kitchen",
     "colors": ["gray-green"],
-    "material": "cellulose",
-    "rating": {
-      "stars": 5,
-      "count": 64
-    },
-    "notes": "New",
-    "features": [
-      "Dual-textured (soft and coarse sides)",
-      "Economical 3-pack",
-      "Effective for dishwashing",
-      "Basic cleaning essential"
-    ]
+    "sizes": ["3 pack"],
+    "material": "plastic"
   }, 
   {
     "id": "100",
@@ -2737,18 +2128,8 @@
     ],
     "category": "kitchenware",
     "colors": ["black"],
-    "sizes": ["5 inches"],
-    "material": "ceramic/plastic",
-    "roomType": "kitchen",
-    "rating": {
-      "stars": 5,
-      "count": 17
-    },
-    "features": [
-      "Adjustable ceramic grinder",
-      "Fresh-ground spices",
-      "Durable construction",
-      "Easy to refill"
-    ]
+    "sizes": ["set of 2"],
+    "material": "plastic",
+    "roomType": "kitchen"
   }
 ]
