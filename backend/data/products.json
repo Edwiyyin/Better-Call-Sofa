@@ -1299,7 +1299,7 @@
   },
   {
     "id": "53",
-    "name": "HEMNES Storage combination with doors/drawers",
+    "name": "Storage combination with doors/drawers",
     "description": "This pair offers plenty of closed and open storage. Both with a grey-green color that brings nature's harmonious color scale into your room – and stained shelves which highlight the beauty of the solid wood.",
     "stock": 8,
     "price": 1007.00,
@@ -1966,9 +1966,789 @@
       "Robust steel frame",
       "Spacious work surface"
     ]
+  }, 
+  {
+    "id": "76",
+    "name": "NORDVIKEN Extendable table",
+    "description": "This spacious, wood dining table has a traditional feel and will soon become a natural gathering place in your home. The sturdy construction and smooth extension mechanism make it a long-lasting favorite.",
+    "stock": 10,
+    "price": 699.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/74/antique-stain/nordviken-table-1.jpg",
+      "/public/images/74/antique-stain/nordviken-table-2.jpg",
+      "/public/images/74/antique-stain/nordviken-table-3.jpg",
+      "/public/images/74/black/nordviken-table-1.jpg",
+      "/public/images/74/black/nordviken-table-2.jpg",
+      "/public/images/74/black/nordviken-table-3.jpg"
+    ],
+    "category": "dining tables",
+    "colors": ["antique stain", "black"],
+    "sizes": ["82 5/8-113 3/4x41 3/8 inches (extendable)"],
+    "material": "solid wood",
+    "roomType": "dining room",
+    "rating": {
+      "stars": 5,
+      "count": 143
+    },
+    "features": [
+      "Extendable design",
+      "Sturdy construction",
+      "Smooth extension mechanism",
+      "Traditional style"
+    ],
+    "compatibleChairs": [
+      "NORDVIKEN",
+      "SKOGSTA",
+      "BERGMUND", 
+      "INGOLF"
+    ],
+    "notes": "Chairs sold separately"
+  },
+  {
+    "id": "77",
+    "name": "HÄGERNÄS Bar table and 4 bar stools",
+    "description": "The look and finish of this bar table work well both in kitchens and dining rooms.",
+    "stock": 12,
+    "price": 249.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/75/black-stained/hagernas-set-1.jpg",
+      "/public/images/75/black-stained/hagernas-set-2.jpg",
+      "/public/images/75/black-stained/hagernas-set-3.jpg",
+      "/public/images/75/antique-stained/hagernas-set-1.jpg",
+      "/public/images/75/antique-stained/hagernas-set-2.jpg",
+      "/public/images/75/antique-stained/hagernas-set-3.jpg"
+    ],
+    "category": "bar furniture",
+    "colors": ["black stained pine", "antique stained pine"],
+    "sizes": ["standard"],
+    "material": "pine",
+    "roomType": "kitchen/dining room",
+    "rating": {
+      "stars": 5,
+      "count": 7
+    },
+    "notes": "New",
+    "features": [
+      "Includes 4 bar stools",
+      "Versatile design",
+      "Natural wood finish"
+    ]
+  },
+  {
+    "id": "78",
+    "name": "EKENABBEN Open shelf unit",
+    "description": "Flexible and easy-to-place. EKENABBEN shelving unit has a simple design with open storage that helps you keep track of your things. Or you can customize it with boxes that suit your storage needs.",
+    "stock": 25,
+    "price": 69.00,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/76/aspen-white/ekenabben-shelf-1.jpg",
+      "/public/images/76/aspen-white/ekenabben-shelf-2.jpg",
+      "/public/images/76/aspen-white/ekenabben-shelf-3.jpg",
+      "/public/images/76/aspen-blue/ekenabben-shelf-1.jpg",
+      "/public/images/76/aspen-blue/ekenabben-shelf-2.jpg",
+      "/public/images/76/aspen-blue/ekenabben-shelf-3.jpg"
+    ],
+    "category": "shelving",
+    "colors": ["aspen/white", "aspen/blue"],
+    "sizes": ["27 1/2x13 3/8x60 5/8 inches"],
+    "material": "aspen/particleboard",
+    "roomType": "multi-purpose",
+    "rating": {
+      "stars": 5,
+      "count": 535
+    },
+    "features": [
+      "Open storage design",
+      "Customizable with boxes",
+      "Simple and flexible",
+      "Space-saving"
+    ]
+  },
+  {
+    "id": "79",
+    "name": "HEMNES 2-drawer chest",
+    "description": "A classic smaller-sized chest of drawers in solid wood, with a traditional look and modern function. Quiet, smooth-running drawers makes it easy to organize your things. Psst! Please attach to the wall.",
+    "stock": 22,
+    "price": 149.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/78/white-stain/hemnes-chest-1.jpg",
+      "/public/images/78/white-stain/hemnes-chest-2.jpg",
+      "/public/images/78/white-stain/hemnes-chest-3.jpg",
+      "/public/images/78/black/hemnes-chest-1.jpg",
+      "/public/images/78/black/hemnes-chest-2.jpg",
+      "/public/images/78/black/hemnes-chest-3.jpg"
+    ],
+    "category": "storage",
+    "colors": ["white stain", "black"],
+    "sizes": ["21 1/4x26 inches"],
+    "material": "solid wood",
+    "roomType": "bedroom",
+    "rating": {
+      "stars": 5,
+      "count": 1253
+    },
+    "notes": "Best seller. Requires wall attachment.",
+    "features": [
+      "2 smooth-running drawers",
+      "Classic design",
+      "Solid wood construction",
+      "Space-saving size"
+    ],
+    "safetyNote": "Must be attached to wall"
+  }, 
+  {
+    "id": "80",
+    "name": "VARMBLIXT LED table/wall lamp",
+    "description": "When the light passes through the lamp's orange glass, the soft donut-like shape shines with a warm glow. A magical sight that's an eye-catcher, regardless if it's on a table or hanging on a wall.",
+    "stock": 30,
+    "price": 69.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/80/orange-glass/varmblixt-lamp-1.jpg",
+      "/public/images/80/orange-glass/varmblixt-lamp-2.jpg",
+      "/public/images/80/orange-glass/varmblixt-lamp-3.jpg"
+    ],
+    "category": "lighting",
+    "colors": ["orange glass"],
+    "sizes": ["12 inches diameter"],
+    "material": "glass/metal",
+    "roomType": "any",
+    "lightType": "LED",
+    "mountingOptions": ["table", "wall"],
+    "rating": {
+      "stars": 4,
+      "count": 376
+    },
+    "notes": "Best seller",
+    "features": [
+      "Dual table/wall mounting",
+      "Warm orange glow",
+      "Donut-shaped design",
+      "Energy-efficient LED"
+    ]
+  },
+  {
+    "id": "81",
+    "name": "HÄCKPOPPEL Decorative bowl",
+    "description": "Organic shapes can give a soothing sense of bringing nature into the home. The HÄCKPOPPEL glass bowl is inspired by Swedish lakes and has a fluid shape that mimics gentle ripples on the surface of water.",
+    "stock": 35,
+    "price": 14.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/81/blue/hackpoppel-bowl-1.jpg",
+      "/public/images/81/blue/hackpoppel-bowl-2.jpg",
+      "/public/images/81/blue/hackpoppel-bowl-3.jpg"
+    ],
+    "category": "home decor",
+    "colors": ["blue"],
+    "sizes": ["9 1/2 inches"],
+    "material": "glass",
+    "roomType": "any",
+    "rating": {
+      "stars": 4,
+      "count": 23
+    },
+    "features": [
+      "Organic fluid shape",
+      "Inspired by Swedish lakes",
+      "Handmade look",
+      "Versatile decorative piece"
+    ]
+  },
+  {
+    "id": "82",
+    "name": "DEKAD Alarm clock",
+    "description": "A modern quartz movement is hidden in this alarm clock with a clean and classic design. So you avoid being disturbed by a ticking sound as time passes, but you'll surely hear it when it's time to wake up.",
+    "stock": 50,
+    "price": 9.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/82/black/dekad-clock-1.jpg",
+      "/public/images/82/black/dekad-clock-2.jpg",
+      "/public/images/82/black/dekad-clock-3.jpg",
+      "/public/images/82/white/dekad-clock-1.jpg",
+      "/public/images/82/white/dekad-clock-2.jpg",
+      "/public/images/82/white/dekad-clock-3.jpg"
+    ],
+    "category": "home decor",
+    "colors": ["black", "white"],
+    "sizes": ["4 inches"],
+    "material": "plastic/metal",
+    "roomType": "bedroom",
+    "rating": {
+      "stars": 5,
+      "count": 278
+    },
+    "notes": "Best seller. Batteries sold separately.",
+    "features": [
+      "Quiet quartz movement",
+      "Classic clean design",
+      "Loud alarm function",
+      "Battery operated"
+    ],
+    "requiredAccessories": [
+      {
+        "name": "LADDA Rechargeable battery",
+        "quantity": "2xAA",
+        "price": "$7.99/4 pack"
+      }
+    ],
+    "batteryInfo": "Works with alkaline or rechargeable batteries (2xAA)"
+  },
+  {
+    "id": "83",
+    "name": "HEMNES Dressing table with mirror",
+    "description": "Dressing table or desk? You don't need to decide – there's enough space for both makeup, pens and a laptop. The soft shapes create a romantic silhouette that becomes the focal point in the room.",
+    "stock": 15,
+    "price": 249.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/83/white/hemnes-dressing-table-1.jpg",
+      "/public/images/83/white/hemnes-dressing-table-2.jpg",
+      "/public/images/83/white/hemnes-dressing-table-3.jpg"
+    ],
+    "category": "furniture",
+    "colors": ["white"],
+    "sizes": ["39 3/8x19 5/8 inches"],
+    "material": "solid wood",
+    "roomType": "bedroom",
+    "rating": {
+      "stars": 5,
+      "count": 415
+    },
+    "notes": "Best seller",
+    "features": [
+      "Includes mirror",
+      "Dual-purpose design",
+      "Soft romantic silhouette",
+      "Ample workspace"
+    ]
+  },
+  {
+    "id": "84",
+    "name": "HEMNES TV storage combination",
+    "description": "Sustainable beauty from sustainably-sourced solid pine, a natural and renewable material that gets more beautiful with each passing year. Like it? Combine with other products in the HEMNES series.",
+    "stock": 8,
+    "price": 647.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/84/white-stain/hemnes-tv-unit-1.jpg",
+      "/public/images/84/white-stain/hemnes-tv-unit-2.jpg",
+      "/public/images/84/white-stain/hemnes-tv-unit-3.jpg",
+      "/public/images/84/black/hemnes-tv-unit-1.jpg",
+      "/public/images/84/black/hemnes-tv-unit-2.jpg",
+      "/public/images/84/black/hemnes-tv-unit-3.jpg"
+    ],
+    "category": "media furniture",
+    "colors": ["white stain", "black"],
+    "sizes": ["96 1/2x77 1/2 inches"],
+    "material": "solid pine",
+    "roomType": "living room",
+    "rating": {
+      "stars": 5,
+      "count": 9
+    },
+    "features": [
+      "Sustainable solid pine construction",
+      "Versatile media storage",
+      "Matches HEMNES series",
+      "Natural wood beauty"
+    ],
+    "financingOptions": {
+      "IKEA Projekt Card": "$108/mo for 6 months"
+    }
+  },
+  {
+    "id": "85",
+    "name": "DVÄRGTALL Decorative figure, set of 3",
+    "description": "The decorative DVÄRGTALL figures, designed by Inma Bermudez, are playful friends with three different personalities. You can combine them in many creative ways and even swap their legs.",
+    "stock": 40,
+    "price": 12.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/85/solid-wood/dvargtall-figures-1.jpg",
+      "/public/images/85/solid-wood/dvargtall-figures-2.jpg",
+      "/public/images/85/solid-wood/dvargtall-figures-3.jpg"
+    ],
+    "category": "home decor",
+    "colors": ["solid wood/black"],
+    "sizes": ["set of 3"],
+    "material": "solid wood",
+    "designer": "Inma Bermudez",
+    "roomType": "any",
+    "rating": {
+      "stars": 5,
+      "count": 106
+    },
+    "features": [
+      "Interchangeable legs",
+      "Playful design",
+      "Creative combinations",
+      "Handcrafted look"
+    ]
+  },
+  {
+    "id": "86",
+    "name": "SJÄLSLIGT Decoration, set of 3",
+    "description": "You can decorate your home with green plants without having to water them, since the cactuses are made from ceramic.",
+    "stock": 50,
+    "price": 17.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/86/green/sjalsligt-decor-1.jpg",
+      "/public/images/86/green/sjalsligt-decor-2.jpg",
+      "/public/images/86/green/sjalsligt-decor-3.jpg"
+    ],
+    "category": "home decor",
+    "colors": ["green"],
+    "sizes": ["set of 3"],
+    "material": "ceramic",
+    "roomType": "any",
+    "rating": {
+      "stars": 5,
+      "count": 880
+    },
+    "notes": "Best seller",
+    "features": [
+      "Low-maintenance decor",
+      "Realistic cactus design",
+      "Ceramic construction",
+      "No watering needed"
+    ]
+  }, 
+  {
+    "id": "87",
+    "name": "SILVTJÄRN Container",
+    "description": "Freshen your bathroom with a bit of bling using SILVTJÄRN accessories. This glass container is perfect for make-up remover pads, cotton balls or jewelry - and the stylish lid can double as a soap dish",
+    "stock": 100,
+    "price": 6.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/86/clear/silvtjarn-container-1.jpg",
+      "/public/images/86/clear/silvtjarn-container-2.jpg",
+      "/public/images/86/clear/silvtjarn-container-3.jpg"
+    ],
+    "category": "bathroom accessories",
+    "colors": ["clear"],
+    "sizes": ["one size"],
+    "material": "glass",
+    "roomType": "bathroom",
+    "rating": {
+      "stars": 5,
+      "count": 90
+    },
+    "notes": "",
+    "features": [
+      "Decorative design",
+      "Multi-purpose container",
+      "Lid doubles as soap dish",
+      "Glass construction"
+    ]
+  },
+  {
+    "id": "88",
+    "name": "FEJKA Artificial potted plant",
+    "description": "Enjoy a cherry tree in bloom – all year round. This lifelike potted plant is artificial and is comprised of more than 50% recycled plastic. And it's easy to bring home since it comes in parts.",
+    "stock": 25,
+    "price": 49.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/88/cherry-blossoms/fejka-plant-1.jpg",
+      "/public/images/88/cherry-blossoms/fejka-plant-2.jpg",
+      "/public/images/88/cherry-blossoms/fejka-plant-3.jpg"
+    ],
+    "category": "plants",
+    "colors": ["cherry-blossoms"],
+    "sizes": ["7½ inches"],
+    "material": "recycled plastic",
+    "usage": "indoor/outdoor",
+    "rating": {
+      "stars": 5,
+      "count": 5
+    },
+    "notes": "Last chance to buy",
+    "features": [
+      "Lifelike cherry blossom design",
+      ">50% recycled materials",
+      "Modular assembly",
+      "Year-round beauty",
+      "Low maintenance"
+    ],
+    "assembly": "Comes in parts for easy transport"
+  },
+  {
+    "id": "89",
+    "name": "DAJLIEN 4-piece exercise set",
+    "description": "Improve your flexibility with the yoga strap, use the knee cushions to reduce pressure on your knees, hands or elbows while you exercise – and then roll the massage ball over sore points when you're done.",
+    "stock": 100,
+    "price": 34.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/89/multi/dajlien-exercise-set-1.jpg",
+      "/public/images/89/multi/dajlien-exercise-set-2.jpg",
+      "/public/images/89/multi/dajlien-exercise-set-3.jpg"
+    ],
+    "category": "fitness equipment",
+    "colors": ["green", "pink"],
+    "sizes": ["4-piece set"],
+    "material": "mixed",
+    "roomType": "any",
+    "rating": {
+      "stars": 0,
+      "count": 0
+    },
+    "notes": "Last chance to buy",
+    "features": [
+      "Includes yoga strap",
+      "Knee cushions for support",
+      "Massage ball for recovery",
+      "Convenient storage bag"
+    ]
+  },
+  {
+    "id": "90",
+    "name": "BROFJÄRDEN 3-piece bathroom set",
+    "description": "BROFJÄRDEN bathroom accessories with shiny chrome-plated details reminisce of elegant, lasting designs of the past. This bathroom set of 3 is ideal for toothbrushes, soap and smaller items.",
+    "stock": 100,
+    "price": 8.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/90/gray/brofjardem-bathroom-set-1.jpg",
+      "/public/images/90/gray/brofjardem-bathroom-set-2.jpg",
+      "/public/images/90/gray/brofjardem-bathroom-set-3.jpg"
+    ],
+    "category": "bathroom accessories",
+    "colors": ["gray"],
+    "sizes": ["3-piece set"],
+    "material": "glass and chrome",
+    "roomType": "bathroom",
+    "rating": {
+      "stars": 4.5,
+      "count": 5
+    },
+    "notes": "New",
+    "features": [
+      "Chrome-plated details",
+      "3-piece set",
+      "Soap dispenser included",
+      "Tray for organization"
+    ]
+  },
+  {
+    "id": "91",
+    "name": "VÄLVÅRDAD Soap dispenser",
+    "description": "This traditional-styled soap dispenser gives your kitchen a new and rustic expression. Easy to fill with washing-up liquid, sanitizer or anything else needed when washing up or cleaning the sink.",
+    "stock": 100,
+    "price": 3.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/91/brown/valvardad-soap-dispenser-1.jpg",
+      "/public/images/91/brown/valvardad-soap-dispenser-2.jpg",
+      "/public/images/91/brown/valvardad-soap-dispenser-3.jpg"
+    ],
+    "category": "kitchen accessories",
+    "colors": ["brown"],
+    "sizes": ["one size"],
+    "material": "glass",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 4,
+      "count": 38
+    },
+    "notes": "New",
+    "features": [
+      "Traditional rustic style",
+      "Easy to refill",
+      "Suitable for dish soap or sanitizer",
+      "Pump dispenser design"
+    ]
+  },  
+  {
+    "id": "92",
+    "name": "BRUGDHAJ Salt & pepper shaker",
+    "description": "Decorative and practical food storage on the worktop — or a nice detail to display on a table. The BRUGDHAJ series is in rustic stoneware with a beautifully glazed surface that matches the GLADELIG series.",
+    "stock": 100,
+    "price": 4.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/92/brown/brugdhaj-salt-pepper-shaker-1.jpg",
+      "/public/images/92/brown/brugdhaj-salt-pepper-shaker-2.jpg",
+      "/public/images/92/brown/brugdhaj-salt-pepper-shaker-3.jpg"
+    ],
+    "category": "kitchen accessories",
+    "colors": ["brown"],
+    "sizes": ["4 inch", "set of 2"],
+    "material": "stoneware",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 3,
+      "count": 2
+    },
+    "notes": "New",
+    "features": [
+      "Set of 2 shakers",
+      "Rustic stoneware design",
+      "Glazed surface finish",
+      "Matches GLADELIG series"
+    ]
+  },
+  {
+    "id": "93",
+    "name": "BRUGDHAJ Oil/vinegar bottle",
+    "description": "Decorative and practical food storage on the worktop — or a nice detail to display on a table. The BRUGDHAJ series is in rustic stoneware with a beautifully glazed surface that matches the GLADELIG series.",
+    "stock": 100,
+    "price": 5.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/93/blue/brugdhaj-oil-vinegar-bottle-1.jpg",
+      "/public/images/93/blue/brugdhaj-oil-vinegar-bottle-2.jpg",
+      "/public/images/93/blue/brugdhaj-oil-vinegar-bottle-3.jpg"
+    ],
+    "category": "kitchen accessories",
+    "colors": ["blue"],
+    "sizes": ["7 ½ inch"],
+    "material": "stoneware",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 4,
+      "count": 6
+    },
+    "notes": "New",
+    "features": [
+      "Oil/vinegar dispenser",
+      "Rustic stoneware design",
+      "Glazed surface finish",
+      "Matches GLADELIG series"
+    ]
+  },
+  {
+    "id": "94",
+    "name": "HALVTOM Spice mill",
+    "description": "HALVTOM jars for spices create a trendy restaurant feel at home. The sculptural shape and the brown glass mean that you'll happily have them visible by the stovetop and on the dining table.",
+    "stock": 100,
+    "price": 12.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/94/brown/halvtom-spice-mill-1.jpg",
+      "/public/images/94/brown/halvtom-spice-mill-2.jpg",
+      "/public/images/94/brown/halvtom-spice-mill-3.jpg"
+    ],
+    "category": "kitchen accessories",
+    "colors": ["brown"],
+    "sizes": ["7 ½ inch", "2 pack"],
+    "material": "glass",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 5,
+      "count": 11
+    },
+    "notes": "",
+    "features": [
+      "Trendy restaurant feel",
+      "Sculptural design",
+      "Pack of 2 mills",
+      "Visible storage solution"
+    ]
+  },
+  {
+    "id": "95",
+    "name": "PLATS Salt & pepper shaker",
+    "description": "An S and a P on top of these salt and pepper shakers with clean lines will help you and your dinner guests choose the right one when the food needs some spicing up.",
+    "stock": 100,
+    "price": 3.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/95/stainless-steel/plats-salt-pepper-shaker-1.jpg",
+      "/public/images/95/stainless-steel/plats-salt-pepper-shaker-2.jpg",
+      "/public/images/95/stainless-steel/plats-salt-pepper-shaker-3.jpg"
+    ],
+    "category": "kitchen accessories",
+    "colors": ["stainless steel"],
+    "sizes": ["set of 2"],
+    "material": "stainless steel",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 4.5,
+      "count": 11
+    },
+    "notes": "",
+    "features": [
+      "Labeled with S and P",
+      "Clean line design",
+      "Stainless steel material",
+      "Set of 2 shakers"
+    ]
+  },
+  {
+    "id": "96",
+    "name": "BALUNGEN Soap dispenser",
+    "description": "Inspired by fine bathrooms at the turn of the century, the BALUNGEN series is just as clever as it is beautiful with details like hidden screws and chrome finish that create a harmonious look in your bathroom.",
+    "stock": 100,
+    "price": 14.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/96/chrome/balungen-soap-dispenser-1.jpg",
+      "/public/images/96/chrome/balungen-soap-dispenser-2.jpg",
+      "/public/images/96/chrome/balungen-soap-dispenser-3.jpg"
+    ],
+    "category": "bathroom accessories",
+    "colors": ["chrome"],
+    "sizes": ["one size"],
+    "material": "glass and chrome",
+    "roomType": "bathroom",
+    "rating": {
+      "stars": 4.5,
+      "count": 274
+    },
+    "notes": "Last chance to buy",
+    "features": [
+      "Hidden screws",
+      "Chrome finish",
+      "Vintage-inspired design",
+      "Harmonious bathroom look"
+    ]
+  },
+  {
+    "id": "97",
+    "name": "VÅLVÅRDAD Dish-washing brush refills",
+    "description": "",
+    "stock": 100,
+    "price": 2.49,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/97/natural/valvardad-dish-washing-brush-1.jpg",
+      "/public/images/97/natural/valvardad-dish-washing-brush-2.jpg",
+      "/public/images/97/natural/valvardad-dish-washing-brush-3.jpg"
+    ],
+    "category": "kitchen accessories",
+    "colors": ["natural"],
+    "sizes": ["one size"],
+    "material": "agave leaf fiber and wood",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 4,
+      "count": 116
+    },
+    "notes": "",
+    "features": [
+      "Made from agave leaf fiber",
+      "Sustainable material",
+      "Replacement brush head",
+      "Wooden handle"
+    ]
+  },
+  {
+    "id": "98",
+    "name": "IKEA 365+ Carafe with stopper",
+    "description": "The IKEA 365+ series has everything for the table – to be enjoyed for its everyday simplicity or spiced up with colors and accessories. Made from tempered glass that holds both hot and cold beverages.",
+    "stock": 100,
+    "price": 4.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/98/clear/ikea-365-carafe-1.jpg",
+      "/public/images/98/clear/ikea-365-carafe-2.jpg",
+      "/public/images/98/clear/ikea-365-carafe-3.jpg"
+    ],
+    "category": "drinkware",
+    "colors": ["clear"],
+    "sizes": ["34 oz"],
+    "material": "glass and cork",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 4.5,
+      "count": 2199
+    },
+    "notes": "Best seller",
+    "features": [
+      "Cork stopper",
+      "Tempered glass",
+      "Holds hot and cold beverages",
+      "Simple everyday design"
+    ]
+  },
+  {
+    "id": "99",
+    "name": "SVAMPIG Sponge",
+    "description": "These sponges have a soft and a coarse side – perfect to have close at hand when it's time to take care of the washing up.",
+    "stock": 200,
+    "price": 0.99,
+    "unit": "3 pack",
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/99/gray-green/svampig-sponge-1.jpg",
+      "/public/images/99/gray-green/svampig-sponge-2.jpg",
+      "/public/images/99/gray-green/svampig-sponge-3.jpg"
+    ],
+    "category": "cleaning",
+    "colors": ["gray-green"],
+    "material": "cellulose",
+    "rating": {
+      "stars": 5,
+      "count": 64
+    },
+    "notes": "New",
+    "features": [
+      "Dual-textured (soft and coarse sides)",
+      "Economical 3-pack",
+      "Effective for dishwashing",
+      "Basic cleaning essential"
+    ]
+  }, 
+  {
+    "id": "100",
+    "name": "IKEA 365+ IHÄRDIG Spice mill",
+    "description": "A durable spice mill for fresh-ground spices with adjustable ceramic grinding mechanism.",
+    "stock": 75,
+    "price": 6.99,
+    "discount": 0,
+    "currency": "USD",
+    "images": [
+      "/public/images/100/black/ihardig-mill-1.jpg",
+      "/public/images/100/black/ihardig-mill-2.jpg",
+      "/public/images/100/black/ihardig-mill-3.jpg"
+    ],
+    "category": "kitchenware",
+    "colors": ["black"],
+    "sizes": ["5 inches"],
+    "material": "ceramic/plastic",
+    "roomType": "kitchen",
+    "rating": {
+      "stars": 5,
+      "count": 17
+    },
+    "features": [
+      "Adjustable ceramic grinder",
+      "Fresh-ground spices",
+      "Durable construction",
+      "Easy to refill"
+    ]
   }
-  
-  
-
-
 ]
