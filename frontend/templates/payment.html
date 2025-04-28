@@ -6,6 +6,8 @@
   <title>Payment - Better Call Sofa</title>
   <link href="../css/common.css" rel="stylesheet" type="text/css">
   <link href="../css/checkout.css" rel="stylesheet" type="text/css">
+  <!-- Add Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -94,7 +96,18 @@
               </div>
             </div>
 
-            <button type="submit" class="use-current-location">Complete Order</button>
+            <!-- Add PayPal form section -->
+            <div id="paypal-form" style="display: none;">
+              <div class="form-group">
+                <label for="paypal-email">PayPal Email</label>
+                <input type="email" id="paypal-email" placeholder="your-email@example.com">
+              </div>
+              <p class="paypal-info">
+                You will be redirected to PayPal to complete your payment securely.
+              </p>
+            </div>
+
+            <button type="submit" class="proceed-to-payment">Complete Order</button>
           </form>
         </div>
 
@@ -117,7 +130,6 @@
                 <span id="summary-total">$0.00</span>
               </div>
             </div>
-            <button id="proceed-to-payment" class="proceed-to-payment">Proceed to Payment</button>
           </div>
       </div>
     </div>
