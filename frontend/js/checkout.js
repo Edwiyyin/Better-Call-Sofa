@@ -137,7 +137,124 @@ document.addEventListener('DOMContentLoaded', function() {
     totalElement.textContent = `$${total.toFixed(2)}`;
   }
   
-  // Proceed to payment button - fixed to ensure it always works if the button exists
+  // Add validation for Full Name and Phone Number fields
+  function setupInputValidation() {
+    // Add error message containers
+    const fullNameField = document.getElementById('full-name');
+    const fullNameError = document.createElement('div');
+    fullNameError.id = 'full-name-error';
+    fullNameError.style.color = '#ff0000';
+    fullNameError.style.fontSize = '12px';
+    fullNameError.style.marginTop = '5px';
+    fullNameError.style.display = 'none';
+    fullNameError.textContent = 'LETTERS ONLY FOR NAME';
+    fullNameField.parentNode.appendChild(fullNameError);
+    
+    const phoneField = document.getElementById('phone');
+    const phoneError = document.createElement('div');
+    phoneError.id = 'phone-error';
+    phoneError.style.color = '#ff0000';
+    phoneError.style.fontSize = '12px';
+    phoneError.style.marginTop = '5px';
+    phoneError.style.display = 'none';
+    phoneError.textContent = 'NUMBERS ONLY FOR PHONE';
+    phoneField.parentNode.appendChild(phoneError);
+    
+    // Full Name: Letters only validation
+    fullNameField.addEventListener('keydown', function(e) {
+      // Allow: backspace, delete, tab, escape, enter, navigation, space, and letters
+      if (
+          // Allow control keys
+          e.key === 'Backspace' || 
+          e.key === 'Delete' || 
+          e.key === 'Tab' || 
+          e.key === 'Escape' || 
+          e.key === 'Enter' ||
+          e.key === 'ArrowLeft' || 
+          e.key === 'ArrowRight' || 
+          e.key === 'ArrowUp' || 
+          e.key === 'ArrowDown' ||
+          e.key === 'Home' || 
+          e.key === 'End' ||
+          e.key === ' ' || // Space
+          e.key === '-' || // Hyphen for names like Mary-Jane
+          e.key === '\'' || // Apostrophe for names like O'Neil
+          e.key === '.' || // Period for abbreviated names
+          // Allow Ctrl combinations
+          (e.ctrlKey === true || e.metaKey === true) ||
+          // Allow letters
+          (/^[a-zA-Z]$/.test(e.key))
+      ) {
+        fullNameError.style.display = 'none';
+        return true; // Let the event continue
+      } else {
+        // Block non-letter keys
+        fullNameError.style.display = 'block';
+        e.preventDefault();
+        return false;
+      }
+    });
+    
+    // Remove non-allowed characters from full name when pasted
+    fullNameField.addEventListener('input', function() {
+      this.value = this.value.replace(/[^a-zA-Z\s\-\'\.]/g, '');
+      if (/[^a-zA-Z\s\-\'\.]/g.test(this.value)) {
+        fullNameError.style.display = 'block';
+      } else {
+        fullNameError.style.display = 'none';
+      }
+    });
+    
+    // Phone Number: Numbers and formatting characters only
+    phoneField.addEventListener('keydown', function(e) {
+      // Allow: backspace, delete, tab, escape, enter, navigation, and numbers
+      if (
+          // Allow control keys
+          e.key === 'Backspace' || 
+          e.key === 'Delete' || 
+          e.key === 'Tab' || 
+          e.key === 'Escape' || 
+          e.key === 'Enter' ||
+          e.key === 'ArrowLeft' || 
+          e.key === 'ArrowRight' || 
+          e.key === 'ArrowUp' || 
+          e.key === 'ArrowDown' ||
+          e.key === 'Home' || 
+          e.key === 'End' ||
+          e.key === '+' || // For international numbers
+          e.key === '-' || // For formatting
+          e.key === '(' || // For formatting
+          e.key === ')' || // For formatting
+          e.key === ' ' || // For spacing
+          // Allow number keys
+          (e.key >= '0' && e.key <= '9') ||
+          // Allow numpad number keys
+          (e.key >= 'Numpad0' && e.key <= 'Numpad9') ||
+          // Allow Ctrl combinations
+          (e.ctrlKey === true || e.metaKey === true)
+      ) {
+        phoneError.style.display = 'none';
+        return true; // Let the event continue
+      } else {
+        // Block non-allowed keys
+        phoneError.style.display = 'block';
+        e.preventDefault();
+        return false;
+      }
+    });
+    
+    // Remove any invalid characters from phone when pasted
+    phoneField.addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9\+\-\(\)\s]/g, '');
+      if (/[^0-9\+\-\(\)\s]/g.test(this.value)) {
+        phoneError.style.display = 'block';
+      } else {
+        phoneError.style.display = 'none';
+      }
+    });
+  }
+  
+  // Proceed to payment button
   const proceedToPaymentBtn = document.getElementById('proceed-to-payment');
   if (proceedToPaymentBtn) {
     proceedToPaymentBtn.addEventListener('click', function() {
@@ -168,8 +285,6 @@ document.addEventListener('DOMContentLoaded', function() {
       // Redirect to payment page
       window.location.href = 'payment.html';
     });
-  } else {
-    console.error("Proceed to payment button not found");
   }
   
   // Initialize if map exists
@@ -179,4 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   renderOrderSummary();
+  
+  // Setup input validation for name and phone
+  setupInputValidation();
 });
