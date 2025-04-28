@@ -1,127 +1,96 @@
-# Furniture Boutique E-commerce Backend
 
-A Node.js backend for a furniture-themed e-commerce website, built with Express.js.
+# 🛋️ Better Call Sofa - E-commerce Furniture Store
 
-## Features
+[![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/Edwiyyin/Better-Call-Sofa) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Repo Size](https://img.shields.io/github/repo-size/Edwiyyin/Better-Call-Sofa)](https://github.com/Edwiyyin/Better-Call-Sofa)
 
-- Product catalog with filtering, sorting, and pagination
-- Shopping cart functionality with checkout processing
-- Wishlist management with priority and custom sorting options
-- Product discount handling
-- Similar product recommendations
-- Address management with geocoding
-- Data persistence using JSON files
-- Inventory management for product stock
+---
 
-## Technical Stack
+A full-stack e-commerce platform for modern furniture, built with **Node.js/Express** backend and **vanilla HTML/CSS/JS** frontend.  
+Features a product catalog, cart, wishlist, and checkout flow.
 
-- Node.js
-- Express.js
-- Node-geocoder for address validation
-- JSON file-based data storage
+---
 
-## Setup Instructions
+## 🚀 Getting Started
 
-1. Clone the repository
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Start the server:
-   ```
+### Prerequisites
+
+- Update your system (Linux recommended):  
+  sudo apt update && sudo apt upgrade -y
+- Install a code editor (e.g., VS Code).
+- Install Git (Linux):  
+  sudo apt install git  
+  Verify installation: git --version
+
+---
+
+### Setup
+
+1. Clone the repository:  
+   git clone https://github.com/Edwiyyin/Better-Call-Sofa.git  
+   cd Better-Call-Sofa
+
+2. Navigate to backend:  
+   cd backend
+
+3. Start the server (Node modules are pre-installed):  
    npm start
-   ```
-   
-For development with automatic restarts:
-```
-npm run dev
-```
 
-## API Endpoints
+4. Open in your browser:  
+   Visit 👉 http://localhost:3000
 
-### Products
+---
 
-- `GET /api/products` - Get all products with pagination, filtering, and sorting
-- `GET /api/products/:id` - Get a single product by ID
-- `GET /api/products/:id/similar` - Get products similar to a specific product
-- `GET /api/products/category/:category` - Get products by category
-- `GET /api/products/search` - Search products by keyword
+## 🛋️ Features
 
-### Cart
+- **Product Catalog:** Filter/sort 20+ furniture items.
+- **Shopping Cart:** Add/remove items with quantity control.
+- **Wishlist:** Save favorites with priority sorting.
+- **Checkout Flow:** Address selection and order confirmation.
+- **Responsive Design:** Optimized for mobile, tablet, and desktop.
 
-- `GET /api/cart` - Get user's cart
-- `POST /api/cart/add` - Add product to cart
-- `PUT /api/cart/update/:itemIndex` - Update cart item (quantity, color, size)
-- `DELETE /api/cart/item/:itemIndex` - Remove item from cart
-- `DELETE /api/cart` - Clear the entire cart
-- `POST /api/cart/checkout` - Process checkout and create order
+---
 
-### Wishlist
+## 📚 API Documentation
 
-- `GET /api/wishlist` - Get user's wishlist
-- `POST /api/wishlist/add` - Add product to wishlist
-- `DELETE /api/wishlist/item/:productId` - Remove item from wishlist
-- `DELETE /api/wishlist` - Clear the entire wishlist
-- `PATCH /api/wishlist/item/:productId/priority` - Update item priority in wishlist
-- `GET /api/wishlist/sort` - Sort wishlist by different criteria
+### User Identification
 
-### Address Management
+Users are identified via a `user-id` header.
 
-- `GET /api/addresses` - Get all addresses for user
-- `POST /api/addresses` - Add new address
-- `PUT /api/addresses/:addressId` - Update existing address
-- `DELETE /api/addresses/:addressId` - Delete address
-- `PATCH /api/addresses/:addressId/set-default` - Set address as default
+Example:  
+headers: { 'user-id': 'guest123' }
 
-## Data Structure
+---
 
-The application uses JSON files for data persistence:
+### Error Handling
 
-- `data/products.json` - Product catalog with details including:
-  - Basic info (name, description, price, discount)
-  - Inventory data (stock)
-  - Categorization (category, roomType)
-  - Variants (colors, sizes)
-  - Materials and other attributes
-- `data/cart.json` - Shopping cart data
-- `data/wishlist.json` - Wishlist data
-- `data/addresses.json` - User addresses
+| Code | Status        | Response Format                         |
+|:----:|:--------------|:----------------------------------------|
+| 200  | OK            | { success: true, data: {} }             |
+| 400  | Bad Request   | { success: false, message: "Error" }    |
+| 500  | Server Error  | { success: false, message: "Error" }    |
 
-## User Identification
+---
 
-For simplicity, this backend identifies users through a `user-id` header. In a production environment, this would be replaced with proper authentication.
+## 🛠️ Troubleshooting
 
-Example:
-```
-headers: {
-  'user-id': 'user123'
-}
-```
+| Issue                    | Solution                                 |
+|---------------------------|-----------------------------------------|
+| Port 3000 in use          | kill -9 $(lsof -t -i:3000)               |
+| Missing JSON data         | Check backend/data/ file permissions    |
+| API returns 404           | Ensure server is running (npm start)    |
+| Page not loading properly | Clear browser cache (Ctrl+Shift+R)      |
 
-## Error Handling
+---
 
-The API returns appropriate HTTP status codes:
+## 💬 Contributions
 
-- `200 OK` - Request succeeded
-- `201 Created` - Resource created successfully
-- `400 Bad Request` - Invalid request parameters
-- `404 Not Found` - Resource not found
-- `500 Internal Server Error` - Server-side error
+Pull requests are welcome!  
+For major changes, please open an issue first to discuss what you would like to change.
 
-Response format:
-```json
-{
-  "success": true/false,
-  "data": {}, // Response data (when success is true)
-  "message": "" // Error message (when success is false)
-}
-```
+---
 
-## Future Enhancements
+## 📄 License
 
-- Authentication and user management
-- Order processing
-- Payment integration
-- Product reviews and ratings
-- Inventory management
-- Admin dashboard
+This project is licensed under the [MIT License](LICENSE).
+
+---
